@@ -247,6 +247,7 @@ footer{
 }
 
 @media(max-width:650px){
+
   header{
     flex-direction:column;
     gap:12px;
@@ -305,9 +306,8 @@ footer{
     <h1>Find or Design Your Future Home</h1>
 
     <p>
-      Explore real-estate opportunities in Canada and Australia,
-      or describe the home you want and create a preliminary
-      house concept.
+      Explore property options in Canada and Australia,
+      or create a preliminary concept for the home you want.
     </p>
 
     <a class="btn" href="#builder">
@@ -322,8 +322,13 @@ footer{
 <section id="properties">
 
   <div class="title">
+
     <h2>Choose Your Location</h2>
-    <p>Start by selecting where you want your property.</p>
+
+    <p>
+      Select the country and type of property you are interested in.
+    </p>
+
   </div>
 
   <div class="builder">
@@ -331,23 +336,36 @@ footer{
     <div class="form-grid">
 
       <div>
+
         <label>Country</label>
 
         <select id="country">
-          <option value="Canada">🇨🇦 Canada</option>
-          <option value="Australia">🇦🇺 Australia</option>
+
+          <option value="Canada">
+            🇨🇦 Canada
+          </option>
+
+          <option value="Australia">
+            🇦🇺 Australia
+          </option>
+
         </select>
+
       </div>
 
       <div>
+
         <label>Property Type</label>
 
         <select id="propertyType">
+
           <option>Detached House</option>
           <option>Townhouse</option>
           <option>Apartment</option>
           <option>Luxury Villa</option>
+
         </select>
+
       </div>
 
     </div>
@@ -364,7 +382,7 @@ footer{
     <h2>Design Your Home</h2>
 
     <p>
-      Tell us what you want your house to look like.
+      Choose the size, rooms and features you want.
     </p>
 
   </div>
@@ -375,6 +393,7 @@ footer{
     <div class="form-grid">
 
       <div>
+
         <label>House Size (m²)</label>
 
         <input
@@ -383,6 +402,7 @@ footer{
           value="180"
           min="30"
           max="2000">
+
       </div>
 
 
@@ -427,7 +447,7 @@ footer{
 
         <select id="floors">
 
-          <option>1</option>
+          <option selected>1</option>
           <option>2</option>
           <option>3</option>
 
@@ -475,7 +495,7 @@ footer{
       <div class="full">
 
         <label>
-          Describe exactly how you want your house
+          Describe Your Dream Home
         </label>
 
         <textarea
@@ -485,10 +505,12 @@ footer{
 
       </div>
 
+
       <div class="full center">
 
         <button
           class="btn"
+          type="button"
           onclick="generateHouse()">
 
           Generate My House
@@ -508,11 +530,11 @@ footer{
 
       <div class="house-plan">
 
-        <div class="room" id="room1">
+        <div class="room">
           Living Room
         </div>
 
-        <div class="room" id="room2">
+        <div class="room">
           Kitchen
         </div>
 
@@ -535,7 +557,6 @@ footer{
 
       </div>
 
-
       <div class="summary" id="summary"></div>
 
     </div>
@@ -552,7 +573,7 @@ footer{
     <h2>Submit Your Property Request</h2>
 
     <p>
-      Send your house requirements to our team for review.
+      Send your requirements to our team for review.
     </p>
 
   </div>
@@ -562,9 +583,9 @@ footer{
 
     <div class="notice">
 
-      This request is a preliminary property inquiry.
-      A property professional should confirm availability,
-      pricing, contracts and legal requirements before
+      Your request is a preliminary property inquiry.
+      Property availability, pricing, contracts and
+      legal requirements must be confirmed before
       any purchase is completed.
 
     </div>
@@ -636,14 +657,18 @@ footer{
 
     <button
       class="btn"
+      type="button"
       onclick="submitRequest()">
 
-      Submit Property Request
+      Send Property Request
 
     </button>
 
 
-    <p id="message" style="margin-top:20px;font-weight:bold;"></p>
+    <p
+      id="message"
+      style="margin-top:20px;font-weight:bold;">
+    </p>
 
   </div>
 
@@ -654,14 +679,14 @@ footer{
 
   <div class="payment-box">
 
-    <h2>Purchase & Payment</h2>
+    <h2>Property Purchase</h2>
 
-    <p style="margin:20px 0;">
+    <p style="margin:20px 0;line-height:1.6;">
 
-      After a property request has been reviewed and
-      the property details and agreement have been
-      confirmed, payment can be completed through an
-      authorized payment provider.
+      After your property request has been reviewed,
+      our team can provide the confirmed property
+      information, price and applicable purchase
+      documentation.
 
     </p>
 
@@ -669,7 +694,7 @@ footer{
       class="btn"
       href="mailto:davidemma1031@gmail.com?subject=Property Purchase Inquiry">
 
-      Contact Us About Payment
+      Contact GoInvestment
 
     </a>
 
@@ -680,7 +705,13 @@ footer{
 
 <footer>
 
-  © 2026 GoInvestment Real Estate
+  <p>
+    © 2026 GoInvestment Real Estate
+  </p>
+
+  <p style="margin-top:8px;">
+    Contact: davidemma1031@gmail.com
+  </p>
 
 </footer>
 
@@ -723,7 +754,7 @@ function generateHouse(){
     document.getElementById("office").checked;
 
   const description =
-    document.getElementById("description").value;
+    document.getElementById("description").value.trim();
 
 
   document.getElementById("preview").style.display =
@@ -749,6 +780,7 @@ function generateHouse(){
   if(pool) extras.push("Swimming Pool");
   if(office) extras.push("Home Office");
 
+
   document.getElementById("summary").innerHTML =
 
     "<strong>Location:</strong> " + country +
@@ -761,6 +793,7 @@ function generateHouse(){
     (extras.length ? extras.join(", ") : "None selected") +
     "<br><strong>Special Requirements:</strong> " +
     (description || "None");
+
 
   document.getElementById("preview")
     .scrollIntoView({behavior:"smooth"});
@@ -788,7 +821,7 @@ function resizeCanvas(){
   canvas.height =
     canvas.offsetHeight * ratio;
 
-  ctx.scale(ratio,ratio);
+  ctx.setTransform(ratio,0,0,ratio,0,0);
 
   ctx.lineWidth = 2;
 
@@ -800,60 +833,70 @@ function resizeCanvas(){
 resizeCanvas();
 
 
-function position(event){
-
-  const rect =
-    canvas.getBoundingClientRect();
-
-  const touch =
-    event.touches ? event.touches[0] : event;
-
-  return {
-    x: touch.clientX - rect.left,
-    y: touch.clientY - rect.top
-  };
-
-}
+window.addEventListener(
+  "resize",
+  resizeCanvas
+);
 
 
-canvas.addEventListener("pointerdown",function(e){
+canvas.addEventListener(
+  "pointerdown",
+  function(e){
 
-  drawing = true;
+    drawing = true;
 
-  const p = position(e);
+    const rect =
+      canvas.getBoundingClientRect();
 
-  ctx.beginPath();
+    ctx.beginPath();
 
-  ctx.moveTo(p.x,p.y);
+    ctx.moveTo(
+      e.clientX - rect.left,
+      e.clientY - rect.top
+    );
 
-});
-
-
-canvas.addEventListener("pointermove",function(e){
-
-  if(!drawing) return;
-
-  const p = position(e);
-
-  ctx.lineTo(p.x,p.y);
-
-  ctx.stroke();
-
-});
+  }
+);
 
 
-canvas.addEventListener("pointerup",function(){
+canvas.addEventListener(
+  "pointermove",
+  function(e){
 
-  drawing = false;
+    if(!drawing) return;
 
-});
+    const rect =
+      canvas.getBoundingClientRect();
+
+    ctx.lineTo(
+      e.clientX - rect.left,
+      e.clientY - rect.top
+    );
+
+    ctx.stroke();
+
+  }
+);
 
 
-canvas.addEventListener("pointerleave",function(){
+canvas.addEventListener(
+  "pointerup",
+  function(){
 
-  drawing = false;
+    drawing = false;
 
-});
+  }
+);
+
+
+canvas.addEventListener(
+  "pointercancel",
+  function(){
+
+    drawing = false;
+
+  }
+);
 
 
 function clearSignature(){
@@ -871,27 +914,117 @@ function clearSignature(){
 function submitRequest(){
 
   const name =
-    document.getElementById("fullname").value.trim();
+    document.getElementById("fullname")
+    .value.trim();
 
   const email =
-    document.getElementById("email").value.trim();
+    document.getElementById("email")
+    .value.trim();
+
+  const phone =
+    document.getElementById("phone")
+    .value.trim();
 
   if(!name || !email){
 
     document.getElementById("message").innerText =
-      "Please enter your name and email.";
+      "Please enter your full name and email.";
 
     return;
 
   }
 
 
+  const country =
+    document.getElementById("country").value;
+
+  const property =
+    document.getElementById("propertyType").value;
+
+  const size =
+    document.getElementById("size").value;
+
+  const bedrooms =
+    document.getElementById("bedrooms").value;
+
+  const bathrooms =
+    document.getElementById("bathrooms").value;
+
+  const floors =
+    document.getElementById("floors").value;
+
+  const description =
+    document.getElementById("description")
+    .value.trim();
+
+
+  const features = [];
+
+  if(document.getElementById("balcony").checked)
+    features.push("Balcony");
+
+  if(document.getElementById("garage").checked)
+    features.push("Garage");
+
+  if(document.getElementById("garden").checked)
+    features.push("Garden");
+
+  if(document.getElementById("pool").checked)
+    features.push("Swimming Pool");
+
+  if(document.getElementById("office").checked)
+    features.push("Home Office");
+
+
+  const subject =
+    encodeURIComponent(
+      "New Property Request - " +
+      country
+    );
+
+
+  const body =
+    encodeURIComponent(
+`GoInvestment Real Estate Property Request
+
+CUSTOMER
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+
+PROPERTY
+Country: ${country}
+Property Type: ${property}
+House Size: ${size} m²
+Bedrooms: ${bedrooms}
+Bathrooms: ${bathrooms}
+Floors: ${floors}
+
+FEATURES
+${features.length ? features.join(", ") : "None selected"}
+
+HOUSE DESCRIPTION
+${description || "None"}
+
+Please review this property inquiry and contact the customer regarding availability, pricing, documentation and next steps.`
+    );
+
+
+  const mailto =
+    "mailto:davidemma1031@gmail.com" +
+    "?subject=" + subject +
+    "&body=" + body;
+
+
   document.getElementById("message").innerText =
-    "Your property request has been prepared. Our team can review the information before confirming the next step.";
+    "Opening your email app with the property request...";
+
+
+  window.location.href = mailto;
 
 }
 
 </script>
 
 </body>
-</html>
+  </html>
