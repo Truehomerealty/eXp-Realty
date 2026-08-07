@@ -3,996 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>GoInvestment Real Estate</title>
-
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#f5f2eb;
-  color:#171717;
-}
-
-header{
-  background:#101010;
-  color:white;
-  padding:18px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:20;
-}
-
-.logo{
-  font-size:24px;
-  font-weight:bold;
-}
-
-.logo span{
-  color:#d4af37;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:18px;
-}
-
-.hero{
-  min-height:500px;
-  padding:90px 7%;
-  color:white;
-  display:flex;
-  align-items:center;
-  background:
-  linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-  url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
-  center/cover;
-}
-
-.hero-content{
-  max-width:700px;
-}
-
-.hero h1{
-  font-size:48px;
-  margin-bottom:20px;
-}
-
-.hero p{
-  font-size:19px;
-  margin-bottom:30px;
-}
-
-.btn{
-  display:inline-block;
-  background:#d4af37;
-  color:#111;
-  border:0;
-  padding:14px 24px;
-  border-radius:5px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-}
-
-section{
-  padding:65px 7%;
-}
-
-.title{
-  text-align:center;
-  margin-bottom:35px;
-}
-
-.title h2{
-  font-size:34px;
-  margin-bottom:10px;
-}
-
-.builder{
-  max-width:850px;
-  margin:auto;
-  background:white;
-  padding:30px;
-  border-radius:12px;
-  box-shadow:0 5px 25px rgba(0,0,0,.08);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-
-label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:7px;
-}
-
-input,select,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid #ccc;
-  border-radius:5px;
-  font-size:16px;
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.options label{
-  background:#f2f2f2;
-  padding:10px 14px;
-  border-radius:5px;
-  font-weight:normal;
-}
-
-.options input{
-  width:auto;
-}
-
-.preview{
-  margin-top:30px;
-  background:#f0ede5;
-  border-radius:10px;
-  padding:20px;
-  display:none;
-}
-
-.house-plan{
-  position:relative;
-  margin:20px auto;
-  max-width:600px;
-  height:330px;
-  border:6px solid #222;
-  background:white;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:1fr 1fr;
-}
-
-.room{
-  border:2px solid #555;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:10px;
-  font-weight:bold;
-}
-
-.balcony{
-  position:absolute;
-  right:-90px;
-  top:90px;
-  width:85px;
-  height:100px;
-  border:4px solid #222;
-  background:#ddd;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  writing-mode:vertical-rl;
-  font-size:12px;
-}
-
-.summary{
-  margin-top:20px;
-  line-height:1.9;
-}
-
-.signature-box{
-  margin-top:20px;
-}
-
-canvas{
-  width:100%;
-  height:180px;
-  border:2px solid #aaa;
-  background:white;
-  touch-action:none;
-  border-radius:5px;
-}
-
-.center{
-  text-align:center;
-}
-
-.notice{
-  padding:15px;
-  background:#fff7d6;
-  border-left:4px solid #d4af37;
-  margin:20px 0;
-  line-height:1.6;
-}
-
-.payment{
-  background:#111;
-  color:white;
-  text-align:center;
-}
-
-.payment-box{
-  max-width:650px;
-  margin:auto;
-}
-
-footer{
-  background:#080808;
-  color:#aaa;
-  text-align:center;
-  padding:25px;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f2eb;color:#171717;line-height:1.5}
+header{background:#101010;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+.logo{font-size:24px;font-weight:bold}.logo span{color:#d4af37}
+nav a{color:#fff;text-decoration:none;margin-left:18px}
+.hero{min-height:520px;padding:90px 7%;color:#fff;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80") center/cover}
+.hero-content{max-width:720px}.hero h1{font-size:48px;line-height:1.1;margin-bottom:20px}.hero p{font-size:19px;margin-bottom:30px}
+.btn{display:inline-block;background:#d4af37;color:#111;border:0;padding:14px 24px;border-radius:5px;font-weight:bold;cursor:pointer;text-decoration:none}
+section{padding:65px 7%}.title{text-align:center;margin-bottom:35px}.title h2{font-size:34px;margin-bottom:10px}
+.builder{max-width:900px;margin:auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,.08)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+label{display:block;font-weight:bold;margin-bottom:7px}
+input,select,textarea{width:100%;padding:13px;border:1px solid #ccc;border-radius:5px;font-size:16px}
+textarea{min-height:120px;resize:vertical}.full{grid-column:1/-1}
+.options{display:flex;flex-wrap:wrap;gap:10px}.options label{background:#f2f2f2;padding:10px 14px;border-radius:5px;font-weight:normal}.options input{width:auto}
+.preview{margin-top:30px;background:#f0ede5;border-radius:10px;padding:20px;display:none}
+.house-plan{position:relative;margin:20px auto;max-width:650px;height:330px;border:6px solid #222;background:#fff;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+.room{border:2px solid #555;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:bold}
+.balcony{position:absolute;right:-90px;top:90px;width:85px;height:100px;border:4px solid #222;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:12px}
+.summary{margin-top:20px;line-height:1.9}.signature-box{margin-top:20px}
+canvas{width:100%;height:180px;border:2px solid #aaa;background:#fff;touch-action:none;border-radius:5px}
+.center{text-align:center}
+.notice{padding:15px;background:#fff7d6;border-left:4px solid #d4af37;margin:20px 0;line-height:1.6}
+.payment{background:#111;color:#fff;text-align:center}.payment-box{max-width:700px;margin:auto}
+.status{margin-top:18px;padding:12px;border-radius:6px;background:#eee;display:none}
+footer{background:#080808;color:#aaa;text-align:center;padding:25px}
 @media(max-width:650px){
-
-  header{
-    flex-direction:column;
-    gap:12px;
-  }
-
-  nav a{
-    margin:0 7px;
-    font-size:14px;
-  }
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-  .house-plan{
-    height:250px;
-  }
-
-  .balcony{
-    right:-55px;
-    width:50px;
-  }
+header{flex-direction:column;gap:12px}nav a{margin:0 7px;font-size:14px}
+.hero h1{font-size:36px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
+.house-plan{height:250px}.balcony{right:-55px;width:50px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-
-  <div class="logo">
-    Go<span>Investment</span>
-  </div>
-
+  <div class="logo">Go<span>Investment</span></div>
   <nav>
     <a href="#properties">Properties</a>
     <a href="#builder">Build</a>
     <a href="#request">Request</a>
   </nav>
-
 </header>
 
-
 <section class="hero">
-
   <div class="hero-content">
-
     <h1>Find or Design Your Future Home</h1>
-
-    <p>
-      Explore property options in Canada and Australia,
-      or create a preliminary concept for the home you want.
-    </p>
-
-    <a class="btn" href="#builder">
-      Design My House
-    </a>
-
+    <p>Explore property options in Canada and Australia, or create a preliminary concept for the home you want.</p>
+    <a class="btn" href="#builder">Design My House</a>
   </div>
-
 </section>
 
-
 <section id="properties">
-
   <div class="title">
-
     <h2>Choose Your Location</h2>
-
-    <p>
-      Select the country and type of property you are interested in.
-    </p>
-
+    <p>Select the country and property type you are interested in.</p>
   </div>
-
   <div class="builder">
-
     <div class="form-grid">
-
       <div>
-
-        <label>Country</label>
-
+        <label for="country">Country</label>
         <select id="country">
-
-          <option value="Canada">
-            🇨🇦 Canada
-          </option>
-
-          <option value="Australia">
-            🇦🇺 Australia
-          </option>
-
+          <option value="Canada">🇨🇦 Canada</option>
+          <option value="Australia">🇦🇺 Australia</option>
         </select>
-
       </div>
-
       <div>
-
-        <label>Property Type</label>
-
+        <label for="propertyType">Property Type</label>
         <select id="propertyType">
-
           <option>Detached House</option>
           <option>Townhouse</option>
           <option>Apartment</option>
           <option>Luxury Villa</option>
-
         </select>
-
       </div>
-
     </div>
-
   </div>
-
 </section>
-
 
 <section id="builder">
-
   <div class="title">
-
     <h2>Design Your Home</h2>
-
-    <p>
-      Choose the size, rooms and features you want.
-    </p>
-
+    <p>Choose the size, rooms and features you want.</p>
   </div>
 
-
   <div class="builder">
-
     <div class="form-grid">
-
       <div>
-
-        <label>House Size (m²)</label>
-
-        <input
-          type="number"
-          id="size"
-          value="180"
-          min="30"
-          max="2000">
-
+        <label for="size">House Size (m²)</label>
+        <input type="number" id="size" value="180" min="30" max="2000">
       </div>
-
-
       <div>
-
-        <label>Bedrooms</label>
-
+        <label for="bedrooms">Bedrooms</label>
         <select id="bedrooms">
-
-          <option>1</option>
-          <option>2</option>
-          <option selected>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-
+          <option>1</option><option>2</option><option selected>3</option>
+          <option>4</option><option>5</option><option>6</option>
         </select>
-
       </div>
-
-
       <div>
-
-        <label>Bathrooms</label>
-
+        <label for="bathrooms">Bathrooms</label>
         <select id="bathrooms">
-
-          <option>1</option>
-          <option selected>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-
+          <option>1</option><option selected>2</option><option>3</option>
+          <option>4</option><option>5</option>
         </select>
-
       </div>
-
-
       <div>
-
-        <label>Floors</label>
-
+        <label for="floors">Floors</label>
         <select id="floors">
-
-          <option selected>1</option>
-          <option>2</option>
-          <option>3</option>
-
+          <option selected>1</option><option>2</option><option>3</option>
         </select>
-
       </div>
 
-
       <div class="full">
-
         <label>Features</label>
-
         <div class="options">
-
-          <label>
-            <input type="checkbox" id="balcony">
-            Balcony
-          </label>
-
-          <label>
-            <input type="checkbox" id="garage">
-            Garage
-          </label>
-
-          <label>
-            <input type="checkbox" id="garden">
-            Garden
-          </label>
-
-          <label>
-            <input type="checkbox" id="pool">
-            Swimming Pool
-          </label>
-
-          <label>
-            <input type="checkbox" id="office">
-            Home Office
-          </label>
-
+          <label><input type="checkbox" id="balcony"> Balcony</label>
+          <label><input type="checkbox" id="garage"> Garage</label>
+          <label><input type="checkbox" id="garden"> Garden</label>
+          <label><input type="checkbox" id="pool"> Swimming Pool</label>
+          <label><input type="checkbox" id="office"> Home Office</label>
         </div>
-
       </div>
-
 
       <div class="full">
-
-        <label>
-          Describe Your Dream Home
-        </label>
-
-        <textarea
-          id="description"
-          placeholder="Example: I want a modern three-bedroom house with a large kitchen, two bathrooms, a balcony and a garage.">
-        </textarea>
-
+        <label for="description">Describe Your Dream Home</label>
+        <textarea id="description" placeholder="Example: I want a modern three-bedroom house with a large kitchen, two bathrooms, a balcony and a garage."></textarea>
       </div>
-
 
       <div class="full center">
-
-        <button
-          class="btn"
-          type="button"
-          onclick="generateHouse()">
-
-          Generate My House
-
-        </button>
-
+        <button class="btn" type="button" onclick="generateHouse()">Generate My House</button>
       </div>
-
     </div>
-
 
     <div class="preview" id="preview">
-
-      <h2 class="center">
-        Your Preliminary House Concept
-      </h2>
-
+      <h2 class="center">Your Preliminary House Concept</h2>
       <div class="house-plan">
-
-        <div class="room">
-          Living Room
-        </div>
-
-        <div class="room">
-          Kitchen
-        </div>
-
-        <div class="room" id="room3">
-          Bedrooms
-        </div>
-
-        <div class="room" id="room4">
-          Bathrooms
-        </div>
-
-        <div
-          class="balcony"
-          id="balconyPreview"
-          style="display:none">
-
-          Balcony
-
-        </div>
-
+        <div class="room">Living Room</div>
+        <div class="room">Kitchen</div>
+        <div class="room" id="room3">Bedrooms</div>
+        <div class="room" id="room4">Bathrooms</div>
+        <div class="balcony" id="balconyPreview" style="display:none">Balcony</div>
       </div>
-
       <div class="summary" id="summary"></div>
-
     </div>
-
   </div>
-
 </section>
-
 
 <section id="request">
-
   <div class="title">
-
     <h2>Submit Your Property Request</h2>
-
-    <p>
-      Send your requirements to our team for review.
-    </p>
-
+    <p>Send your requirements to our team for review.</p>
   </div>
-
 
   <div class="builder">
-
     <div class="notice">
-
-      Your request is a preliminary property inquiry.
-      Property availability, pricing, contracts and
-      legal requirements must be confirmed before
-      any purchase is completed.
-
+      This is a preliminary property inquiry. Property availability, pricing,
+      contracts and legal requirements must be confirmed before any purchase
+      is completed. Do not send money until the property and payment process
+      have been independently verified.
     </div>
-
 
     <div class="form-grid">
-
       <div>
-
-        <label>Full Name</label>
-
-        <input
-          type="text"
-          id="fullname"
-          placeholder="Your full name">
-
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Your full name">
       </div>
-
-
       <div>
-
-        <label>Email</label>
-
-        <input
-          type="email"
-          id="email"
-          placeholder="you@example.com">
-
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com">
       </div>
-
-
       <div class="full">
-
-        <label>Phone</label>
-
-        <input
-          type="tel"
-          id="phone"
-          placeholder="Phone number">
-
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="Phone number">
       </div>
-
     </div>
-
 
     <div class="signature-box">
-
-      <label>
-        Draw Your Signature
-      </label>
-
+      <label>Draw Your Signature</label>
       <canvas id="signature"></canvas>
-
       <br>
-
-      <button
-        class="btn"
-        type="button"
-        onclick="clearSignature()">
-
-        Clear Signature
-
-      </button>
-
+      <button class="btn" type="button" onclick="clearSignature()">Clear Signature</button>
     </div>
 
-
     <br>
-
-    <button
-      class="btn"
-      type="button"
-      onclick="submitRequest()">
-
-      Send Property Request
-
-    </button>
-
-
-    <p
-      id="message"
-      style="margin-top:20px;font-weight:bold;">
-    </p>
-
+    <button class="btn" type="button" onclick="submitRequest()">Continue to Email</button>
+    <div id="message" class="status"></div>
   </div>
-
 </section>
-
 
 <section class="payment">
-
   <div class="payment-box">
-
     <h2>Property Purchase</h2>
-
-    <p style="margin:20px 0;line-height:1.6;">
-
-      After your property request has been reviewed,
-      our team can provide the confirmed property
-      information, price and applicable purchase
-      documentation.
-
+    <p style="margin:20px 0;line-height:1.6">
+      Once a property has been verified and the purchase terms have been
+      formally confirmed, use an authorized payment provider or regulated
+      real-estate closing process. This website does not collect or store
+      payment-card or bank-account information.
     </p>
-
-    <a
-      class="btn"
-      href="mailto:davidemma1031@gmail.com?subject=Property Purchase Inquiry">
-
+    <a class="btn" href="mailto:davidemma1031@gmail.com?subject=Property%20Purchase%20Inquiry">
       Contact GoInvestment
-
     </a>
-
   </div>
-
 </section>
 
-
 <footer>
-
-  <p>
-    © 2026 GoInvestment Real Estate
-  </p>
-
-  <p style="margin-top:8px;">
-    Contact: davidemma1031@gmail.com
-  </p>
-
+  <p>© 2026 GoInvestment Real Estate</p>
+  <p style="margin-top:8px">Contact: davidemma1031@gmail.com</p>
 </footer>
 
-
 <script>
-
 function generateHouse(){
+  const country = document.getElementById("country").value;
+  const type = document.getElementById("propertyType").value;
+  const size = document.getElementById("size").value;
+  const bedrooms = document.getElementById("bedrooms").value;
+  const bathrooms = document.getElementById("bathrooms").value;
+  const floors = document.getElementById("floors").value;
+  const balcony = document.getElementById("balcony").checked;
+  const garage = document.getElementById("garage").checked;
+  const garden = document.getElementById("garden").checked;
+  const pool = document.getElementById("pool").checked;
+  const office = document.getElementById("office").checked;
+  const description = document.getElementById("description").value.trim();
 
-  const country =
-    document.getElementById("country").value;
+  document.getElementById("preview").style.display = "block";
+  document.getElementById("room3").innerText = bedrooms + " Bedroom(s)";
+  document.getElementById("room4").innerText = bathrooms + " Bathroom(s)";
+  document.getElementById("balconyPreview").style.display = balcony ? "flex" : "none";
 
-  const type =
-    document.getElementById("propertyType").value;
-
-  const size =
-    document.getElementById("size").value;
-
-  const bedrooms =
-    document.getElementById("bedrooms").value;
-
-  const bathrooms =
-    document.getElementById("bathrooms").value;
-
-  const floors =
-    document.getElementById("floors").value;
-
-  const balcony =
-    document.getElementById("balcony").checked;
-
-  const garage =
-    document.getElementById("garage").checked;
-
-  const garden =
-    document.getElementById("garden").checked;
-
-  const pool =
-    document.getElementById("pool").checked;
-
-  const office =
-    document.getElementById("office").checked;
-
-  const description =
-    document.getElementById("description").value.trim();
-
-
-  document.getElementById("preview").style.display =
-    "block";
-
-
-  document.getElementById("room3").innerText =
-    bedrooms + " Bedroom(s)";
-
-
-  document.getElementById("room4").innerText =
-    bathrooms + " Bathroom(s)";
-
-
-  document.getElementById("balconyPreview").style.display =
-    balcony ? "flex" : "none";
-
-
-  let extras = [];
-
+  const extras = [];
   if(garage) extras.push("Garage");
   if(garden) extras.push("Garden");
   if(pool) extras.push("Swimming Pool");
   if(office) extras.push("Home Office");
-
+  if(balcony) extras.push("Balcony");
 
   document.getElementById("summary").innerHTML =
+    "<strong>Location:</strong> " + escapeHTML(country) +
+    "<br><strong>Property:</strong> " + escapeHTML(type) +
+    "<br><strong>Size:</strong> " + escapeHTML(size) + " m²" +
+    "<br><strong>Bedrooms:</strong> " + escapeHTML(bedrooms) +
+    "<br><strong>Bathrooms:</strong> " + escapeHTML(bathrooms) +
+    "<br><strong>Floors:</strong> " + escapeHTML(floors) +
+    "<br><strong>Features:</strong> " + (extras.length ? extras.map(escapeHTML).join(", ") : "None selected") +
+    "<br><strong>Special Requirements:</strong> " + escapeHTML(description || "None");
 
-    "<strong>Location:</strong> " + country +
-    "<br><strong>Property:</strong> " + type +
-    "<br><strong>Size:</strong> " + size + " m²" +
-    "<br><strong>Bedrooms:</strong> " + bedrooms +
-    "<br><strong>Bathrooms:</strong> " + bathrooms +
-    "<br><strong>Floors:</strong> " + floors +
-    "<br><strong>Features:</strong> " +
-    (extras.length ? extras.join(", ") : "None selected") +
-    "<br><strong>Special Requirements:</strong> " +
-    (description || "None");
-
-
-  document.getElementById("preview")
-    .scrollIntoView({behavior:"smooth"});
-
+  document.getElementById("preview").scrollIntoView({behavior:"smooth"});
 }
 
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, function(ch){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch];
+  });
+}
 
-const canvas =
-  document.getElementById("signature");
-
-const ctx =
-  canvas.getContext("2d");
-
+const canvas = document.getElementById("signature");
+const ctx = canvas.getContext("2d");
 let drawing = false;
 
-
 function resizeCanvas(){
-
-  const ratio =
-    window.devicePixelRatio || 1;
-
-  canvas.width =
-    canvas.offsetWidth * ratio;
-
-  canvas.height =
-    canvas.offsetHeight * ratio;
-
+  const rect = canvas.getBoundingClientRect();
+  const ratio = window.devicePixelRatio || 1;
+  canvas.width = rect.width * ratio;
+  canvas.height = rect.height * ratio;
   ctx.setTransform(ratio,0,0,ratio,0,0);
-
   ctx.lineWidth = 2;
-
   ctx.lineCap = "round";
-
 }
-
-
 resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
+canvas.addEventListener("pointerdown", function(e){
+  drawing = true;
+  canvas.setPointerCapture(e.pointerId);
+  const rect = canvas.getBoundingClientRect();
+  ctx.beginPath();
+  ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+});
 
-window.addEventListener(
-  "resize",
-  resizeCanvas
-);
+canvas.addEventListener("pointermove", function(e){
+  if(!drawing) return;
+  const rect = canvas.getBoundingClientRect();
+  ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+  ctx.stroke();
+});
 
-
-canvas.addEventListener(
-  "pointerdown",
-  function(e){
-
-    drawing = true;
-
-    const rect =
-      canvas.getBoundingClientRect();
-
-    ctx.beginPath();
-
-    ctx.moveTo(
-      e.clientX - rect.left,
-      e.clientY - rect.top
-    );
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointermove",
-  function(e){
-
-    if(!drawing) return;
-
-    const rect =
-      canvas.getBoundingClientRect();
-
-    ctx.lineTo(
-      e.clientX - rect.left,
-      e.clientY - rect.top
-    );
-
-    ctx.stroke();
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointerup",
-  function(){
-
-    drawing = false;
-
-  }
-);
-
-
-canvas.addEventListener(
-  "pointercancel",
-  function(){
-
-    drawing = false;
-
-  }
-);
-
+canvas.addEventListener("pointerup", function(){ drawing = false; });
+canvas.addEventListener("pointercancel", function(){ drawing = false; });
 
 function clearSignature(){
-
-  ctx.clearRect(
-    0,
-    0,
-    canvas.width,
-    canvas.height
-  );
-
+  ctx.clearRect(0,0,canvas.width,canvas.height);
 }
 
-
 function submitRequest(){
-
-  const name =
-    document.getElementById("fullname")
-    .value.trim();
-
-  const email =
-    document.getElementById("email")
-    .value.trim();
-
-  const phone =
-    document.getElementById("phone")
-    .value.trim();
+  const name = document.getElementById("fullname").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
 
   if(!name || !email){
-
-    document.getElementById("message").innerText =
-      "Please enter your full name and email.";
-
+    showStatus("Please enter your full name and email.", true);
     return;
-
   }
 
-
-  const country =
-    document.getElementById("country").value;
-
-  const property =
-    document.getElementById("propertyType").value;
-
-  const size =
-    document.getElementById("size").value;
-
-  const bedrooms =
-    document.getElementById("bedrooms").value;
-
-  const bathrooms =
-    document.getElementById("bathrooms").value;
-
-  const floors =
-    document.getElementById("floors").value;
-
-  const description =
-    document.getElementById("description")
-    .value.trim();
-
+  const country = document.getElementById("country").value;
+  const property = document.getElementById("propertyType").value;
+  const size = document.getElementById("size").value;
+  const bedrooms = document.getElementById("bedrooms").value;
+  const bathrooms = document.getElementById("bathrooms").value;
+  const floors = document.getElementById("floors").value;
+  const description = document.getElementById("description").value.trim();
 
   const features = [];
+  if(document.getElementById("balcony").checked) features.push("Balcony");
+  if(document.getElementById("garage").checked) features.push("Garage");
+  if(document.getElementById("garden").checked) features.push("Garden");
+  if(document.getElementById("pool").checked) features.push("Swimming Pool");
+  if(document.getElementById("office").checked) features.push("Home Office");
 
-  if(document.getElementById("balcony").checked)
-    features.push("Balcony");
+  const subject = encodeURIComponent("GoInvestment Property Request - " + country);
 
-  if(document.getElementById("garage").checked)
-    features.push("Garage");
+  const body = encodeURIComponent(
+`GOINVESTMENT REAL ESTATE
+PROPERTY REQUEST
 
-  if(document.getElementById("garden").checked)
-    features.push("Garden");
-
-  if(document.getElementById("pool").checked)
-    features.push("Swimming Pool");
-
-  if(document.getElementById("office").checked)
-    features.push("Home Office");
-
-
-  const subject =
-    encodeURIComponent(
-      "New Property Request - " +
-      country
-    );
-
-
-  const body =
-    encodeURIComponent(
-`GoInvestment Real Estate Property Request
-
-CUSTOMER
-Name: ${name}
+CUSTOMER INFORMATION
+--------------------
+Full Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
 
-PROPERTY
+PROPERTY DETAILS
+----------------
 Country: ${country}
 Property Type: ${property}
 House Size: ${size} m²
@@ -1001,30 +345,45 @@ Bathrooms: ${bathrooms}
 Floors: ${floors}
 
 FEATURES
+--------
 ${features.length ? features.join(", ") : "None selected"}
 
-HOUSE DESCRIPTION
-${description || "None"}
+DREAM HOME DESCRIPTION
+----------------------
+${description || "None provided"}
 
-Please review this property inquiry and contact the customer regarding availability, pricing, documentation and next steps.`
-    );
+SIGNATURE
+---------
+The customer completed the signature section on the website.
 
+NEXT STEP
+---------
+Please review this preliminary property inquiry and contact
+the customer regarding availability, pricing, documentation
+and the appropriate purchase process.
 
-  const mailto =
-    "mailto:davidemma1031@gmail.com" +
-    "?subject=" + subject +
+No purchase or payment is confirmed by this form.`
+  );
+
+  const gmailUrl =
+    "https://mail.google.com/mail/?view=cm&fs=1" +
+    "&to=davidemma1031@gmail.com" +
+    "&su=" + subject +
     "&body=" + body;
 
-
-  document.getElementById("message").innerText =
-    "Opening your email app with the property request...";
-
-
-  window.location.href = mailto;
-
+  showStatus("Opening Gmail with the property request. Review it and press Send.", false);
+  setTimeout(function(){
+    window.location.href = gmailUrl;
+  }, 500);
 }
 
+function showStatus(text, error){
+  const box = document.getElementById("message");
+  box.style.display = "block";
+  box.innerText = text;
+  box.style.borderLeft = error ? "4px solid #b00020" : "4px solid #d4af37";
+}
 </script>
 
 </body>
-  </html>
+</html>
