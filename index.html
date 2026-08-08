@@ -3,387 +3,2372 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoInvestment Real Estate</title>
+
+<title>GoInvestment Real Estate | Find Your Future Home</title>
+
+<meta name="description"
+content="Explore homes, communities and custom home concepts with GoInvestment Real Estate.">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f2eb;color:#171717;line-height:1.5}
-header{background:#101010;color:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
-.logo{font-size:24px;font-weight:bold}.logo span{color:#d4af37}
-nav a{color:#fff;text-decoration:none;margin-left:18px}
-.hero{min-height:520px;padding:90px 7%;color:#fff;display:flex;align-items:center;background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)),url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80") center/cover}
-.hero-content{max-width:720px}.hero h1{font-size:48px;line-height:1.1;margin-bottom:20px}.hero p{font-size:19px;margin-bottom:30px}
-.btn{display:inline-block;background:#d4af37;color:#111;border:0;padding:14px 24px;border-radius:5px;font-weight:bold;cursor:pointer;text-decoration:none}
-section{padding:65px 7%}.title{text-align:center;margin-bottom:35px}.title h2{font-size:34px;margin-bottom:10px}
-.builder{max-width:900px;margin:auto;background:#fff;padding:30px;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,.08)}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-label{display:block;font-weight:bold;margin-bottom:7px}
-input,select,textarea{width:100%;padding:13px;border:1px solid #ccc;border-radius:5px;font-size:16px}
-textarea{min-height:120px;resize:vertical}.full{grid-column:1/-1}
-.options{display:flex;flex-wrap:wrap;gap:10px}.options label{background:#f2f2f2;padding:10px 14px;border-radius:5px;font-weight:normal}.options input{width:auto}
-.preview{margin-top:30px;background:#f0ede5;border-radius:10px;padding:20px;display:none}
-.house-plan{position:relative;margin:20px auto;max-width:650px;height:330px;border:6px solid #222;background:#fff;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
-.room{border:2px solid #555;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-weight:bold}
-.balcony{position:absolute;right:-90px;top:90px;width:85px;height:100px;border:4px solid #222;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:12px}
-.summary{margin-top:20px;line-height:1.9}.signature-box{margin-top:20px}
-canvas{width:100%;height:180px;border:2px solid #aaa;background:#fff;touch-action:none;border-radius:5px}
-.center{text-align:center}
-.notice{padding:15px;background:#fff7d6;border-left:4px solid #d4af37;margin:20px 0;line-height:1.6}
-.payment{background:#111;color:#fff;text-align:center}.payment-box{max-width:700px;margin:auto}
-.status{margin-top:18px;padding:12px;border-radius:6px;background:#eee;display:none}
-footer{background:#080808;color:#aaa;text-align:center;padding:25px}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#fff;
+  color:#17202a;
+  line-height:1.6;
+}
+
+:root{
+  --blue:#087db8;
+  --dark-blue:#07547f;
+  --deep:#063d5c;
+  --gold:#d4af37;
+  --light:#f5f8fa;
+  --dark:#101820;
+  --white:#fff;
+  --gray:#68747d;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:white;
+  box-shadow:0 2px 15px rgba(0,0,0,.12);
+}
+
+.header-inner{
+  max-width:1250px;
+  margin:auto;
+  padding:15px 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-mark{
+  width:48px;
+  height:48px;
+  background:var(--blue);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  border-radius:6px;
+}
+
+.logo-text{
+  font-size:24px;
+  font-weight:800;
+  color:var(--deep);
+  letter-spacing:-.5px;
+}
+
+.logo-text span{
+  color:var(--blue);
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:27px;
+}
+
+nav a{
+  font-weight:600;
+  color:#263746;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:var(--blue);
+}
+
+.nav-button{
+  background:var(--blue);
+  color:white!important;
+  padding:12px 19px;
+  border-radius:4px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:30px;
+  color:var(--deep);
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:620px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,38,58,.92),
+      rgba(3,38,58,.68),
+      rgba(3,38,58,.20)
+    ),
+    url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+    center/cover;
+}
+
+.hero-content{
+  width:100%;
+  max-width:1250px;
+  margin:auto;
+  padding:80px 25px;
+  color:white;
+}
+
+.hero-content small{
+  display:inline-block;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.35);
+  padding:8px 14px;
+  border-radius:30px;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  max-width:700px;
+  font-size:60px;
+  line-height:1.08;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:650px;
+  font-size:19px;
+  margin-bottom:30px;
+  color:#eef6fa;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.btn{
+  display:inline-block;
+  border:none;
+  cursor:pointer;
+  padding:15px 25px;
+  border-radius:4px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.btn-primary{
+  background:var(--blue);
+  color:white;
+}
+
+.btn-primary:hover{
+  background:#066b9d;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#111;
+}
+
+.btn-outline{
+  border:2px solid white;
+  color:white;
+  background:transparent;
+}
+
+/* ================= SEARCH BOX ================= */
+
+.search-wrap{
+  position:relative;
+  margin-top:-60px;
+  z-index:5;
+}
+
+.search-box{
+  max-width:1100px;
+  margin:auto;
+  background:white;
+  box-shadow:0 8px 35px rgba(0,0,0,.18);
+  border-radius:8px;
+  padding:25px;
+}
+
+.search-title{
+  font-size:21px;
+  font-weight:800;
+  color:var(--deep);
+  margin-bottom:17px;
+}
+
+.search-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr auto;
+  gap:13px;
+}
+
+.search-grid select,
+.search-grid input{
+  border:1px solid #d4dce1;
+  padding:14px;
+  border-radius:4px;
+  outline:none;
+  background:white;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+  padding:85px 25px;
+}
+
+.container{
+  max-width:1250px;
+  margin:auto;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-heading span{
+  color:var(--blue);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:13px;
+}
+
+.section-heading h2{
+  font-size:38px;
+  color:var(--deep);
+  margin:8px 0 10px;
+}
+
+.section-heading p{
+  max-width:650px;
+  margin:auto;
+  color:var(--gray);
+}
+
+/* ================= PROPERTY CARDS ================= */
+
+.properties{
+  background:#f6f9fb;
+}
+
+.property-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.property-card{
+  background:white;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.property-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 30px rgba(0,0,0,.13);
+}
+
+.property-image{
+  height:235px;
+  position:relative;
+  overflow:hidden;
+}
+
+.property-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.property-card:hover img{
+  transform:scale(1.04);
+}
+
+.badge{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:var(--blue);
+  color:white;
+  padding:7px 12px;
+  border-radius:3px;
+  font-size:12px;
+  font-weight:bold;
+}
+
+.property-body{
+  padding:20px;
+}
+
+.property-body h3{
+  color:var(--deep);
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+.location{
+  color:var(--gray);
+  margin-bottom:15px;
+}
+
+.property-info{
+  display:flex;
+  gap:18px;
+  border-top:1px solid #eee;
+  padding-top:14px;
+  color:#44525d;
+  font-size:14px;
+}
+
+.property-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:18px;
+}
+
+.price{
+  font-weight:800;
+  color:var(--blue);
+  font-size:19px;
+}
+
+/* ================= COMMUNITIES ================= */
+
+.communities{
+  background:white;
+}
+
+.community-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.community{
+  min-height:340px;
+  border-radius:8px;
+  overflow:hidden;
+  position:relative;
+  color:white;
+  display:flex;
+  align-items:flex-end;
+  background-size:cover;
+  background-position:center;
+}
+
+.community:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 35%,rgba(0,30,50,.9));
+}
+
+.community-content{
+  position:relative;
+  z-index:2;
+  padding:25px;
+}
+
+.community h3{
+  font-size:25px;
+  margin-bottom:5px;
+}
+
+.community p{
+  color:#e5f2f8;
+}
+
+/* ================= WHY ================= */
+
+.why{
+  background:var(--deep);
+  color:white;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.why-image{
+  height:450px;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.why-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.why-content span{
+  color:#8bd4f5;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+
+.why-content h2{
+  font-size:40px;
+  line-height:1.15;
+  margin:12px 0 20px;
+}
+
+.why-content p{
+  color:#d9e7ed;
+  margin-bottom:25px;
+}
+
+.features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.feature{
+  display:flex;
+  gap:12px;
+}
+
+.feature-icon{
+  width:42px;
+  height:42px;
+  min-width:42px;
+  background:rgba(255,255,255,.12);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.feature strong{
+  display:block;
+}
+
+/* ================= HOME BUILDER ================= */
+
+.builder-section{
+  background:#f5f8fa;
+}
+
+.builder-box{
+  max-width:1050px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:10px;
+  box-shadow:0 5px 30px rgba(0,0,0,.08);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.field label{
+  display:block;
+  font-weight:700;
+  margin-bottom:7px;
+  color:#243746;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d2dce2;
+  border-radius:5px;
+  padding:13px;
+  outline:none;
+  background:white;
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.options label{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:10px 14px;
+  background:#eef4f7;
+  border-radius:5px;
+  font-weight:normal;
+  cursor:pointer;
+}
+
+.generate-area{
+  text-align:center;
+  margin-top:25px;
+}
+
+/* ================= HOUSE PREVIEW ================= */
+
+.preview{
+  display:none;
+  margin-top:35px;
+  padding:30px;
+  background:#eef5f8;
+  border-radius:8px;
+}
+
+.preview h3{
+  text-align:center;
+  color:var(--deep);
+  margin-bottom:20px;
+}
+
+.floor-plan{
+  max-width:650px;
+  height:350px;
+  margin:20px auto;
+  background:white;
+  border:5px solid #12384c;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+}
+
+.room{
+  border:2px solid #547180;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:10px;
+  font-weight:bold;
+  color:#173c50;
+}
+
+.preview-summary{
+  background:white;
+  padding:20px;
+  border-radius:6px;
+  line-height:1.9;
+}
+
+/* ================= GALLERY ================= */
+
+.gallery{
+  background:white;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:220px 220px;
+  gap:12px;
+}
+
+.gallery-item{
+  overflow:hidden;
+  border-radius:6px;
+}
+
+.gallery-item:first-child{
+  grid-row:1/3;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.3s;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.04);
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  padding:70px 25px;
+  background:
+    linear-gradient(rgba(4,60,90,.92),rgba(4,60,90,.92)),
+    url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
+  text-align:center;
+  color:white;
+}
+
+.cta h2{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.cta p{
+  max-width:650px;
+  margin:0 auto 25px;
+  color:#e4f2f8;
+}
+
+/* ================= REQUEST ================= */
+
+.request{
+  background:#f6f9fb;
+}
+
+.request-box{
+  max-width:850px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:9px;
+  box-shadow:0 5px 25px rgba(0,0,0,.08);
+}
+
+.notice{
+  padding:15px;
+  background:#fff8df;
+  border-left:4px solid var(--gold);
+  margin-bottom:25px;
+  color:#5c4d20;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#071b27;
+  color:#b9cbd4;
+  padding:55px 25px 25px;
+}
+
+.footer-grid{
+  max-width:1250px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:35px;
+}
+
+.footer-logo{
+  color:white;
+  font-size:25px;
+  font-weight:bold;
+  margin-bottom:12px;
+}
+
+.footer-logo span{
+  color:#55bce8;
+}
+
+footer h4{
+  color:white;
+  margin-bottom:13px;
+}
+
+footer a{
+  display:block;
+  margin:7px 0;
+}
+
+footer a:hover{
+  color:white;
+}
+
+.copyright{
+  max-width:1250px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+  text-align:center;
+  font-size:13px;
+}
+
+/* ================= FLOATING CONTACT ================= */
+
+.contact-float{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:900;
+}
+
+.contact-float a{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#087db8;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:25px;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .search-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .property-grid,
+  .community-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 @media(max-width:650px){
-header{flex-direction:column;gap:12px}nav a{margin:0 7px;font-size:14px}
-.hero h1{font-size:36px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}
-.house-plan{height:250px}.balcony{right:-55px;width:50px}
+
+  .header-inner{
+    padding:12px 18px;
+  }
+
+  .logo-text{
+    font-size:20px;
+  }
+
+  .logo-mark{
+    width:40px;
+    height:40px;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:white;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    box-shadow:0 8px 15px rgba(0,0,0,.1);
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  nav a{
+    padding:17px 25px;
+    border-bottom:1px solid #eee;
+  }
+
+  .nav-button{
+    border-radius:0;
+  }
+
+  .hero{
+    min-height:590px;
+  }
+
+  .hero-content{
+    padding:60px 20px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .search-wrap{
+    margin-top:-35px;
+    padding:0 15px;
+  }
+
+  .search-box{
+    padding:20px;
+  }
+
+  .search-grid{
+    grid-template-columns:1fr;
+  }
+
+  section{
+    padding:65px 18px;
+  }
+
+  .section-heading h2{
+    font-size:31px;
+  }
+
+  .property-grid,
+  .community-grid{
+    grid-template-columns:1fr;
+  }
+
+  .why-content h2{
+    font-size:32px;
+  }
+
+  .why-image{
+    height:300px;
+  }
+
+  .features{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+
+  .builder-box,
+  .request-box{
+    padding:22px;
+  }
+
+  .floor-plan{
+    height:270px;
+  }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:200px 150px 150px;
+  }
+
+  .gallery-item:first-child{
+    grid-column:1/3;
+    grid-row:auto;
+  }
+
+  .cta h2{
+    font-size:32px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
+
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-  <div class="logo">Go<span>Investment</span></div>
-  <nav>
-    <a href="#properties">Properties</a>
-    <a href="#builder">Build</a>
-    <a href="#request">Request</a>
-  </nav>
+
+<div class="header-inner">
+
+<a href="#" class="logo">
+  <div class="logo-mark">⌂</div>
+
+  <div class="logo-text">
+    Go<span>Investment</span>
+  </div>
+</a>
+
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+  ☰
+</button>
+
+<nav id="mainNav">
+
+<a href="#homes">Homes</a>
+<a href="#communities">Communities</a>
+<a href="#builder">Build Your Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#about">About</a>
+<a href="#request" class="nav-button">Contact Us</a>
+
+</nav>
+
+</div>
+
 </header>
 
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
-  <div class="hero-content">
-    <h1>Find or Design Your Future Home</h1>
-    <p>Explore property options in Canada and Australia, or create a preliminary concept for the home you want.</p>
-    <a class="btn" href="#builder">Design My House</a>
-  </div>
+
+<div class="hero-content">
+
+<small>GOINVESTMENT REAL ESTATE</small>
+
+<h1>
+Find the place where your next chapter begins.
+</h1>
+
+<p>
+Explore available homes, discover communities and
+create a preliminary concept for the home you want
+to build.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#homes" class="btn btn-primary">
+Explore Homes
+</a>
+
+<a href="#builder" class="btn btn-gold">
+Design Your Home
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section id="properties">
-  <div class="title">
-    <h2>Choose Your Location</h2>
-    <p>Select the country and property type you are interested in.</p>
-  </div>
-  <div class="builder">
-    <div class="form-grid">
-      <div>
-        <label for="country">Country</label>
-        <select id="country">
-          <option value="Canada">🇨🇦 Canada</option>
-          <option value="Australia">🇦🇺 Australia</option>
-        </select>
-      </div>
-      <div>
-        <label for="propertyType">Property Type</label>
-        <select id="propertyType">
-          <option>Detached House</option>
-          <option>Townhouse</option>
-          <option>Apartment</option>
-          <option>Luxury Villa</option>
-        </select>
-      </div>
-    </div>
-  </div>
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-wrap">
+
+<div class="search-box">
+
+<div class="search-title">
+What are you looking for?
+</div>
+
+<div class="search-grid">
+
+<select id="searchCountry">
+
+<option value="all">
+All Locations
+</option>
+
+<option value="Canada">
+🇨🇦 Canada
+</option>
+
+<option value="Australia">
+🇦🇺 Australia
+</option>
+
+</select>
+
+<select id="searchType">
+
+<option value="all">
+All Property Types
+</option>
+
+<option>
+Detached House
+</option>
+
+<option>
+Townhouse
+</option>
+
+<option>
+Apartment
+</option>
+
+<option>
+Luxury Villa
+</option>
+
+</select>
+
+<select id="searchBedrooms">
+
+<option value="all">
+Any Bedrooms
+</option>
+
+<option value="1">
+1+ Bedroom
+</option>
+
+<option value="2">
+2+ Bedrooms
+</option>
+
+<option value="3">
+3+ Bedrooms
+</option>
+
+<option value="4">
+4+ Bedrooms
+</option>
+
+</select>
+
+<button class="btn btn-primary" onclick="searchHomes()">
+Search
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= HOMES ================= -->
+
+<section class="properties" id="homes">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Featured Properties</span>
+
+<h2>Homes You Can Explore</h2>
+
+<p>
+Browse examples of homes and property opportunities.
+Availability, pricing and ownership details must be
+confirmed with the relevant property provider.
+</p>
+
+</div>
+
+
+<div class="property-grid" id="propertyGrid">
+
+
+<!-- PROPERTY 1 -->
+
+<article class="property-card"
+data-country="Canada"
+data-type="Detached House"
+data-bedrooms="3">
+
+<div class="property-image">
+
+<img
+src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+alt="Modern detached house">
+
+<div class="badge">
+FEATURED
+</div>
+
+</div>
+
+<div class="property-body">
+
+<h3>Modern Family Residence</h3>
+
+<div class="location">
+📍 Canada
+</div>
+
+<div class="property-info">
+
+<span>🛏 3 Beds</span>
+<span>🚿 2 Baths</span>
+<span>📐 180 m²</span>
+
+</div>
+
+<div class="property-bottom">
+
+<div class="price">
+Request Price
+</div>
+
+<a
+href="#request"
+class="btn btn-primary"
+style="padding:10px 15px">
+View
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROPERTY 2 -->
+
+<article class="property-card"
+data-country="Australia"
+data-type="Luxury Villa"
+data-bedrooms="4">
+
+<div class="property-image">
+
+<img
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
+alt="Luxury modern villa">
+
+<div class="badge">
+LUXURY
+</div>
+
+</div>
+
+<div class="property-body">
+
+<h3>Contemporary Luxury Villa</h3>
+
+<div class="location">
+📍 Australia
+</div>
+
+<div class="property-info">
+
+<span>🛏 4 Beds</span>
+<span>🚿 3 Baths</span>
+<span>📐 260 m²</span>
+
+</div>
+
+<div class="property-bottom">
+
+<div class="price">
+Request Price
+</div>
+
+<a
+href="#request"
+class="btn btn-primary"
+style="padding:10px 15px">
+View
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PROPERTY 3 -->
+
+<article class="property-card"
+data-country="Canada"
+data-type="Townhouse"
+data-bedrooms="3">
+
+<div class="property-image">
+
+<img
+src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=80"
+alt="Modern townhouse">
+
+<div class="badge">
+NEW
+</div>
+
+</div>
+
+<div class="property-body">
+
+<h3>Modern Community Townhome</h3>
+
+<div class="location">
+📍 Canada
+</div>
+
+<div class="property-info">
+
+<span>🛏 3 Beds</span>
+<span>🚿 2.5 Baths</span>
+<span>📐 195 m²</span>
+
+</div>
+
+<div class="property-bottom">
+
+<div class="price">
+Request Price
+</div>
+
+<a
+href="#request"
+class="btn btn-primary"
+style="padding:10px 15px">
+View
+</a>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section id="builder">
-  <div class="title">
-    <h2>Design Your Home</h2>
-    <p>Choose the size, rooms and features you want.</p>
-  </div>
 
-  <div class="builder">
-    <div class="form-grid">
-      <div>
-        <label for="size">House Size (m²)</label>
-        <input type="number" id="size" value="180" min="30" max="2000">
-      </div>
-      <div>
-        <label for="bedrooms">Bedrooms</label>
-        <select id="bedrooms">
-          <option>1</option><option>2</option><option selected>3</option>
-          <option>4</option><option>5</option><option>6</option>
-        </select>
-      </div>
-      <div>
-        <label for="bathrooms">Bathrooms</label>
-        <select id="bathrooms">
-          <option>1</option><option selected>2</option><option>3</option>
-          <option>4</option><option>5</option>
-        </select>
-      </div>
-      <div>
-        <label for="floors">Floors</label>
-        <select id="floors">
-          <option selected>1</option><option>2</option><option>3</option>
-        </select>
-      </div>
+<!-- ================= COMMUNITIES ================= -->
 
-      <div class="full">
-        <label>Features</label>
-        <div class="options">
-          <label><input type="checkbox" id="balcony"> Balcony</label>
-          <label><input type="checkbox" id="garage"> Garage</label>
-          <label><input type="checkbox" id="garden"> Garden</label>
-          <label><input type="checkbox" id="pool"> Swimming Pool</label>
-          <label><input type="checkbox" id="office"> Home Office</label>
-        </div>
-      </div>
+<section class="communities" id="communities">
 
-      <div class="full">
-        <label for="description">Describe Your Dream Home</label>
-        <textarea id="description" placeholder="Example: I want a modern three-bedroom house with a large kitchen, two bathrooms, a balcony and a garage."></textarea>
-      </div>
+<div class="container">
 
-      <div class="full center">
-        <button class="btn" type="button" onclick="generateHouse()">Generate My House</button>
-      </div>
-    </div>
+<div class="section-heading">
 
-    <div class="preview" id="preview">
-      <h2 class="center">Your Preliminary House Concept</h2>
-      <div class="house-plan">
-        <div class="room">Living Room</div>
-        <div class="room">Kitchen</div>
-        <div class="room" id="room3">Bedrooms</div>
-        <div class="room" id="room4">Bathrooms</div>
-        <div class="balcony" id="balconyPreview" style="display:none">Balcony</div>
-      </div>
-      <div class="summary" id="summary"></div>
-    </div>
-  </div>
+<span>Explore Locations</span>
+
+<h2>Communities For Every Lifestyle</h2>
+
+<p>
+Explore residential opportunities across selected
+locations in Canada and Australia.
+</p>
+
+</div>
+
+
+<div class="community-grid">
+
+
+<div class="community"
+style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80')">
+
+<div class="community-content">
+
+<h3>Canadian Communities</h3>
+
+<p>
+Modern homes and family-friendly communities.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="community"
+style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80')">
+
+<div class="community-content">
+
+<h3>Australian Communities</h3>
+
+<p>
+Explore contemporary residential opportunities.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="community"
+style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80')">
+
+<div class="community-content">
+
+<h3>Future Developments</h3>
+
+<p>
+Discover new property concepts and developments.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<section id="request">
-  <div class="title">
-    <h2>Submit Your Property Request</h2>
-    <p>Send your requirements to our team for review.</p>
-  </div>
 
-  <div class="builder">
-    <div class="notice">
-      This is a preliminary property inquiry. Property availability, pricing,
-      contracts and legal requirements must be confirmed before any purchase
-      is completed. Do not send money until the property and payment process
-      have been independently verified.
-    </div>
+<!-- ================= WHY ================= -->
 
-    <div class="form-grid">
-      <div>
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" placeholder="Your full name">
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="you@example.com">
-      </div>
-      <div class="full">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" placeholder="Phone number">
-      </div>
-    </div>
+<section class="why" id="about">
 
-    <div class="signature-box">
-      <label>Draw Your Signature</label>
-      <canvas id="signature"></canvas>
-      <br>
-      <button class="btn" type="button" onclick="clearSignature()">Clear Signature</button>
-    </div>
+<div class="container">
 
-    <br>
-    <button class="btn" type="button" onclick="submitRequest()">Continue to Email</button>
-    <div id="message" class="status"></div>
-  </div>
+<div class="why-grid">
+
+<div class="why-image">
+
+<img
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
+alt="Beautiful modern home">
+
+</div>
+
+
+<div class="why-content">
+
+<span>Why GoInvestment</span>
+
+<h2>
+A simpler way to explore your next home.
+</h2>
+
+<p>
+We bring property discovery, home concepts and
+customer inquiries together in one convenient place.
+Our goal is to make it easier for people to explore
+their housing options and communicate their requirements.
+</p>
+
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-icon">
+⌂
+</div>
+
+<div>
+<strong>Property Discovery</strong>
+Find homes and property opportunities.
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+⌘
+</div>
+
+<div>
+<strong>Home Concepts</strong>
+Create a preliminary idea for your dream home.
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+✓
+</div>
+
+<div>
+<strong>Clear Requests</strong>
+Send your property requirements to our team.
+</div>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-icon">
+★
+</div>
+
+<div>
+<strong>Modern Experience</strong>
+A simple, mobile-friendly property experience.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="payment">
-  <div class="payment-box">
-    <h2>Property Purchase</h2>
-    <p style="margin:20px 0;line-height:1.6">
-      Once a property has been verified and the purchase terms have been
-      formally confirmed, use an authorized payment provider or regulated
-      real-estate closing process. This website does not collect or store
-      payment-card or bank-account information.
-    </p>
-    <a class="btn" href="mailto:davidemma1031@gmail.com?subject=Property%20Purchase%20Inquiry">
-      Contact GoInvestment
-    </a>
-  </div>
+
+<!-- ================= BUILDER ================= -->
+
+<section class="builder-section" id="builder">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Home Builder</span>
+
+<h2>Design Your Future Home</h2>
+
+<p>
+Choose your location, house size, rooms and features
+to create a preliminary home concept.
+</p>
+
+</div>
+
+
+<div class="builder-box">
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>Country</label>
+
+<select id="country">
+
+<option>Canada</option>
+<option>Australia</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Property Type</label>
+
+<select id="propertyType">
+
+<option>Detached House</option>
+<option>Townhouse</option>
+<option>Apartment</option>
+<option>Luxury Villa</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>House Size (m²)</label>
+
+<input
+type="number"
+id="size"
+value="180"
+min="30"
+max="2000">
+
+</div>
+
+
+<div class="field">
+
+<label>Bedrooms</label>
+
+<select id="bedrooms">
+
+<option>1</option>
+<option>2</option>
+<option selected>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Bathrooms</label>
+
+<select id="bathrooms">
+
+<option>1</option>
+<option selected>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Floors</label>
+
+<select id="floors">
+
+<option selected>1</option>
+<option>2</option>
+<option>3</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>Features</label>
+
+<div class="options">
+
+<label>
+<input type="checkbox" id="balcony">
+Balcony
+</label>
+
+<label>
+<input type="checkbox" id="garage">
+Garage
+</label>
+
+<label>
+<input type="checkbox" id="garden">
+Garden
+</label>
+
+<label>
+<input type="checkbox" id="pool">
+Swimming Pool
+</label>
+
+<label>
+<input type="checkbox" id="office">
+Home Office
+</label>
+
+</div>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Describe Your Dream Home
+</label>
+
+<textarea
+id="description"
+placeholder="Example: I want a modern three-bedroom home with a large kitchen, two bathrooms, a garage and a garden.">
+</textarea>
+
+</div>
+
+</div>
+
+
+<div class="generate-area">
+
+<button
+class="btn btn-primary"
+onclick="generateHouse()">
+
+Generate My House Concept
+
+</button>
+
+</div>
+
+
+<!-- PREVIEW -->
+
+<div class="preview" id="preview">
+
+<h3>
+Your Preliminary Home Concept
+</h3>
+
+
+<div class="floor-plan">
+
+<div class="room">
+Living Room
+</div>
+
+<div class="room">
+Kitchen
+</div>
+
+<div class="room" id="room3">
+Bedrooms
+</div>
+
+<div class="room" id="room4">
+Bathrooms
+</div>
+
+</div>
+
+
+<div
+class="preview-summary"
+id="summary">
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery" id="gallery">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Photo Gallery</span>
+
+<h2>Homes That Inspire</h2>
+
+<p>
+Explore examples of modern residential architecture
+and interiors.
+</p>
+
+</div>
+
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
+alt="Luxury house interior">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85"
+alt="Modern living room">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
+alt="Modern house">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=85"
+alt="Modern kitchen">
+
+</div>
+
+
+<div class="gallery-item">
+
+<img
+src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85"
+alt="Luxury exterior">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+Ready to explore your next home?
+</h2>
+
+<p>
+Tell us what you are looking for and we'll help you
+understand the next steps for your property inquiry.
+</p>
+
+<a href="#request" class="btn btn-gold">
+Start Your Property Request
+</a>
+
+</section>
+
+
+<!-- ================= REQUEST ================= -->
+
+<section class="request" id="request">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>Contact GoInvestment</span>
+
+<h2>Submit a Property Request</h2>
+
+<p>
+Tell us about the property you are interested in.
+</p>
+
+</div>
+
+
+<div class="request-box">
+
+<div class="notice">
+
+<strong>Important:</strong>
+This form is a property inquiry only. Property
+availability, prices, ownership, contracts and legal
+requirements must be confirmed before any purchase.
+
+</div>
+
+
+<form
+id="propertyForm"
+onsubmit="submitRequest(event)">
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>Full Name</label>
+
+<input
+type="text"
+id="fullname"
+required
+placeholder="Your full name">
+
+</div>
+
+
+<div class="field">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+required
+placeholder="you@example.com">
+
+</div>
+
+
+<div class="field">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Your phone number">
+
+</div>
+
+
+<div class="field">
+
+<label>Preferred Country</label>
+
+<select id="requestCountry">
+
+<option>Canada</option>
+<option>Australia</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+What type of property are you interested in?
+</label>
+
+<select id="requestProperty">
+
+<option>Detached House</option>
+<option>Townhouse</option>
+<option>Apartment</option>
+<option>Luxury Villa</option>
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>
+Message
+</label>
+
+<textarea
+id="requestMessage"
+placeholder="Tell us what type of property you are looking for.">
+</textarea>
+
+</div>
+
+
+<div class="full">
+
+<button
+class="btn btn-primary"
+type="submit">
+
+Send Property Request
+
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+
+<p
+id="formMessage"
+style="margin-top:20px;font-weight:bold;">
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-  <p>© 2026 GoInvestment Real Estate</p>
-  <p style="margin-top:8px">Contact: davidemma1031@gmail.com</p>
+
+<div class="footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+Go<span>Investment</span>
+</div>
+
+<p>
+Property discovery, home concepts and residential
+property inquiries in one convenient experience.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>Explore</h4>
+
+<a href="#homes">Homes</a>
+<a href="#communities">Communities</a>
+<a href="#gallery">Gallery</a>
+
+</div>
+
+
+<div>
+
+<h4>Services</h4>
+
+<a href="#builder">Design Your Home</a>
+<a href="#request">Property Request</a>
+<a href="#about">About Us</a>
+
+</div>
+
+
+<div>
+
+<h4>Contact</h4>
+
+<a href="#request">Contact Us</a>
+<a href="#request">Property Inquiry</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 GoInvestment Real Estate.
+All rights reserved.
+
+<br><br>
+
+<strong>
+Important:
+</strong>
+Property information shown on this website may be
+illustrative or subject to availability. Confirm all
+property details, prices, ownership and legal
+requirements before making a purchase decision.
+
+</div>
+
 </footer>
 
+
+<!-- FLOATING CONTACT -->
+
+<div class="contact-float">
+
+<a href="#request" aria-label="Contact">
+💬
+</a>
+
+</div>
+
+
 <script>
-function generateHouse(){
-  const country = document.getElementById("country").value;
-  const type = document.getElementById("propertyType").value;
-  const size = document.getElementById("size").value;
-  const bedrooms = document.getElementById("bedrooms").value;
-  const bathrooms = document.getElementById("bathrooms").value;
-  const floors = document.getElementById("floors").value;
-  const balcony = document.getElementById("balcony").checked;
-  const garage = document.getElementById("garage").checked;
-  const garden = document.getElementById("garden").checked;
-  const pool = document.getElementById("pool").checked;
-  const office = document.getElementById("office").checked;
-  const description = document.getElementById("description").value.trim();
 
-  document.getElementById("preview").style.display = "block";
-  document.getElementById("room3").innerText = bedrooms + " Bedroom(s)";
-  document.getElementById("room4").innerText = bathrooms + " Bathroom(s)";
-  document.getElementById("balconyPreview").style.display = balcony ? "flex" : "none";
+/* ================= MOBILE MENU ================= */
 
-  const extras = [];
-  if(garage) extras.push("Garage");
-  if(garden) extras.push("Garden");
-  if(pool) extras.push("Swimming Pool");
-  if(office) extras.push("Home Office");
-  if(balcony) extras.push("Balcony");
+function toggleMenu(){
 
-  document.getElementById("summary").innerHTML =
-    "<strong>Location:</strong> " + escapeHTML(country) +
-    "<br><strong>Property:</strong> " + escapeHTML(type) +
-    "<br><strong>Size:</strong> " + escapeHTML(size) + " m²" +
-    "<br><strong>Bedrooms:</strong> " + escapeHTML(bedrooms) +
-    "<br><strong>Bathrooms:</strong> " + escapeHTML(bathrooms) +
-    "<br><strong>Floors:</strong> " + escapeHTML(floors) +
-    "<br><strong>Features:</strong> " + (extras.length ? extras.map(escapeHTML).join(", ") : "None selected") +
-    "<br><strong>Special Requirements:</strong> " + escapeHTML(description || "None");
+  document
+    .getElementById("mainNav")
+    .classList.toggle("active");
 
-  document.getElementById("preview").scrollIntoView({behavior:"smooth"});
 }
 
-function escapeHTML(value){
-  return String(value).replace(/[&<>"']/g, function(ch){
-    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[ch];
+
+/* Close mobile menu after clicking */
+
+document
+  .querySelectorAll("#mainNav a")
+  .forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+      document
+        .getElementById("mainNav")
+        .classList.remove("active");
+
+    });
+
   });
-}
 
-const canvas = document.getElementById("signature");
-const ctx = canvas.getContext("2d");
-let drawing = false;
 
-function resizeCanvas(){
-  const rect = canvas.getBoundingClientRect();
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = rect.width * ratio;
-  canvas.height = rect.height * ratio;
-  ctx.setTransform(ratio,0,0,ratio,0,0);
-  ctx.lineWidth = 2;
-  ctx.lineCap = "round";
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+/* ================= HOME SEARCH ================= */
 
-canvas.addEventListener("pointerdown", function(e){
-  drawing = true;
-  canvas.setPointerCapture(e.pointerId);
-  const rect = canvas.getBoundingClientRect();
-  ctx.beginPath();
-  ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
-});
+function searchHomes(){
 
-canvas.addEventListener("pointermove", function(e){
-  if(!drawing) return;
-  const rect = canvas.getBoundingClientRect();
-  ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
-  ctx.stroke();
-});
+  const country =
+    document.getElementById("searchCountry").value;
 
-canvas.addEventListener("pointerup", function(){ drawing = false; });
-canvas.addEventListener("pointercancel", function(){ drawing = false; });
+  const type =
+    document.getElementById("searchType").value;
 
-function clearSignature(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-}
+  const bedrooms =
+    document.getElementById("searchBedrooms").value;
 
-function submitRequest(){
-  const name = document.getElementById("fullname").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const phone = document.getElementById("phone").value.trim();
+  const cards =
+    document.querySelectorAll(".property-card");
 
-  if(!name || !email){
-    showStatus("Please enter your full name and email.", true);
-    return;
+  let found = 0;
+
+  cards.forEach(function(card){
+
+    const cardCountry =
+      card.dataset.country;
+
+    const cardType =
+      card.dataset.type;
+
+    const cardBedrooms =
+      Number(card.dataset.bedrooms);
+
+    let show = true;
+
+    if(country !== "all" &&
+       cardCountry !== country){
+
+      show = false;
+
+    }
+
+    if(type !== "all" &&
+       cardType !== type){
+
+      show = false;
+
+    }
+
+    if(bedrooms !== "all" &&
+       cardBedrooms < Number(bedrooms)){
+
+      show = false;
+
+    }
+
+    card.style.display =
+      show ? "block" : "none";
+
+    if(show){
+      found++;
+    }
+
+  });
+
+
+  const grid =
+    document.getElementById("propertyGrid");
+
+  if(found === 0){
+
+    alert(
+      "No matching example properties were found. Try changing your search."
+    );
+
+  }else{
+
+    document
+      .getElementById("homes")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
+
   }
 
-  const country = document.getElementById("country").value;
-  const property = document.getElementById("propertyType").value;
-  const size = document.getElementById("size").value;
-  const bedrooms = document.getElementById("bedrooms").value;
-  const bathrooms = document.getElementById("bathrooms").value;
-  const floors = document.getElementById("floors").value;
-  const description = document.getElementById("description").value.trim();
+}
 
-  const features = [];
-  if(document.getElementById("balcony").checked) features.push("Balcony");
-  if(document.getElementById("garage").checked) features.push("Garage");
-  if(document.getElementById("garden").checked) features.push("Garden");
-  if(document.getElementById("pool").checked) features.push("Swimming Pool");
-  if(document.getElementById("office").checked) features.push("Home Office");
 
-  const subject = encodeURIComponent("GoInvestment Property Request - " + country);
+/* ================= HOUSE BUILDER ================= */
 
-  const body = encodeURIComponent(
-`GOINVESTMENT REAL ESTATE
-PROPERTY REQUEST
+function generateHouse(){
 
-CUSTOMER INFORMATION
---------------------
-Full Name: ${name}
+  const country =
+    document.getElementById("country").value;
+
+  const property =
+    document.getElementById("propertyType").value;
+
+  const size =
+    document.getElementById("size").value;
+
+  const bedrooms =
+    document.getElementById("bedrooms").value;
+
+  const bathrooms =
+    document.getElementById("bathrooms").value;
+
+  const floors =
+    document.getElementById("floors").value;
+
+  const description =
+    document
+      .getElementById("description")
+      .value
+      .trim();
+
+
+  const balcony =
+    document
+      .getElementById("balcony")
+      .checked;
+
+  const garage =
+    document
+      .getElementById("garage")
+      .checked;
+
+  const garden =
+    document
+      .getElementById("garden")
+      .checked;
+
+  const pool =
+    document
+      .getElementById("pool")
+      .checked;
+
+  const office =
+    document
+      .getElementById("office")
+      .checked;
+
+
+  document
+    .getElementById("room3")
+    .innerText =
+      bedrooms + " Bedroom(s)";
+
+
+  document
+    .getElementById("room4")
+    .innerText =
+      bathrooms + " Bathroom(s)";
+
+
+  let features = [];
+
+
+  if(balcony)
+    features.push("Balcony");
+
+  if(garage)
+    features.push("Garage");
+
+  if(garden)
+    features.push("Garden");
+
+  if(pool)
+    features.push("Swimming Pool");
+
+  if(office)
+    features.push("Home Office");
+
+
+  document
+    .getElementById("summary")
+    .innerHTML =
+
+    "<strong>Country:</strong> " +
+    country +
+
+    "<br><strong>Property Type:</strong> " +
+    property +
+
+    "<br><strong>House Size:</strong> " +
+    size + " m²" +
+
+    "<br><strong>Bedrooms:</strong> " +
+    bedrooms +
+
+    "<br><strong>Bathrooms:</strong> " +
+    bathrooms +
+
+    "<br><strong>Floors:</strong> " +
+    floors +
+
+    "<br><strong>Features:</strong> " +
+    (
+      features.length
+      ? features.join(", ")
+      : "None selected"
+    ) +
+
+    "<br><strong>Description:</strong> " +
+    (
+      description ||
+      "No special requirements provided."
+    );
+
+
+  document
+    .getElementById("preview")
+    .style.display =
+      "block";
+
+
+  document
+    .getElementById("preview")
+    .scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+}
+
+
+/* ================= PROPERTY REQUEST ================= */
+
+function submitRequest(event){
+
+  event.preventDefault();
+
+
+  const name =
+    document
+      .getElementById("fullname")
+      .value
+      .trim();
+
+  const email =
+    document
+      .getElementById("email")
+      .value
+      .trim();
+
+  const phone =
+    document
+      .getElementById("phone")
+      .value
+      .trim();
+
+  const country =
+    document
+      .getElementById("requestCountry")
+      .value;
+
+  const property =
+    document
+      .getElementById("requestProperty")
+      .value;
+
+  const message =
+    document
+      .getElementById("requestMessage")
+      .value
+      .trim();
+
+
+  /*
+    IMPORTANT:
+    Replace the email below with the official
+    email address that should receive requests.
+  */
+
+  const receivingEmail =
+    "your-email@example.com";
+
+
+  const subject =
+    encodeURIComponent(
+      "New GoInvestment Property Request - " +
+      country
+    );
+
+
+  const body =
+    encodeURIComponent(
+
+`GoInvestment Real Estate Property Request
+
+CUSTOMER
+Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
 
-PROPERTY DETAILS
-----------------
+PROPERTY
 Country: ${country}
 Property Type: ${property}
-House Size: ${size} m²
-Bedrooms: ${bedrooms}
-Bathrooms: ${bathrooms}
-Floors: ${floors}
 
-FEATURES
---------
-${features.length ? features.join(", ") : "None selected"}
+CUSTOMER MESSAGE
+${message || "No additional message."}
 
-DREAM HOME DESCRIPTION
-----------------------
-${description || "None provided"}
+Please review this property inquiry and contact the customer regarding availability, pricing, documentation and next steps.`
 
-SIGNATURE
----------
-The customer completed the signature section on the website.
+    );
 
-NEXT STEP
----------
-Please review this preliminary property inquiry and contact
-the customer regarding availability, pricing, documentation
-and the appropriate purchase process.
 
-No purchase or payment is confirmed by this form.`
-  );
+  document
+    .getElementById("formMessage")
+    .innerText =
+      "Opening your email application...";
 
-  const gmailUrl =
-    "https://mail.google.com/mail/?view=cm&fs=1" +
-    "&to=davidemma1031@gmail.com" +
-    "&su=" + subject +
-    "&body=" + body;
 
-  showStatus("Opening Gmail with the property request. Review it and press Send.", false);
-  setTimeout(function(){
-    window.location.href = gmailUrl;
-  }, 500);
+  window.location.href =
+    "mailto:" +
+    receivingEmail +
+    "?subject=" +
+    subject +
+    "&body=" +
+    body;
+
 }
 
-function showStatus(text, error){
-  const box = document.getElementById("message");
-  box.style.display = "block";
-  box.innerText = text;
-  box.style.borderLeft = error ? "4px solid #b00020" : "4px solid #d4af37";
-}
 </script>
 
 </body>
-</html>
+  </html>
