@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GoInvestment Real Estate | Find Your Future Home</title>
+<title>TrueHome Realty | Find Your Future Home</title>
 
 <meta name="description"
-content="Explore homes, communities and custom home concepts with GoInvestment Real Estate.">
+content="TrueHome Realty helps you explore homes, communities and property opportunities and submit property inquiries.">
 
 <style>
 *{
@@ -36,6 +36,7 @@ body{
   --dark:#101820;
   --white:#fff;
   --gray:#68747d;
+  --green:#25d366;
 }
 
 a{
@@ -83,7 +84,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:24px;
+  font-size:25px;
   border-radius:6px;
 }
 
@@ -91,7 +92,6 @@ header{
   font-size:24px;
   font-weight:800;
   color:var(--deep);
-  letter-spacing:-.5px;
 }
 
 .logo-text span{
@@ -137,6 +137,7 @@ nav a:hover{
   position:relative;
   display:flex;
   align-items:center;
+
   background:
     linear-gradient(
       90deg,
@@ -215,7 +216,7 @@ nav a:hover{
   background:transparent;
 }
 
-/* ================= SEARCH BOX ================= */
+/* ================= SEARCH ================= */
 
 .search-wrap{
   position:relative;
@@ -366,6 +367,7 @@ section{
   padding-top:14px;
   color:#44525d;
   font-size:14px;
+  flex-wrap:wrap;
 }
 
 .property-bottom{
@@ -497,7 +499,7 @@ section{
   display:block;
 }
 
-/* ================= HOME BUILDER ================= */
+/* ================= BUILDER ================= */
 
 .builder-section{
   background:#f5f8fa;
@@ -567,7 +569,7 @@ section{
   margin-top:25px;
 }
 
-/* ================= HOUSE PREVIEW ================= */
+/* ================= PREVIEW ================= */
 
 .preview{
   display:none;
@@ -691,6 +693,41 @@ section{
   color:#5c4d20;
 }
 
+/* ================= CONTACT ================= */
+
+.contact-section{
+  background:white;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.contact-card{
+  background:#f5f8fa;
+  padding:30px;
+  text-align:center;
+  border-radius:8px;
+}
+
+.contact-card .icon{
+  font-size:35px;
+  margin-bottom:10px;
+}
+
+.contact-card h3{
+  color:var(--deep);
+  margin-bottom:5px;
+}
+
+.contact-card p{
+  color:var(--gray);
+}
+
 /* ================= FOOTER ================= */
 
 footer{
@@ -741,25 +778,25 @@ footer a:hover{
   font-size:13px;
 }
 
-/* ================= FLOATING CONTACT ================= */
+/* ================= WHATSAPP ================= */
 
-.contact-float{
+.whatsapp{
   position:fixed;
   right:20px;
   bottom:20px;
   z-index:900;
 }
 
-.contact-float a{
-  width:58px;
-  height:58px;
+.whatsapp a{
+  width:60px;
+  height:60px;
   border-radius:50%;
-  background:#087db8;
+  background:var(--green);
   color:white;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:25px;
+  font-size:30px;
   box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
@@ -785,6 +822,10 @@ footer a:hover{
   }
 
   .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .contact-grid{
     grid-template-columns:1fr 1fr;
   }
 }
@@ -923,6 +964,10 @@ footer a:hover{
   .footer-grid{
     grid-template-columns:1fr;
   }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -936,25 +981,47 @@ footer a:hover{
 <div class="header-inner">
 
 <a href="#" class="logo">
-  <div class="logo-mark">⌂</div>
 
-  <div class="logo-text">
-    Go<span>Investment</span>
-  </div>
+<div class="logo-mark">⌂</div>
+
+<div class="logo-text">
+True<span>Home Realty</span>
+</div>
+
 </a>
 
-<button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
-  ☰
+<button
+class="menu-btn"
+onclick="toggleMenu()"
+aria-label="Open menu">
+☰
 </button>
 
 <nav id="mainNav">
 
 <a href="#homes">Homes</a>
-<a href="#communities">Communities</a>
-<a href="#builder">Build Your Home</a>
-<a href="#gallery">Gallery</a>
-<a href="#about">About</a>
-<a href="#request" class="nav-button">Contact Us</a>
+
+<a href="#communities">
+Communities
+</a>
+
+<a href="#builder">
+Build Your Home
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a
+href="#request"
+class="nav-button">
+Contact Us
+</a>
 
 </nav>
 
@@ -969,26 +1036,31 @@ footer a:hover{
 
 <div class="hero-content">
 
-<small>GOINVESTMENT REAL ESTATE</small>
+<small>
+TRUEHOME REALTY
+</small>
 
 <h1>
 Find the place where your next chapter begins.
 </h1>
 
 <p>
-Explore available homes, discover communities and
-create a preliminary concept for the home you want
-to build.
+Explore homes, discover communities and tell us
+what you are looking for in your next home.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#homes" class="btn btn-primary">
+<a
+href="#homes"
+class="btn btn-primary">
 Explore Homes
 </a>
 
-<a href="#builder" class="btn btn-gold">
-Design Your Home
+<a
+href="#request"
+class="btn btn-gold">
+Find My Home
 </a>
 
 </div>
@@ -1005,7 +1077,7 @@ Design Your Home
 <div class="search-box">
 
 <div class="search-title">
-What are you looking for?
+What kind of home are you looking for?
 </div>
 
 <div class="search-grid">
@@ -1032,19 +1104,19 @@ All Locations
 All Property Types
 </option>
 
-<option>
+<option value="Detached House">
 Detached House
 </option>
 
-<option>
+<option value="Townhouse">
 Townhouse
 </option>
 
-<option>
+<option value="Apartment">
 Apartment
 </option>
 
-<option>
+<option value="Luxury Villa">
 Luxury Villa
 </option>
 
@@ -1074,7 +1146,9 @@ Any Bedrooms
 
 </select>
 
-<button class="btn btn-primary" onclick="searchHomes()">
+<button
+class="btn btn-primary"
+onclick="searchHomes()">
 Search
 </button>
 
@@ -1087,31 +1161,39 @@ Search
 
 <!-- ================= HOMES ================= -->
 
-<section class="properties" id="homes">
+<section
+class="properties"
+id="homes">
 
 <div class="container">
 
 <div class="section-heading">
 
-<span>Featured Properties</span>
+<span>
+Featured Homes
+</span>
 
-<h2>Homes You Can Explore</h2>
+<h2>
+Homes Worth Coming Home To
+</h2>
 
 <p>
-Browse examples of homes and property opportunities.
-Availability, pricing and ownership details must be
-confirmed with the relevant property provider.
+Explore example properties and contact us for
+current availability, pricing and additional details.
 </p>
 
 </div>
 
 
-<div class="property-grid" id="propertyGrid">
+<div
+class="property-grid"
+id="propertyGrid">
 
 
-<!-- PROPERTY 1 -->
+<!-- HOME 1 -->
 
-<article class="property-card"
+<article
+class="property-card"
 data-country="Canada"
 data-type="Detached House"
 data-bedrooms="3">
@@ -1120,7 +1202,7 @@ data-bedrooms="3">
 
 <img
 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-alt="Modern detached house">
+alt="Modern detached home">
 
 <div class="badge">
 FEATURED
@@ -1130,7 +1212,9 @@ FEATURED
 
 <div class="property-body">
 
-<h3>Modern Family Residence</h3>
+<h3>
+Modern Family Home
+</h3>
 
 <div class="location">
 📍 Canada
@@ -1139,7 +1223,9 @@ FEATURED
 <div class="property-info">
 
 <span>🛏 3 Beds</span>
+
 <span>🚿 2 Baths</span>
+
 <span>📐 180 m²</span>
 
 </div>
@@ -1147,14 +1233,14 @@ FEATURED
 <div class="property-bottom">
 
 <div class="price">
-Request Price
+Contact for Price
 </div>
 
 <a
 href="#request"
 class="btn btn-primary"
 style="padding:10px 15px">
-View
+Inquire
 </a>
 
 </div>
@@ -1164,9 +1250,10 @@ View
 </article>
 
 
-<!-- PROPERTY 2 -->
+<!-- HOME 2 -->
 
-<article class="property-card"
+<article
+class="property-card"
 data-country="Australia"
 data-type="Luxury Villa"
 data-bedrooms="4">
@@ -1175,7 +1262,7 @@ data-bedrooms="4">
 
 <img
 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=80"
-alt="Luxury modern villa">
+alt="Luxury villa">
 
 <div class="badge">
 LUXURY
@@ -1185,7 +1272,9 @@ LUXURY
 
 <div class="property-body">
 
-<h3>Contemporary Luxury Villa</h3>
+<h3>
+Contemporary Villa
+</h3>
 
 <div class="location">
 📍 Australia
@@ -1194,7 +1283,9 @@ LUXURY
 <div class="property-info">
 
 <span>🛏 4 Beds</span>
+
 <span>🚿 3 Baths</span>
+
 <span>📐 260 m²</span>
 
 </div>
@@ -1202,14 +1293,14 @@ LUXURY
 <div class="property-bottom">
 
 <div class="price">
-Request Price
+Contact for Price
 </div>
 
 <a
 href="#request"
 class="btn btn-primary"
 style="padding:10px 15px">
-View
+Inquire
 </a>
 
 </div>
@@ -1219,9 +1310,10 @@ View
 </article>
 
 
-<!-- PROPERTY 3 -->
+<!-- HOME 3 -->
 
-<article class="property-card"
+<article
+class="property-card"
 data-country="Canada"
 data-type="Townhouse"
 data-bedrooms="3">
@@ -1240,7 +1332,9 @@ NEW
 
 <div class="property-body">
 
-<h3>Modern Community Townhome</h3>
+<h3>
+Modern Townhome
+</h3>
 
 <div class="location">
 📍 Canada
@@ -1249,7 +1343,9 @@ NEW
 <div class="property-info">
 
 <span>🛏 3 Beds</span>
-<span>🚿 2.5 Baths</span>
+
+<span>🚿 2 Baths</span>
+
 <span>📐 195 m²</span>
 
 </div>
@@ -1257,14 +1353,14 @@ NEW
 <div class="property-bottom">
 
 <div class="price">
-Request Price
+Contact for Price
 </div>
 
 <a
 href="#request"
 class="btn btn-primary"
 style="padding:10px 15px">
-View
+Inquire
 </a>
 
 </div>
@@ -1283,19 +1379,25 @@ View
 
 <!-- ================= COMMUNITIES ================= -->
 
-<section class="communities" id="communities">
+<section
+class="communities"
+id="communities">
 
 <div class="container">
 
 <div class="section-heading">
 
-<span>Explore Locations</span>
+<span>
+Explore Locations
+</span>
 
-<h2>Communities For Every Lifestyle</h2>
+<h2>
+Communities & Locations
+</h2>
 
 <p>
 Explore residential opportunities across selected
-locations in Canada and Australia.
+locations.
 </p>
 
 </div>
@@ -1304,15 +1406,18 @@ locations in Canada and Australia.
 <div class="community-grid">
 
 
-<div class="community"
+<div
+class="community"
 style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80')">
 
 <div class="community-content">
 
-<h3>Canadian Communities</h3>
+<h3>
+Canadian Homes
+</h3>
 
 <p>
-Modern homes and family-friendly communities.
+Explore residential properties in Canada.
 </p>
 
 </div>
@@ -1320,15 +1425,18 @@ Modern homes and family-friendly communities.
 </div>
 
 
-<div class="community"
+<div
+class="community"
 style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1200&q=80')">
 
 <div class="community-content">
 
-<h3>Australian Communities</h3>
+<h3>
+Australian Homes
+</h3>
 
 <p>
-Explore contemporary residential opportunities.
+Discover modern residential properties.
 </p>
 
 </div>
@@ -1336,15 +1444,18 @@ Explore contemporary residential opportunities.
 </div>
 
 
-<div class="community"
+<div
+class="community"
 style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=80')">
 
 <div class="community-content">
 
-<h3>Future Developments</h3>
+<h3>
+New Developments
+</h3>
 
 <p>
-Discover new property concepts and developments.
+Explore upcoming residential opportunities.
 </p>
 
 </div>
@@ -1361,7 +1472,9 @@ Discover new property concepts and developments.
 
 <!-- ================= WHY ================= -->
 
-<section class="why" id="about">
+<section
+class="why"
+id="about">
 
 <div class="container">
 
@@ -1378,21 +1491,25 @@ alt="Beautiful modern home">
 
 <div class="why-content">
 
-<span>Why GoInvestment</span>
+<span>
+Why TrueHome Realty
+</span>
 
 <h2>
-A simpler way to explore your next home.
+Helping you get closer to the right home.
 </h2>
 
 <p>
-We bring property discovery, home concepts and
-customer inquiries together in one convenient place.
-Our goal is to make it easier for people to explore
-their housing options and communicate their requirements.
+TrueHome Realty is designed to make exploring
+residential properties simple. Browse homes,
+discover locations and send us your requirements
+so you can learn more about properties that may
+match what you are looking for.
 </p>
 
 
 <div class="features">
+
 
 <div class="feature">
 
@@ -1401,8 +1518,13 @@ their housing options and communicate their requirements.
 </div>
 
 <div>
-<strong>Property Discovery</strong>
-Find homes and property opportunities.
+
+<strong>
+Explore Homes
+</strong>
+
+Browse residential property opportunities.
+
 </div>
 
 </div>
@@ -1411,12 +1533,17 @@ Find homes and property opportunities.
 <div class="feature">
 
 <div class="feature-icon">
-⌘
+⌕
 </div>
 
 <div>
-<strong>Home Concepts</strong>
-Create a preliminary idea for your dream home.
+
+<strong>
+Search Properties
+</strong>
+
+Filter homes by location and property type.
+
 </div>
 
 </div>
@@ -1429,8 +1556,13 @@ Create a preliminary idea for your dream home.
 </div>
 
 <div>
-<strong>Clear Requests</strong>
-Send your property requirements to our team.
+
+<strong>
+Property Requests
+</strong>
+
+Tell us what type of home you want.
+
 </div>
 
 </div>
@@ -1443,11 +1575,17 @@ Send your property requirements to our team.
 </div>
 
 <div>
-<strong>Modern Experience</strong>
-A simple, mobile-friendly property experience.
+
+<strong>
+Home Concepts
+</strong>
+
+Create a preliminary idea for your future home.
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -1462,19 +1600,25 @@ A simple, mobile-friendly property experience.
 
 <!-- ================= BUILDER ================= -->
 
-<section class="builder-section" id="builder">
+<section
+class="builder-section"
+id="builder">
 
 <div class="container">
 
 <div class="section-heading">
 
-<span>Home Builder</span>
+<span>
+Home Concept
+</span>
 
-<h2>Design Your Future Home</h2>
+<h2>
+Design Your Future Home
+</h2>
 
 <p>
-Choose your location, house size, rooms and features
-to create a preliminary home concept.
+Choose your preferred size, rooms and features
+to create a simple preliminary home concept.
 </p>
 
 </div>
@@ -1487,12 +1631,19 @@ to create a preliminary home concept.
 
 <div class="field">
 
-<label>Country</label>
+<label>
+Country
+</label>
 
 <select id="country">
 
-<option>Canada</option>
-<option>Australia</option>
+<option>
+Canada
+</option>
+
+<option>
+Australia
+</option>
 
 </select>
 
@@ -1501,14 +1652,27 @@ to create a preliminary home concept.
 
 <div class="field">
 
-<label>Property Type</label>
+<label>
+Property Type
+</label>
 
 <select id="propertyType">
 
-<option>Detached House</option>
-<option>Townhouse</option>
-<option>Apartment</option>
-<option>Luxury Villa</option>
+<option>
+Detached House
+</option>
+
+<option>
+Townhouse
+</option>
+
+<option>
+Apartment
+</option>
+
+<option>
+Luxury Villa
+</option>
 
 </select>
 
@@ -1517,7 +1681,9 @@ to create a preliminary home concept.
 
 <div class="field">
 
-<label>House Size (m²)</label>
+<label>
+House Size (m²)
+</label>
 
 <input
 type="number"
@@ -1531,16 +1697,35 @@ max="2000">
 
 <div class="field">
 
-<label>Bedrooms</label>
+<label>
+Bedrooms
+</label>
 
 <select id="bedrooms">
 
-<option>1</option>
-<option>2</option>
-<option selected>3</option>
-<option>4</option>
-<option>5</option>
-<option>6</option>
+<option>
+1
+</option>
+
+<option>
+2
+</option>
+
+<option selected>
+3
+</option>
+
+<option>
+4
+</option>
+
+<option>
+5
+</option>
+
+<option>
+6
+</option>
 
 </select>
 
@@ -1549,15 +1734,31 @@ max="2000">
 
 <div class="field">
 
-<label>Bathrooms</label>
+<label>
+Bathrooms
+</label>
 
 <select id="bathrooms">
 
-<option>1</option>
-<option selected>2</option>
-<option>3</option>
-<option>4</option>
-<option>5</option>
+<option>
+1
+</option>
+
+<option selected>
+2
+</option>
+
+<option>
+3
+</option>
+
+<option>
+4
+</option>
+
+<option>
+5
+</option>
 
 </select>
 
@@ -1566,13 +1767,23 @@ max="2000">
 
 <div class="field">
 
-<label>Floors</label>
+<label>
+Floors
+</label>
 
 <select id="floors">
 
-<option selected>1</option>
-<option>2</option>
-<option>3</option>
+<option selected>
+1
+</option>
+
+<option>
+2
+</option>
+
+<option>
+3
+</option>
 
 </select>
 
@@ -1581,32 +1792,44 @@ max="2000">
 
 <div class="field full">
 
-<label>Features</label>
+<label>
+Features
+</label>
 
 <div class="options">
 
 <label>
-<input type="checkbox" id="balcony">
+<input
+type="checkbox"
+id="balcony">
 Balcony
 </label>
 
 <label>
-<input type="checkbox" id="garage">
+<input
+type="checkbox"
+id="garage">
 Garage
 </label>
 
 <label>
-<input type="checkbox" id="garden">
+<input
+type="checkbox"
+id="garden">
 Garden
 </label>
 
 <label>
-<input type="checkbox" id="pool">
+<input
+type="checkbox"
+id="pool">
 Swimming Pool
 </label>
 
 <label>
-<input type="checkbox" id="office">
+<input
+type="checkbox"
+id="office">
 Home Office
 </label>
 
@@ -1628,6 +1851,7 @@ placeholder="Example: I want a modern three-bedroom home with a large kitchen, t
 
 </div>
 
+
 </div>
 
 
@@ -1637,16 +1861,16 @@ placeholder="Example: I want a modern three-bedroom home with a large kitchen, t
 class="btn btn-primary"
 onclick="generateHouse()">
 
-Generate My House Concept
+Generate Home Concept
 
 </button>
 
 </div>
 
 
-<!-- PREVIEW -->
-
-<div class="preview" id="preview">
+<div
+class="preview"
+id="preview">
 
 <h3>
 Your Preliminary Home Concept
@@ -1663,11 +1887,15 @@ Living Room
 Kitchen
 </div>
 
-<div class="room" id="room3">
+<div
+class="room"
+id="room3">
 Bedrooms
 </div>
 
-<div class="room" id="room4">
+<div
+class="room"
+id="room4">
 Bathrooms
 </div>
 
@@ -1690,19 +1918,25 @@ id="summary">
 
 <!-- ================= GALLERY ================= -->
 
-<section class="gallery" id="gallery">
+<section
+class="gallery"
+id="gallery">
 
 <div class="container">
 
 <div class="section-heading">
 
-<span>Photo Gallery</span>
+<span>
+Gallery
+</span>
 
-<h2>Homes That Inspire</h2>
+<h2>
+Homes That Inspire
+</h2>
 
 <p>
-Explore examples of modern residential architecture
-and interiors.
+Examples of modern residential architecture and
+interiors.
 </p>
 
 </div>
@@ -1714,7 +1948,7 @@ and interiors.
 
 <img
 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85"
-alt="Luxury house interior">
+alt="Luxury home interior">
 
 </div>
 
@@ -1732,7 +1966,7 @@ alt="Modern living room">
 
 <img
 src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85"
-alt="Modern house">
+alt="Modern home">
 
 </div>
 
@@ -1750,7 +1984,7 @@ alt="Modern kitchen">
 
 <img
 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85"
-alt="Luxury exterior">
+alt="Modern exterior">
 
 </div>
 
@@ -1766,16 +2000,18 @@ alt="Luxury exterior">
 <section class="cta">
 
 <h2>
-Ready to explore your next home?
+Looking for your next home?
 </h2>
 
 <p>
-Tell us what you are looking for and we'll help you
-understand the next steps for your property inquiry.
+Tell us what you are looking for and submit a
+property request to learn more.
 </p>
 
-<a href="#request" class="btn btn-gold">
-Start Your Property Request
+<a
+href="#request"
+class="btn btn-gold">
+Find My Home
 </a>
 
 </section>
@@ -1783,18 +2019,25 @@ Start Your Property Request
 
 <!-- ================= REQUEST ================= -->
 
-<section class="request" id="request">
+<section
+class="request"
+id="request">
 
 <div class="container">
 
 <div class="section-heading">
 
-<span>Contact GoInvestment</span>
+<span>
+Contact TrueHome Realty
+</span>
 
-<h2>Submit a Property Request</h2>
+<h2>
+Tell Us What You Are Looking For
+</h2>
 
 <p>
-Tell us about the property you are interested in.
+Submit your property requirements and our team
+can review your inquiry.
 </p>
 
 </div>
@@ -1805,9 +2048,11 @@ Tell us about the property you are interested in.
 <div class="notice">
 
 <strong>Important:</strong>
-This form is a property inquiry only. Property
-availability, prices, ownership, contracts and legal
-requirements must be confirmed before any purchase.
+
+This form is a property inquiry. Property
+availability, prices, ownership, contracts and
+legal requirements should be confirmed before
+making a purchase decision.
 
 </div>
 
@@ -1816,12 +2061,15 @@ requirements must be confirmed before any purchase.
 id="propertyForm"
 onsubmit="submitRequest(event)">
 
+
 <div class="form-grid">
 
 
 <div class="field">
 
-<label>Full Name</label>
+<label>
+Full Name
+</label>
 
 <input
 type="text"
@@ -1834,7 +2082,9 @@ placeholder="Your full name">
 
 <div class="field">
 
-<label>Email Address</label>
+<label>
+Email Address
+</label>
 
 <input
 type="email"
@@ -1847,7 +2097,9 @@ placeholder="you@example.com">
 
 <div class="field">
 
-<label>Phone Number</label>
+<label>
+Phone Number
+</label>
 
 <input
 type="tel"
@@ -1859,12 +2111,19 @@ placeholder="Your phone number">
 
 <div class="field">
 
-<label>Preferred Country</label>
+<label>
+Preferred Country
+</label>
 
 <select id="requestCountry">
 
-<option>Canada</option>
-<option>Australia</option>
+<option>
+Canada
+</option>
+
+<option>
+Australia
+</option>
 
 </select>
 
@@ -1874,15 +2133,27 @@ placeholder="Your phone number">
 <div class="field full">
 
 <label>
-What type of property are you interested in?
+Property Type
 </label>
 
 <select id="requestProperty">
 
-<option>Detached House</option>
-<option>Townhouse</option>
-<option>Apartment</option>
-<option>Luxury Villa</option>
+<option>
+Detached House
+</option>
+
+<option>
+Townhouse
+</option>
+
+<option>
+Apartment
+</option>
+
+<option>
+Luxury Villa
+</option>
+
 </select>
 
 </div>
@@ -1891,12 +2162,12 @@ What type of property are you interested in?
 <div class="field full">
 
 <label>
-Message
+Your Message
 </label>
 
 <textarea
 id="requestMessage"
-placeholder="Tell us what type of property you are looking for.">
+placeholder="Tell us what kind of home you are looking for.">
 </textarea>
 
 </div>
@@ -1932,6 +2203,91 @@ style="margin-top:20px;font-weight:bold;">
 </section>
 
 
+<!-- ================= CONTACT ================= -->
+
+<section
+class="contact-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span>
+Get In Touch
+</span>
+
+<h2>
+Contact TrueHome Realty
+</h2>
+
+<p>
+Choose the contact method that works best for you.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<div class="icon">
+📧
+</div>
+
+<h3>
+Email
+</h3>
+
+<p>
+your-email@example.com
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">
+📞
+</div>
+
+<h3>
+Phone
+</h3>
+
+<p>
+Your phone number
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<div class="icon">
+💬
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Message us on WhatsApp
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
@@ -1942,12 +2298,12 @@ style="margin-top:20px;font-weight:bold;">
 <div>
 
 <div class="footer-logo">
-Go<span>Investment</span>
+True<span>Home Realty</span>
 </div>
 
 <p>
-Property discovery, home concepts and residential
-property inquiries in one convenient experience.
+Explore homes, discover communities and submit
+property inquiries through TrueHome Realty.
 </p>
 
 </div>
@@ -1955,32 +2311,59 @@ property inquiries in one convenient experience.
 
 <div>
 
-<h4>Explore</h4>
+<h4>
+Explore
+</h4>
 
-<a href="#homes">Homes</a>
-<a href="#communities">Communities</a>
-<a href="#gallery">Gallery</a>
+<a href="#homes">
+Homes
+</a>
+
+<a href="#communities">
+Communities
+</a>
+
+<a href="#gallery">
+Gallery
+</a>
 
 </div>
 
 
 <div>
 
-<h4>Services</h4>
+<h4>
+Services
+</h4>
 
-<a href="#builder">Design Your Home</a>
-<a href="#request">Property Request</a>
-<a href="#about">About Us</a>
+<a href="#builder">
+Home Concept
+</a>
+
+<a href="#request">
+Property Request
+</a>
+
+<a href="#about">
+About
+</a>
 
 </div>
 
 
 <div>
 
-<h4>Contact</h4>
+<h4>
+Contact
+</h4>
 
-<a href="#request">Contact Us</a>
-<a href="#request">Property Inquiry</a>
+<a href="#request">
+Contact Us
+</a>
+
+<a href="#request">
+Property Inquiry
+</a>
 
 </div>
 
@@ -1990,7 +2373,7 @@ property inquiries in one convenient experience.
 
 <div class="copyright">
 
-© 2026 GoInvestment Real Estate.
+© 2026 TrueHome Realty.
 All rights reserved.
 
 <br><br>
@@ -1998,9 +2381,10 @@ All rights reserved.
 <strong>
 Important:
 </strong>
+
 Property information shown on this website may be
-illustrative or subject to availability. Confirm all
-property details, prices, ownership and legal
+illustrative or subject to availability. Confirm
+property details, pricing, ownership and legal
 requirements before making a purchase decision.
 
 </div>
@@ -2008,11 +2392,15 @@ requirements before making a purchase decision.
 </footer>
 
 
-<!-- FLOATING CONTACT -->
+<!-- ================= WHATSAPP ================= -->
 
-<div class="contact-float">
+<div class="whatsapp">
 
-<a href="#request" aria-label="Contact">
+<a
+href="https://wa.me/15551234567"
+target="_blank"
+rel="noopener"
+aria-label="WhatsApp">
 💬
 </a>
 
@@ -2031,8 +2419,6 @@ function toggleMenu(){
 
 }
 
-
-/* Close mobile menu after clicking */
 
 document
   .querySelectorAll("#mainNav a")
@@ -2054,13 +2440,19 @@ document
 function searchHomes(){
 
   const country =
-    document.getElementById("searchCountry").value;
+    document
+      .getElementById("searchCountry")
+      .value;
 
   const type =
-    document.getElementById("searchType").value;
+    document
+      .getElementById("searchType")
+      .value;
 
   const bedrooms =
-    document.getElementById("searchBedrooms").value;
+    document
+      .getElementById("searchBedrooms")
+      .value;
 
   const cards =
     document.querySelectorAll(".property-card");
@@ -2080,22 +2472,28 @@ function searchHomes(){
 
     let show = true;
 
-    if(country !== "all" &&
-       cardCountry !== country){
+    if(
+      country !== "all" &&
+      cardCountry !== country
+    ){
 
       show = false;
 
     }
 
-    if(type !== "all" &&
-       cardType !== type){
+    if(
+      type !== "all" &&
+      cardType !== type
+    ){
 
       show = false;
 
     }
 
-    if(bedrooms !== "all" &&
-       cardBedrooms < Number(bedrooms)){
+    if(
+      bedrooms !== "all" &&
+      cardBedrooms < Number(bedrooms)
+    ){
 
       show = false;
 
@@ -2111,13 +2509,10 @@ function searchHomes(){
   });
 
 
-  const grid =
-    document.getElementById("propertyGrid");
-
   if(found === 0){
 
     alert(
-      "No matching example properties were found. Try changing your search."
+      "No matching homes were found. Try another search."
     );
 
   }else{
@@ -2133,27 +2528,39 @@ function searchHomes(){
 }
 
 
-/* ================= HOUSE BUILDER ================= */
+/* ================= HOME CONCEPT ================= */
 
 function generateHouse(){
 
   const country =
-    document.getElementById("country").value;
+    document
+      .getElementById("country")
+      .value;
 
   const property =
-    document.getElementById("propertyType").value;
+    document
+      .getElementById("propertyType")
+      .value;
 
   const size =
-    document.getElementById("size").value;
+    document
+      .getElementById("size")
+      .value;
 
   const bedrooms =
-    document.getElementById("bedrooms").value;
+    document
+      .getElementById("bedrooms")
+      .value;
 
   const bathrooms =
-    document.getElementById("bathrooms").value;
+    document
+      .getElementById("bathrooms")
+      .value;
 
   const floors =
-    document.getElementById("floors").value;
+    document
+      .getElementById("floors")
+      .value;
 
   const description =
     document
@@ -2162,30 +2569,52 @@ function generateHouse(){
       .trim();
 
 
-  const balcony =
+  const features = [];
+
+
+  if(
     document
       .getElementById("balcony")
-      .checked;
+      .checked
+  ){
+    features.push("Balcony");
+  }
 
-  const garage =
+
+  if(
     document
       .getElementById("garage")
-      .checked;
+      .checked
+  ){
+    features.push("Garage");
+  }
 
-  const garden =
+
+  if(
     document
       .getElementById("garden")
-      .checked;
+      .checked
+  ){
+    features.push("Garden");
+  }
 
-  const pool =
+
+  if(
     document
       .getElementById("pool")
-      .checked;
+      .checked
+  ){
+    features.push("Swimming Pool");
+  }
 
-  const office =
+
+  if(
     document
       .getElementById("office")
-      .checked;
+      .checked
+  ){
+    features.push("Home Office");
+  }
 
 
   document
@@ -2200,25 +2629,6 @@ function generateHouse(){
       bathrooms + " Bathroom(s)";
 
 
-  let features = [];
-
-
-  if(balcony)
-    features.push("Balcony");
-
-  if(garage)
-    features.push("Garage");
-
-  if(garden)
-    features.push("Garden");
-
-  if(pool)
-    features.push("Swimming Pool");
-
-  if(office)
-    features.push("Home Office");
-
-
   document
     .getElementById("summary")
     .innerHTML =
@@ -2230,7 +2640,8 @@ function generateHouse(){
     property +
 
     "<br><strong>House Size:</strong> " +
-    size + " m²" +
+    size +
+    " m²" +
 
     "<br><strong>Bedrooms:</strong> " +
     bedrooms +
@@ -2314,9 +2725,7 @@ function submitRequest(event){
 
 
   /*
-    IMPORTANT:
-    Replace the email below with the official
-    email address that should receive requests.
+    CHANGE THIS TO YOUR REAL BUSINESS EMAIL.
   */
 
   const receivingEmail =
@@ -2325,7 +2734,7 @@ function submitRequest(event){
 
   const subject =
     encodeURIComponent(
-      "New GoInvestment Property Request - " +
+      "New TrueHome Realty Property Request - " +
       country
     );
 
@@ -2333,7 +2742,7 @@ function submitRequest(event){
   const body =
     encodeURIComponent(
 
-`GoInvestment Real Estate Property Request
+`TrueHome Realty Property Request
 
 CUSTOMER
 Name: ${name}
@@ -2347,7 +2756,8 @@ Property Type: ${property}
 CUSTOMER MESSAGE
 ${message || "No additional message."}
 
-Please review this property inquiry and contact the customer regarding availability, pricing, documentation and next steps.`
+Please review this property inquiry and contact
+the customer regarding the property.`
 
     );
 
