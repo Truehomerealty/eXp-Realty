@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TrueHome Realty | Buy Your Home</title>
+<title>TrueHome Realty | Find Your Dream Home</title>
 
 <meta name="description"
-content="TrueHome Realty helps you find your next home in Canada and Australia. Contact us about available properties.">
+content="TrueHome Realty helps you find or build your ideal home in Canada and Australia. Choose your home type, bedrooms, features and budget.">
 
 <style>
 *{
@@ -34,6 +34,7 @@ body{
   --light:#f4f8fa;
   --gold:#d4af37;
   --gray:#66737c;
+  --green:#168c4a;
   --white:#fff;
 }
 
@@ -47,6 +48,10 @@ input,
 select,
 textarea{
   font:inherit;
+}
+
+button{
+  cursor:pointer;
 }
 
 img{
@@ -81,7 +86,6 @@ header{
 .logo-svg{
   width:52px;
   height:52px;
-  display:block;
 }
 
 .logo-text{
@@ -132,7 +136,6 @@ nav a:hover{
   border:0;
   background:none;
   font-size:29px;
-  cursor:pointer;
 }
 
 /* ================= HERO ================= */
@@ -141,12 +144,13 @@ nav a:hover{
   min-height:650px;
   display:flex;
   align-items:center;
+
   background:
   linear-gradient(
     90deg,
-    rgba(3,39,59,.93),
-    rgba(3,39,59,.65),
-    rgba(3,39,59,.15)
+    rgba(3,39,59,.94),
+    rgba(3,39,59,.67),
+    rgba(3,39,59,.18)
   ),
   url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
   center/cover;
@@ -172,14 +176,14 @@ nav a:hover{
 }
 
 .hero h1{
-  max-width:760px;
+  max-width:800px;
   font-size:60px;
   line-height:1.08;
   margin-bottom:20px;
 }
 
 .hero p{
-  max-width:650px;
+  max-width:680px;
   font-size:19px;
   color:#edf7fb;
   margin-bottom:30px;
@@ -194,7 +198,6 @@ nav a:hover{
 .btn{
   display:inline-block;
   border:0;
-  cursor:pointer;
   padding:15px 25px;
   border-radius:5px;
   font-weight:700;
@@ -217,39 +220,6 @@ nav a:hover{
 .btn-white{
   background:white;
   color:var(--deep);
-}
-
-/* ================= CONTACT BAR ================= */
-
-.contact-bar{
-  background:white;
-  margin:-55px auto 0;
-  position:relative;
-  z-index:10;
-  max-width:1000px;
-  border-radius:8px;
-  box-shadow:0 8px 35px rgba(0,0,0,.18);
-  padding:25px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.contact-bar-title{
-  font-size:20px;
-  font-weight:800;
-  color:var(--deep);
-  margin-right:10px;
-}
-
-.email-btn{
-  background:var(--blue);
-  color:white;
-  padding:13px 20px;
-  border-radius:5px;
-  font-weight:bold;
 }
 
 /* ================= GENERAL ================= */
@@ -284,14 +254,153 @@ section{
 
 .heading p{
   color:var(--gray);
-  max-width:680px;
+  max-width:700px;
   margin:auto;
 }
 
-/* ================= BUY HOMES ================= */
+/* ================= HOME FINDER ================= */
+
+.find-section{
+  background:#f5f8fa;
+}
+
+.find-box{
+  max-width:1050px;
+  margin:auto;
+  background:white;
+  padding:35px;
+  border-radius:10px;
+  box-shadow:0 6px 30px rgba(0,0,0,.09);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.field label{
+  display:block;
+  font-weight:bold;
+  color:var(--deep);
+  margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  border:1px solid #d2dce1;
+  padding:13px;
+  border-radius:5px;
+  background:white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:2px solid rgba(8,125,184,.2);
+  border-color:var(--blue);
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+/* budget */
+
+.budget-box{
+  background:#f1f7fa;
+  padding:18px;
+  border-radius:7px;
+}
+
+.budget-display{
+  font-size:25px;
+  color:var(--blue);
+  font-weight:800;
+  margin-top:5px;
+}
+
+.budget-range{
+  width:100%!important;
+  padding:0!important;
+  margin-top:15px;
+  accent-color:var(--blue);
+}
+
+/* options */
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.option{
+  position:relative;
+}
+
+.option input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.option label{
+  display:block;
+  background:#eef4f7;
+  padding:10px 14px;
+  border-radius:5px;
+  border:1px solid transparent;
+  cursor:pointer;
+  font-weight:normal;
+}
+
+.option input:checked + label{
+  background:#dff1fa;
+  border-color:var(--blue);
+  color:var(--deep);
+}
+
+/* finder result */
+
+.find-result{
+  display:none;
+  margin-top:30px;
+  padding:25px;
+  background:#eef7fb;
+  border-left:5px solid var(--blue);
+  border-radius:7px;
+}
+
+.find-result h3{
+  color:var(--deep);
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+.result-details{
+  background:white;
+  padding:20px;
+  border-radius:6px;
+  line-height:2;
+  margin:15px 0;
+}
+
+.result-note{
+  color:var(--gray);
+  font-size:14px;
+}
+
+.email-request{
+  margin-top:18px;
+}
+
+/* ================= PROPERTY CARDS ================= */
 
 .buy-section{
-  background:#f5f8fa;
+  background:white;
 }
 
 .property-grid{
@@ -305,12 +414,6 @@ section{
   border-radius:8px;
   overflow:hidden;
   box-shadow:0 4px 20px rgba(0,0,0,.08);
-  transition:.2s;
-}
-
-.property-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 30px rgba(0,0,0,.13);
 }
 
 .property-image{
@@ -376,14 +479,10 @@ section{
   font-weight:bold;
 }
 
-.message-property:hover{
-  background:#066c9f;
-}
-
-/* ================= HOW TO BUY ================= */
+/* ================= HOW ================= */
 
 .how{
-  background:white;
+  background:#f5f8fa;
 }
 
 .steps{
@@ -395,6 +494,7 @@ section{
 .step{
   text-align:center;
   padding:30px;
+  background:white;
   border:1px solid #e4eaed;
   border-radius:8px;
 }
@@ -425,7 +525,7 @@ section{
 /* ================= LOCATIONS ================= */
 
 .locations{
-  background:#f5f8fa;
+  background:white;
 }
 
 .location-grid{
@@ -466,7 +566,7 @@ section{
   font-size:28px;
 }
 
-/* ================= FEATURE ================= */
+/* ================= WHY ================= */
 
 .feature-section{
   background:var(--deep);
@@ -531,111 +631,19 @@ section{
   align-items:center;
 }
 
-/* ================= BUILD HOME ================= */
-
-.build-section{
-  background:#f5f8fa;
-}
-
-.build-box{
-  max-width:1050px;
-  margin:auto;
-  background:white;
-  padding:35px;
-  border-radius:9px;
-  box-shadow:0 5px 25px rgba(0,0,0,.08);
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.field label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:7px;
-}
-
-.field input,
-.field select,
-.field textarea{
-  width:100%;
-  border:1px solid #d2dce1;
-  padding:13px;
-  border-radius:5px;
-}
-
-.field textarea{
-  min-height:110px;
-  resize:vertical;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-.options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
-.options label{
-  background:#eef4f7;
-  padding:9px 13px;
-  border-radius:5px;
-  font-weight:normal;
-}
-
-.preview{
-  display:none;
-  margin-top:30px;
-  padding:25px;
-  background:#eef5f8;
-  border-radius:7px;
-}
-
-.floor-plan{
-  max-width:600px;
-  height:300px;
-  margin:20px auto;
-  background:white;
-  border:5px solid #173e52;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:1fr 1fr;
-}
-
-.room{
-  border:2px solid #65808d;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  text-align:center;
-}
-
-.summary{
-  background:white;
-  padding:18px;
-  border-radius:5px;
-  line-height:1.9;
-}
-
 /* ================= CONTACT ================= */
 
 .contact{
-  background:white;
+  background:#f5f8fa;
 }
 
 .contact-box{
   max-width:850px;
   margin:auto;
-  background:#f5f8fa;
+  background:white;
   padding:35px;
   border-radius:9px;
+  box-shadow:0 5px 25px rgba(0,0,0,.07);
 }
 
 .notice{
@@ -651,6 +659,7 @@ section{
   text-align:center;
   color:white;
   padding:75px 20px;
+
   background:
   linear-gradient(rgba(4,58,85,.92),rgba(4,58,85,.92)),
   url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85")
@@ -684,17 +693,10 @@ footer{
 }
 
 .footer-logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
   color:white;
   font-size:24px;
   font-weight:bold;
-}
-
-.footer-logo svg{
-  width:42px;
-  height:42px;
+  margin-bottom:15px;
 }
 
 .footer-logo span{
@@ -782,6 +784,7 @@ footer a{
   nav a{
     padding:16px 22px;
     border-bottom:1px solid #eee;
+    width:100%;
   }
 
   .nav-buy{
@@ -798,17 +801,6 @@ footer a{
 
   .hero p{
     font-size:17px;
-  }
-
-  .contact-bar{
-    margin:-35px 15px 0;
-    padding:20px;
-  }
-
-  .contact-bar-title{
-    width:100%;
-    text-align:center;
-    margin:0;
   }
 
   section{
@@ -841,7 +833,7 @@ footer a{
     grid-column:auto;
   }
 
-  .build-box,
+  .find-box,
   .contact-box{
     padding:22px;
   }
@@ -858,6 +850,8 @@ footer a{
 </head>
 
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -920,10 +914,10 @@ onclick="toggleMenu()">
 
 <nav id="nav">
 
-<a href="#homes">Buy a Home</a>
+<a href="#finder">Find My Home</a>
+<a href="#homes">Homes</a>
 <a href="#locations">Locations</a>
 <a href="#how">How It Works</a>
-<a href="#build">Build a Home</a>
 <a href="#contact" class="nav-buy">Contact Us</a>
 
 </nav>
@@ -932,6 +926,8 @@ onclick="toggleMenu()">
 
 </header>
 
+
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -942,19 +938,19 @@ TRUEHOME REALTY
 </div>
 
 <h1>
-Buy Your Home With Confidence.
+Find A Home That Fits Your Life & Budget.
 </h1>
 
 <p>
-Explore beautiful homes in Canada and Australia.
-Find a property you love and contact us for
-more information.
+Tell us what type of home you want, how many
+bedrooms you need, where you want to live and
+your budget. We'll help you explore suitable options.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#homes" class="btn btn-primary">
-🏠 Buy Your Home
+<a href="#finder" class="btn btn-primary">
+🏠 Find My Home
 </a>
 
 <a href="#contact" class="btn btn-white">
@@ -968,20 +964,430 @@ more information.
 </section>
 
 
-<div class="contact-bar">
+<!-- ================= HOME FINDER ================= -->
 
-<div class="contact-bar-title">
-Looking for a home?
+<section class="find-section" id="finder">
+
+<div class="container">
+
+<div class="heading">
+
+<span>Personal Home Search</span>
+
+<h2>Tell Us What Home You Want</h2>
+
+<p>
+Choose your preferred home type, size, location,
+features and budget.
+</p>
+
 </div>
 
+
+<div class="find-box">
+
+<div class="form-grid">
+
+
+<!-- COUNTRY -->
+
+<div class="field">
+
+<label>Where do you want your home?</label>
+
+<select id="country">
+
+<option value="Canada">🇨🇦 Canada</option>
+<option value="Australia">🇦🇺 Australia</option>
+
+</select>
+
+</div>
+
+
+<!-- CITY -->
+
+<div class="field">
+
+<label>Preferred City</label>
+
+<input
+type="text"
+id="city"
+placeholder="Example: Toronto, Sydney">
+
+</div>
+
+
+<!-- HOME TYPE -->
+
+<div class="field">
+
+<label>What type of home do you want?</label>
+
+<select id="homeType">
+
+<option value="Detached House">
+🏠 Detached House
+</option>
+
+<option value="Townhouse">
+🏘️ Townhouse
+</option>
+
+<option value="Apartment">
+🏢 Apartment
+</option>
+
+<option value="Condominium">
+🏙️ Condominium
+</option>
+
+<option value="Luxury Villa">
+🏡 Luxury Villa
+</option>
+
+<option value="Bungalow">
+🏠 Bungalow
+</option>
+
+</select>
+
+</div>
+
+
+<!-- BEDROOMS -->
+
+<div class="field">
+
+<label>How many bedrooms?</label>
+
+<select id="bedrooms">
+
+<option value="1">1 Bedroom</option>
+<option value="2">2 Bedrooms</option>
+<option value="3" selected>3 Bedrooms</option>
+<option value="4">4 Bedrooms</option>
+<option value="5">5 Bedrooms</option>
+<option value="6+">6+ Bedrooms</option>
+
+</select>
+
+</div>
+
+
+<!-- BATHROOMS -->
+
+<div class="field">
+
+<label>How many bathrooms?</label>
+
+<select id="bathrooms">
+
+<option value="1">1 Bathroom</option>
+<option value="2" selected>2 Bathrooms</option>
+<option value="3">3 Bathrooms</option>
+<option value="4">4 Bathrooms</option>
+<option value="5+">5+ Bathrooms</option>
+
+</select>
+
+</div>
+
+
+<!-- FLOORS -->
+
+<div class="field">
+
+<label>Number of floors</label>
+
+<select id="floors">
+
+<option value="1">1 Floor</option>
+<option value="2">2 Floors</option>
+<option value="3">3 Floors</option>
+<option value="4+">4+ Floors</option>
+
+</select>
+
+</div>
+
+
+<!-- BUDGET -->
+
+<div class="field full">
+
+<label>
+What is your maximum budget?
+</label>
+
+<div class="budget-box">
+
+<div class="budget-display">
+$<span id="budgetValue">500,000</span>
+</div>
+
+<input
+type="range"
+id="budget"
+class="budget-range"
+min="50000"
+max="5000000"
+step="25000"
+value="500000"
+oninput="updateBudget()">
+
+<div style="
+display:flex;
+justify-content:space-between;
+font-size:12px;
+color:#66737c;
+margin-top:5px;">
+
+<span>$50,000</span>
+<span>$5,000,000</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FEATURES -->
+
+<div class="field full">
+
+<label>
+What features do you want?
+</label>
+
+<div class="options">
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="garage">
+
+<label for="garage">
+🚗 Garage
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="garden">
+
+<label for="garden">
+🌳 Garden
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="pool">
+
+<label for="pool">
+🏊 Swimming Pool
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="office">
+
+<label for="office">
+💼 Home Office
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="balcony">
+
+<label for="balcony">
+🌇 Balcony
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="basement">
+
+<label for="basement">
+🏠 Basement
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="parking">
+
+<label for="parking">
+🚘 Extra Parking
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="checkbox"
+id="smart">
+
+<label for="smart">
+📱 Smart Home
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DESCRIPTION -->
+
+<div class="field full">
+
+<label>
+Anything else you want?
+</label>
+
+<textarea
+id="requirements"
+placeholder="Example: I want a modern kitchen, large backyard, quiet neighborhood, close to schools..."></textarea>
+
+</div>
+
+
+<!-- CUSTOMER NAME -->
+
+<div class="field">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Your full name">
+
+</div>
+
+
+<!-- CUSTOMER EMAIL -->
+
+<div class="field">
+
+<label>
+Your Email
+</label>
+
+<input
+type="email"
+id="customerEmail"
+placeholder="you@example.com">
+
+</div>
+
+
+<!-- BUTTON -->
+
+<div class="full">
+
+<button
+type="button"
+class="btn btn-primary"
+onclick="findHome()">
+
+🔎 Find Homes For Me
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div
+class="find-result"
+id="findResult">
+
+<h3>
+🏠 Your Home Search Request
+</h3>
+
+<p>
+Based on the information you provided,
+these are the requirements you selected:
+</p>
+
+<div
+class="result-details"
+id="resultDetails">
+</div>
+
+<p class="result-note">
+TrueHome Realty will review your requirements
+and provide available property information.
+Property availability, prices and details must
+be confirmed before making a purchase decision.
+</p>
+
+<div class="email-request">
+
 <a
-href="mailto:truehomerealty01@gmail.com?subject=TrueHome%20Realty%20Property%20Inquiry"
-class="email-btn">
-✉️ Email TrueHome Realty
+id="sendRequest"
+href="#"
+class="btn btn-primary">
+
+✉️ Send My Home Request
+
 </a>
 
 </div>
 
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HOMES ================= -->
 
 <section class="buy-section" id="homes">
 
@@ -989,13 +1395,14 @@ class="email-btn">
 
 <div class="heading">
 
-<span>Buy Your Home</span>
+<span>Featured Homes</span>
 
-<h2>Find Your Next Home</h2>
+<h2>Example Properties</h2>
 
 <p>
-Explore our featured homes and contact us
-about any property you are interested in.
+These are examples of the types of homes you
+may be able to explore. Contact us for current
+availability.
 </p>
 
 </div>
@@ -1010,10 +1417,10 @@ about any property you are interested in.
 
 <img
 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-alt="Modern family home">
+alt="Modern detached house">
 
 <div class="badge">
-FEATURED
+DETACHED
 </div>
 
 </div>
@@ -1029,17 +1436,21 @@ Modern Family Home
 </div>
 
 <div class="property-info">
+
 <span>🛏 3 Beds</span>
 <span>🚿 2 Baths</span>
 <span>📐 180 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
 <a
-href="mailto:truehomerealty01@gmail.com?subject=Interest%20in%20Modern%20Family%20Home%20-%20Canada&body=Hello%20TrueHome%20Realty%2C%0A%0AI%20am%20interested%20in%20the%20Modern%20Family%20Home%20in%20Canada.%0A%0APlease%20send%20me%20more%20information."
+href="#finder"
 class="message-property">
-✉️ Ask About This Home
+
+Choose A Home Like This
+
 </a>
 
 </div>
@@ -1074,17 +1485,21 @@ Contemporary Luxury Villa
 </div>
 
 <div class="property-info">
+
 <span>🛏 4 Beds</span>
 <span>🚿 3 Baths</span>
 <span>📐 260 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
 <a
-href="mailto:truehomerealty01@gmail.com?subject=Interest%20in%20Contemporary%20Luxury%20Villa%20-%20Australia&body=Hello%20TrueHome%20Realty%2C%0A%0AI%20am%20interested%20in%20the%20Contemporary%20Luxury%20Villa%20in%20Australia.%0A%0APlease%20send%20me%20more%20information."
+href="#finder"
 class="message-property">
-✉️ Ask About This Home
+
+Choose A Home Like This
+
 </a>
 
 </div>
@@ -1103,7 +1518,7 @@ src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fi
 alt="Modern townhouse">
 
 <div class="badge">
-NEW
+TOWNHOUSE
 </div>
 
 </div>
@@ -1119,17 +1534,21 @@ Modern Townhouse
 </div>
 
 <div class="property-info">
+
 <span>🛏 3 Beds</span>
 <span>🚿 2 Baths</span>
 <span>📐 195 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
 <a
-href="mailto:truehomerealty01@gmail.com?subject=Interest%20in%20Modern%20Townhouse%20-%20Canada&body=Hello%20TrueHome%20Realty%2C%0A%0AI%20am%20interested%20in%20the%20Modern%20Townhouse%20in%20Canada.%0A%0APlease%20send%20me%20more%20information."
+href="#finder"
 class="message-property">
-✉️ Ask About This Home
+
+Choose A Home Like This
+
 </a>
 
 </div>
@@ -1146,62 +1565,81 @@ class="message-property">
 </section>
 
 
+<!-- ================= HOW IT WORKS ================= -->
+
 <section class="how" id="how">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Buying A Home</span>
+<span>Simple Process</span>
 
 <h2>How It Works</h2>
 
 <p>
-Finding your next home is simple.
+Tell us what you need and we'll help you
+explore suitable home options.
 </p>
 
 </div>
 
 <div class="steps">
 
+
 <div class="step">
 
-<div class="step-number">1</div>
+<div class="step-number">
+1
+</div>
 
-<h3>Choose a Home</h3>
+<h3>
+Tell Us Your Requirements
+</h3>
 
 <p>
-Browse the homes available and choose
-a property you like.
+Choose your location, home type,
+bedrooms, features and budget.
 </p>
 
 </div>
 
+
 <div class="step">
 
-<div class="step-number">2</div>
+<div class="step-number">
+2
+</div>
 
-<h3>Contact Us</h3>
+<h3>
+Send Your Request
+</h3>
 
 <p>
-Send TrueHome Realty an inquiry about
-the property you are interested in.
+Submit your requirements and
+contact information to us.
 </p>
 
 </div>
 
+
 <div class="step">
 
-<div class="step-number">3</div>
+<div class="step-number">
+3
+</div>
 
-<h3>Get Information</h3>
+<h3>
+Explore Your Options
+</h3>
 
 <p>
-Our team can provide further property
-information and explain the next steps.
+We can provide available property
+information and next steps.
 </p>
 
 </div>
+
 
 </div>
 
@@ -1209,6 +1647,8 @@ information and explain the next steps.
 
 </section>
 
+
+<!-- ================= LOCATIONS ================= -->
 
 <section class="locations" id="locations">
 
@@ -1218,14 +1658,15 @@ information and explain the next steps.
 
 <span>Our Locations</span>
 
-<h2>Explore Homes By Location</h2>
+<h2>Canada & Australia</h2>
 
 <p>
-Explore residential properties in Canada
-and Australia.
+Explore residential property opportunities
+in our selected locations.
 </p>
 
 </div>
+
 
 <div class="location-grid">
 
@@ -1236,19 +1677,23 @@ style="background-image:url('https://images.unsplash.com/photo-1600585154526-990
 
 <div class="location-content">
 
-<h3>🇨🇦 Canada</h3>
+<h3>
+🇨🇦 Canada
+</h3>
 
 <p>
-Explore homes and residential properties
-in Canada.
+Find homes in Canadian cities and
+residential communities.
 </p>
 
 <br>
 
 <a
-href="#homes"
+href="#finder"
 class="btn btn-gold">
-View Canadian Homes
+
+Find A Canadian Home
+
 </a>
 
 </div>
@@ -1262,19 +1707,23 @@ style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5b
 
 <div class="location-content">
 
-<h3>🇦🇺 Australia</h3>
+<h3>
+🇦🇺 Australia
+</h3>
 
 <p>
-Explore contemporary homes and residential
-properties in Australia.
+Explore residential properties
+across Australia.
 </p>
 
 <br>
 
 <a
-href="#homes"
+href="#finder"
 class="btn btn-gold">
-View Australian Homes
+
+Find An Australian Home
+
 </a>
 
 </div>
@@ -1288,6 +1737,8 @@ View Australian Homes
 
 </section>
 
+
+<!-- ================= WHY TRUEHOME ================= -->
 
 <section class="feature-section">
 
@@ -1299,287 +1750,100 @@ View Australian Homes
 
 <img
 src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-alt="Beautiful modern house">
+alt="Beautiful modern home">
 
 </div>
+
 
 <div class="feature-content">
 
-<span>Why TrueHome Realty</span>
+<span>
+Why TrueHome Realty
+</span>
 
 <h2>
-A simpler way to find your next home.
+Your home search starts with what you need.
 </h2>
 
 <p>
-Browse residential properties, explore locations
-and contact us about the home you are interested in.
+Instead of searching randomly, tell us the
+type of home you want, your preferred location,
+your requirements and your budget.
 </p>
+
 
 <div class="feature-list">
 
-<div class="feature-item">
-
-<div class="feature-icon">⌂</div>
-
-<div>
-<strong>Beautiful Homes</strong><br>
-Explore properties.
-</div>
-
-</div>
-
 
 <div class="feature-item">
 
-<div class="feature-icon">🌎</div>
+<div class="feature-icon">
+⌂
+</div>
 
 <div>
-<strong>Great Locations</strong><br>
-Canada & Australia.
-</div>
-
-</div>
-
-
-<div class="feature-item">
-
-<div class="feature-icon">✉</div>
-
-<div>
-<strong>Easy Contact</strong><br>
-Email us directly.
-</div>
-
-</div>
-
-
-<div class="feature-item">
-
-<div class="feature-icon">✓</div>
-
-<div>
-<strong>Simple Process</strong><br>
-Get property information.
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section class="build-section" id="build">
-
-<div class="container">
-
-<div class="heading">
-
-<span>Secondary Service</span>
-
-<h2>Want To Build Your Home?</h2>
-
-<p>
-If you prefer to build instead of buying an existing
-home, tell us about the home you would like.
-</p>
-
-</div>
-
-
-<div class="build-box">
-
-<div class="form-grid">
-
-<div class="field">
-
-<label>Country</label>
-
-<select id="buildCountry">
-<option>Canada</option>
-<option>Australia</option>
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>Home Type</label>
-
-<select id="buildType">
-<option>Detached House</option>
-<option>Townhouse</option>
-<option>Luxury Villa</option>
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>House Size (m²)</label>
-
-<input
-type="number"
-id="buildSize"
-value="180"
-min="30">
-
-</div>
-
-
-<div class="field">
-
-<label>Bedrooms</label>
-
-<select id="buildBedrooms">
-
-<option>1</option>
-<option>2</option>
-<option selected>3</option>
-<option>4</option>
-<option>5</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>Bathrooms</label>
-
-<select id="buildBathrooms">
-
-<option>1</option>
-<option selected>2</option>
-<option>3</option>
-<option>4</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>Floors</label>
-
-<select id="buildFloors">
-
-<option selected>1</option>
-<option>2</option>
-<option>3</option>
-
-</select>
-
-</div>
-
-
-<div class="field full">
-
-<label>Features</label>
-
-<div class="options">
-
-<label>
-<input type="checkbox" id="buildGarage">
-Garage
-</label>
-
-<label>
-<input type="checkbox" id="buildGarden">
-Garden
-</label>
-
-<label>
-<input type="checkbox" id="buildPool">
-Swimming Pool
-</label>
-
-<label>
-<input type="checkbox" id="buildOffice">
-Home Office
-</label>
-
-</div>
-
-</div>
-
-
-<div class="field full">
-
-<label>Describe Your Home</label>
-
-<textarea
-id="buildDescription"
-placeholder="Describe the home you would like to build..."></textarea>
-
-</div>
-
-</div>
-
+<strong>
+Choose Your Home Type
+</strong>
 <br>
-
-<button
-class="btn btn-primary"
-onclick="generateHouse()">
-Create Home Concept
-</button>
-
-
-<div
-class="preview"
-id="preview">
-
-<h3>
-Your Home Concept
-</h3>
-
-<div class="floor-plan">
-
-<div class="room">
-Living Room
-</div>
-
-<div class="room">
-Kitchen
-</div>
-
-<div
-class="room"
-id="buildRoom3">
-Bedrooms
-</div>
-
-<div
-class="room"
-id="buildRoom4">
-Bathrooms
+House, townhouse, apartment or villa.
 </div>
 
 </div>
 
-<div
-class="summary"
-id="buildSummary">
+
+<div class="feature-item">
+
+<div class="feature-icon">
+💰
 </div>
 
+<div>
+<strong>
+Set Your Budget
+</strong>
 <br>
+Tell us your maximum budget.
+</div>
 
-<a
-href="mailto:truehomerealty01@gmail.com?subject=TrueHome%20Realty%20Home%20Building%20Inquiry"
-class="btn btn-primary">
-✉️ Send This Request
-</a>
+</div>
+
+
+<div class="feature-item">
+
+<div class="feature-icon">
+🛏
+</div>
+
+<div>
+<strong>
+Choose Bedrooms
+</strong>
+<br>
+Select the number of bedrooms.
+</div>
+
+</div>
+
+
+<div class="feature-item">
+
+<div class="feature-icon">
+📍
+</div>
+
+<div>
+<strong>
+Choose Location
+</strong>
+<br>
+Canada or Australia.
+</div>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -1590,25 +1854,7 @@ class="btn btn-primary">
 </section>
 
 
-<section class="cta">
-
-<h2>
-Ready To Buy Your Home?
-</h2>
-
-<p>
-Choose a home and contact TrueHome Realty
-for more information.
-</p>
-
-<a
-href="#homes"
-class="btn btn-gold">
-🏠 Buy Your Home
-</a>
-
-</section>
-
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -1616,12 +1862,17 @@ class="btn btn-gold">
 
 <div class="heading">
 
-<span>Contact TrueHome Realty</span>
+<span>
+Contact TrueHome Realty
+</span>
 
-<h2>Message Us About A Home</h2>
+<h2>
+Talk To Our Team
+</h2>
 
 <p>
-Tell us which property you are interested in.
+Have a question about buying a home?
+Send us your message.
 </p>
 
 </div>
@@ -1631,24 +1882,31 @@ Tell us which property you are interested in.
 
 <div class="notice">
 
-<strong>Property Inquiry:</strong>
-Send your details and the property you
-would like to ask about.
+<strong>
+Email:
+</strong>
+
+truehomerealty01@gmail.com
 
 </div>
 
 
-<form onsubmit="submitForm(event)">
+<form
+onsubmit="contactForm(event)">
+
 
 <div class="form-grid">
 
+
 <div class="field">
 
-<label>Full Name</label>
+<label>
+Full Name
+</label>
 
 <input
 type="text"
-id="name"
+id="contactName"
 required
 placeholder="Your full name">
 
@@ -1657,48 +1915,29 @@ placeholder="Your full name">
 
 <div class="field">
 
-<label>Email</label>
+<label>
+Email
+</label>
 
 <input
 type="email"
-id="email"
+id="contactEmail"
 required
-placeholder="you@example.com">
-
-</div>
-
-
-<div class="field">
-
-<label>Phone</label>
-
-<input
-type="tel"
-id="phone"
-placeholder="Your phone number">
-
-</div>
-
-
-<div class="field">
-
-<label>Property</label>
-
-<input
-type="text"
-id="selectedProperty"
-placeholder="Property you are interested in">
+placeholder="Your email">
 
 </div>
 
 
 <div class="field full">
 
-<label>Message</label>
+<label>
+Message
+</label>
 
 <textarea
-id="message"
-placeholder="Tell us what you would like to know..."></textarea>
+id="contactMessage"
+required
+placeholder="How can we help you?"></textarea>
 
 </div>
 
@@ -1708,19 +1947,28 @@ placeholder="Tell us what you would like to know..."></textarea>
 <button
 type="submit"
 class="btn btn-primary">
-✉️ Send Inquiry By Email
+
+✉️ Send Message
+
 </button>
 
 </div>
+
 
 </div>
 
 </form>
 
+
 <p
-id="formMessage"
-style="margin-top:18px;font-weight:bold;">
+id="contactMessageStatus"
+style="
+margin-top:18px;
+font-weight:bold;
+color:#087db8;
+">
 </p>
+
 
 </div>
 
@@ -1729,40 +1977,40 @@ style="margin-top:18px;font-weight:bold;">
 </section>
 
 
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>
+Ready To Find Your Home?
+</h2>
+
+<p>
+Tell us what you want and your budget.
+Let's start your home search.
+</p>
+
+<a
+href="#finder"
+class="btn btn-gold">
+
+🏠 Start My Home Search
+
+</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
 <div class="footer-grid">
 
+
 <div>
 
 <div class="footer-logo">
-
-<svg
-viewBox="0 0 100 100"
-xmlns="http://www.w3.org/2000/svg">
-
-<path
-d="M12 45 L50 14 L88 45"
-fill="none"
-stroke="#55bce8"
-stroke-width="9"
-stroke-linecap="round"
-stroke-linejoin="round"/>
-
-<path
-d="M22 42 V83 H78 V42"
-fill="none"
-stroke="white"
-stroke-width="8"
-stroke-linejoin="round"/>
-
-<path
-d="M43 83 V58 H57 V83"
-fill="none"
-stroke="#d4af37"
-stroke-width="7"/>
-
-</svg>
 
 True<span>Home Realty</span>
 
@@ -1770,17 +2018,13 @@ True<span>Home Realty</span>
 
 <p>
 Helping people find homes and explore
-residential properties.
+residential properties in Canada and Australia.
 </p>
 
 <br>
 
 <p>
-Email:
-<br>
-<a href="mailto:truehomerealty01@gmail.com">
-truehomerealty01@gmail.com
-</a>
+📧 truehomerealty01@gmail.com
 </p>
 
 </div>
@@ -1788,36 +2032,62 @@ truehomerealty01@gmail.com
 
 <div>
 
-<h4>Buy</h4>
+<h4>
+Buy
+</h4>
 
-<a href="#homes">Buy Your Home</a>
-<a href="#locations">Locations</a>
-<a href="#how">How It Works</a>
+<a href="#finder">
+Find My Home
+</a>
+
+<a href="#homes">
+Featured Homes
+</a>
+
+<a href="#locations">
+Locations
+</a>
 
 </div>
 
 
 <div>
 
-<h4>Services</h4>
+<h4>
+Services
+</h4>
 
-<a href="#build">Build Your Home</a>
-<a href="#contact">Property Inquiry</a>
+<a href="#finder">
+Home Search
+</a>
+
+<a href="#how">
+How It Works
+</a>
+
+<a href="#contact">
+Property Inquiry
+</a>
 
 </div>
 
 
 <div>
 
-<h4>Contact</h4>
-
-<a href="#contact">Contact Us</a>
+<h4>
+Contact
+</h4>
 
 <a href="mailto:truehomerealty01@gmail.com">
 Email Us
 </a>
 
+<a href="#contact">
+Contact Form
+</a>
+
 </div>
+
 
 </div>
 
@@ -1828,13 +2098,15 @@ Email Us
 
 <br><br>
 
-Property information and availability should
-be confirmed before making a purchase decision.
+Property information, pricing and availability
+must be confirmed before making a purchase decision.
 
 </div>
 
 </footer>
 
+
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
@@ -1849,117 +2121,276 @@ document
 }
 
 
-/* ================= BUILD HOME ================= */
+/* ================= BUDGET ================= */
 
-function generateHouse(){
+function updateBudget(){
 
-const country =
-document.getElementById("buildCountry").value;
+const budget =
+document.getElementById("budget").value;
 
-const type =
-document.getElementById("buildType").value;
-
-const size =
-document.getElementById("buildSize").value;
-
-const bedrooms =
-document.getElementById("buildBedrooms").value;
-
-const bathrooms =
-document.getElementById("buildBathrooms").value;
-
-const floors =
-document.getElementById("buildFloors").value;
-
-const description =
 document
-.getElementById("buildDescription")
-.value
-.trim();
+.getElementById("budgetValue")
+.innerText =
+Number(budget).toLocaleString();
+
+}
+
+
+/* ================= GET FEATURES ================= */
+
+function getFeatures(){
 
 const features = [];
 
-if(
-document.getElementById("buildGarage").checked
-)
-features.push("Garage");
+const featureIds = [
 
-if(
-document.getElementById("buildGarden").checked
-)
-features.push("Garden");
+["garage","Garage"],
+["garden","Garden"],
+["pool","Swimming Pool"],
+["office","Home Office"],
+["balcony","Balcony"],
+["basement","Basement"],
+["parking","Extra Parking"],
+["smart","Smart Home"]
 
-if(
-document.getElementById("buildPool").checked
-)
-features.push("Swimming Pool");
+];
 
-if(
-document.getElementById("buildOffice").checked
-)
-features.push("Home Office");
+featureIds.forEach(function(item){
 
+const checkbox =
+document.getElementById(item[0]);
+
+if(checkbox.checked){
+
+features.push(item[1]);
+
+}
+
+});
+
+return features;
+
+}
+
+
+/* ================= FIND HOME ================= */
+
+function findHome(){
+
+const country =
+document.getElementById("country").value;
+
+const city =
+document.getElementById("city").value.trim();
+
+const homeType =
+document.getElementById("homeType").value;
+
+const bedrooms =
+document.getElementById("bedrooms").value;
+
+const bathrooms =
+document.getElementById("bathrooms").value;
+
+const floors =
+document.getElementById("floors").value;
+
+const budget =
+document.getElementById("budget").value;
+
+const requirements =
+document
+.getElementById("requirements")
+.value
+.trim();
+
+const customerName =
+document
+.getElementById("customerName")
+.value
+.trim();
+
+const customerEmail =
+document
+.getElementById("customerEmail")
+.value
+.trim();
+
+const features =
+getFeatures();
+
+
+if(!customerName){
+
+alert("Please enter your name.");
 
 document
-.getElementById("buildRoom3")
-.innerText =
-bedrooms + " Bedroom(s)";
+.getElementById("customerName")
+.focus();
 
+return;
+
+}
+
+
+if(!customerEmail){
+
+alert("Please enter your email.");
 
 document
-.getElementById("buildRoom4")
-.innerText =
-bathrooms + " Bathroom(s)";
+.getElementById("customerEmail")
+.focus();
+
+return;
+
+}
 
 
-document
-.getElementById("buildSummary")
-.innerHTML =
+const details = `
 
-"<strong>Country:</strong> " +
-country +
+<strong>Customer:</strong>
+${escapeHTML(customerName)}
 
-"<br><strong>Home Type:</strong> " +
-type +
+<br>
 
-"<br><strong>Size:</strong> " +
-size + " m²" +
+<strong>Email:</strong>
+${escapeHTML(customerEmail)}
 
-"<br><strong>Bedrooms:</strong> " +
-bedrooms +
+<br>
 
-"<br><strong>Bathrooms:</strong> " +
-bathrooms +
+<strong>Country:</strong>
+${escapeHTML(country)}
 
-"<br><strong>Floors:</strong> " +
-floors +
+<br>
 
-"<br><strong>Features:</strong> " +
-(
+<strong>Preferred City:</strong>
+${escapeHTML(city || "Not specified")}
+
+<br>
+
+<strong>Home Type:</strong>
+${escapeHTML(homeType)}
+
+<br>
+
+<strong>Bedrooms:</strong>
+${escapeHTML(bedrooms)}
+
+<br>
+
+<strong>Bathrooms:</strong>
+${escapeHTML(bathrooms)}
+
+<br>
+
+<strong>Floors:</strong>
+${escapeHTML(floors)}
+
+<br>
+
+<strong>Maximum Budget:</strong>
+$${Number(budget).toLocaleString()}
+
+<br>
+
+<strong>Features:</strong>
+${escapeHTML(
 features.length
-?
-features.join(", ")
-:
-"None selected"
-) +
+? features.join(", ")
+: "No specific features selected"
+)}
 
-"<br><strong>Description:</strong> " +
-(
-description ||
-"No description provided."
+<br>
+
+<strong>Additional Requirements:</strong>
+${escapeHTML(
+requirements || "None provided"
+)}
+
+`;
+
+
+document
+.getElementById("resultDetails")
+.innerHTML =
+details;
+
+
+const emailSubject =
+encodeURIComponent(
+"TrueHome Realty - Home Search Request"
+);
+
+
+const emailBody =
+encodeURIComponent(
+
+`Hello TrueHome Realty,
+
+I would like help finding a home.
+
+Customer Name:
+${customerName}
+
+Customer Email:
+${customerEmail}
+
+Country:
+${country}
+
+Preferred City:
+${city || "Not specified"}
+
+Home Type:
+${homeType}
+
+Bedrooms:
+${bedrooms}
+
+Bathrooms:
+${bathrooms}
+
+Floors:
+${floors}
+
+Maximum Budget:
+$${Number(budget).toLocaleString()}
+
+Features:
+${features.length ? features.join(", ") : "None specified"}
+
+Additional Requirements:
+${requirements || "None provided"}
+
+Thank you.
+`
+
 );
 
 
 document
-.getElementById("preview")
+.getElementById("sendRequest")
+.href =
+"mailto:truehomerealty01@gmail.com?subject="
++
+emailSubject
++
+"&body="
++
+emailBody;
+
+
+document
+.getElementById("findResult")
 .style.display =
 "block";
 
 
 document
-.getElementById("preview")
+.getElementById("findResult")
 .scrollIntoView({
-behavior:"smooth"
+behavior:"smooth",
+block:"center"
 });
 
 }
@@ -1967,84 +2398,111 @@ behavior:"smooth"
 
 /* ================= CONTACT FORM ================= */
 
-function submitForm(event){
+function contactForm(event){
 
 event.preventDefault();
 
 
 const name =
-document.getElementById("name")
+document
+.getElementById("contactName")
 .value
 .trim();
 
 const email =
-document.getElementById("email")
-.value
-.trim();
-
-const phone =
-document.getElementById("phone")
-.value
-.trim();
-
-const property =
-document.getElementById("selectedProperty")
+document
+.getElementById("contactEmail")
 .value
 .trim();
 
 const message =
-document.getElementById("message")
+document
+.getElementById("contactMessage")
 .value
 .trim();
 
 
-/* TRUEHOME REALTY EMAIL */
-
-const receivingEmail =
-"truehomerealty01@gmail.com";
-
-
 const subject =
 encodeURIComponent(
-"TrueHome Realty Property Inquiry"
+"TrueHome Realty - Website Contact"
 );
 
 
 const body =
 encodeURIComponent(
 
-`TrueHome Realty Property Inquiry
+`Hello TrueHome Realty,
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
+Name:
+${name}
 
-Property:
-${property || "Not specified"}
+Email:
+${email}
 
 Message:
-${message || "No additional message."}`
+${message}
+`
 
 );
 
 
 document
-.getElementById("formMessage")
+.getElementById("contactMessageStatus")
 .innerText =
 "Opening your email application...";
 
 
 window.location.href =
-"mailto:" +
-receivingEmail +
-"?subject=" +
-subject +
-"&body=" +
+"mailto:truehomerealty01@gmail.com"
++
+"?subject="
++
+subject
++
+"&body="
++
 body;
 
 }
 
+
+/* ================= SECURITY ================= */
+
+function escapeHTML(value){
+
+return String(value)
+
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* ================= CLOSE MOBILE MENU ================= */
+
+document
+.querySelectorAll("#nav a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+document
+.getElementById("nav")
+.classList.remove("active");
+
+});
+
+});
+
+
+/* ================= INITIAL BUDGET ================= */
+
+updateBudget();
+
 </script>
 
 </body>
-   </html>
+  </html>
