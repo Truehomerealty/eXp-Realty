@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>TrueHome Realty | Find Your Home</title>
+<title>TrueHome Realty | Buy Your Home</title>
 
 <meta name="description"
-content="TrueHome Realty helps you explore homes for sale, find properties by location and price, and submit property inquiries.">
+content="TrueHome Realty helps you find and inquire about homes for sale in Canada and Australia.">
 
 <style>
 *{
@@ -33,6 +33,7 @@ body{
   --deep:#052c42;
   --light:#f4f8fa;
   --gold:#d4af37;
+  --green:#25D366;
   --gray:#66737c;
   --white:#fff;
 }
@@ -66,7 +67,7 @@ header{
 .header-inner{
   max-width:1250px;
   margin:auto;
-  padding:14px 22px;
+  padding:12px 22px;
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -75,29 +76,12 @@ header{
 .logo{
   display:flex;
   align-items:center;
-  gap:10px;
 }
 
-.logo-mark{
-  width:46px;
-  height:46px;
-  background:var(--blue);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  font-size:25px;
-}
-
-.logo-text{
-  font-size:23px;
-  font-weight:800;
-  color:var(--deep);
-}
-
-.logo-text span{
-  color:var(--blue);
+.logo img{
+  height:58px;
+  width:auto;
+  object-fit:contain;
 }
 
 nav{
@@ -140,8 +124,8 @@ nav a:hover{
   background:
   linear-gradient(
     90deg,
-    rgba(3,39,59,.93),
-    rgba(3,39,59,.65),
+    rgba(3,39,59,.94),
+    rgba(3,39,59,.68),
     rgba(3,39,59,.15)
   ),
   url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
@@ -215,44 +199,47 @@ nav a:hover{
   color:var(--deep);
 }
 
-/* ================= SEARCH ================= */
+.btn-whatsapp{
+  background:var(--green);
+  color:white;
+}
 
-.search-wrap{
+/* ================= BUY CTA ================= */
+
+.buy-contact{
   position:relative;
   margin-top:-65px;
   padding:0 20px;
   z-index:5;
 }
 
-.search-box{
+.buy-contact-box{
   max-width:1100px;
   margin:auto;
   background:white;
-  border-radius:8px;
-  padding:27px;
+  border-radius:9px;
+  padding:28px;
   box-shadow:0 8px 35px rgba(0,0,0,.18);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
-.search-title{
+.buy-contact-text h2{
   color:var(--deep);
-  font-size:21px;
-  font-weight:800;
-  margin-bottom:16px;
+  font-size:26px;
+  margin-bottom:5px;
 }
 
-.search-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr 1fr auto;
-  gap:12px;
+.buy-contact-text p{
+  color:var(--gray);
 }
 
-.search-grid input,
-.search-grid select{
-  width:100%;
-  border:1px solid #d2dce1;
-  padding:13px;
-  border-radius:4px;
-  background:white;
+.contact-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
 /* ================= GENERAL ================= */
@@ -368,12 +355,13 @@ section{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:10px;
   margin-top:18px;
 }
 
 .price{
   color:var(--blue);
-  font-size:20px;
+  font-size:19px;
   font-weight:800;
 }
 
@@ -463,7 +451,7 @@ section{
   font-size:28px;
 }
 
-/* ================= FEATURE ================= */
+/* ================= WHY TRUEHOME ================= */
 
 .feature-section{
   background:var(--deep);
@@ -642,6 +630,29 @@ section{
   margin-bottom:25px;
 }
 
+.direct-contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin-bottom:30px;
+}
+
+.direct-contact a{
+  padding:20px;
+  border-radius:7px;
+  text-align:center;
+  font-weight:bold;
+  color:white;
+}
+
+.email-contact{
+  background:var(--blue);
+}
+
+.whatsapp-contact{
+  background:var(--green);
+}
+
 /* ================= CTA ================= */
 
 .cta{
@@ -739,10 +750,6 @@ footer a{
     font-size:48px;
   }
 
-  .search-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
   .property-grid{
     grid-template-columns:1fr 1fr;
   }
@@ -754,12 +761,21 @@ footer a{
   .footer-grid{
     grid-template-columns:1fr 1fr;
   }
+
+  .buy-contact-box{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
 @media(max-width:650px){
 
   .header-inner{
-    padding:12px 17px;
+    padding:10px 17px;
+  }
+
+  .logo img{
+    height:48px;
   }
 
   .menu-btn{
@@ -802,10 +818,6 @@ footer a{
     font-size:17px;
   }
 
-  .search-grid{
-    grid-template-columns:1fr;
-  }
-
   section{
     padding:65px 18px;
   }
@@ -818,6 +830,11 @@ footer a{
   .steps,
   .location-grid{
     grid-template-columns:1fr;
+  }
+
+  .property-bottom{
+    align-items:flex-start;
+    flex-direction:column;
   }
 
   .feature-content h2{
@@ -848,41 +865,62 @@ footer a{
   .cta h2{
     font-size:32px;
   }
+
+  .direct-contact{
+    grid-template-columns:1fr;
+  }
+
+  .contact-buttons{
+    width:100%;
+  }
+
+  .contact-buttons .btn{
+    width:100%;
+    text-align:center;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header>
+
 <div class="header-inner">
 
 <a href="#" class="logo">
-<div class="logo-mark">⌂</div>
-<div class="logo-text">
-True<span>Home Realty</span>
-</div>
+
+<!-- PUT YOUR LOGO FILE IN THE SAME FOLDER AS index.html -->
+<img src="logo.png" alt="TrueHome Realty Logo">
+
 </a>
 
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 <nav id="nav">
 
-<a href="#homes">Buy a Home</a>
+<a href="#homes">Buy Your Home</a>
+
 <a href="#locations">Locations</a>
+
 <a href="#how">How It Works</a>
-<a href="#build">Build a Home</a>
-<a href="#contact" class="nav-buy">Contact Us</a>
+
+<a href="#build">Build Your Home</a>
+
+<a href="#contact" class="nav-buy">
+Contact Us
+</a>
 
 </nav>
 
 </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -893,13 +931,13 @@ TRUEHOME REALTY
 </div>
 
 <h1>
-Find a home that feels right for you.
+Buy Your Home With Confidence.
 </h1>
 
 <p>
-Explore homes for sale, discover properties in
-your preferred location and contact us about the
-home you want to buy.
+Explore homes for sale in Canada and Australia.
+Find a property you like and contact us directly
+by email or WhatsApp for more information.
 </p>
 
 <div class="hero-buttons">
@@ -908,8 +946,8 @@ home you want to buy.
 🏠 Buy Your Home
 </a>
 
-<a href="#locations" class="btn btn-white">
-Explore Locations
+<a href="#contact" class="btn btn-white">
+Contact Us
 </a>
 
 </div>
@@ -919,56 +957,36 @@ Explore Locations
 </section>
 
 
-<!-- SEARCH -->
+<!-- ================= CONTACT BAR ================= -->
 
-<div class="search-wrap">
+<div class="buy-contact">
 
-<div class="search-box">
+<div class="buy-contact-box">
 
-<div class="search-title">
-🔎 Search Homes For Sale
+<div class="buy-contact-text">
+
+<h2>Looking for a home?</h2>
+
+<p>
+Choose a property below and contact TrueHome Realty.
+</p>
+
 </div>
 
-<div class="search-grid">
+<div class="contact-buttons">
 
-<select id="searchCountry">
+<a
+href="#contact"
+class="btn btn-primary">
+📧 Email Us
+</a>
 
-<option value="all">All Locations</option>
-<option value="Canada">🇨🇦 Canada</option>
-<option value="Australia">🇦🇺 Australia</option>
-
-</select>
-
-<select id="searchType">
-
-<option value="all">Any Property Type</option>
-<option value="Detached House">Detached House</option>
-<option value="Townhouse">Townhouse</option>
-<option value="Apartment">Apartment</option>
-<option value="Luxury Villa">Luxury Villa</option>
-
-</select>
-
-<select id="searchBedrooms">
-
-<option value="all">Any Bedrooms</option>
-<option value="1">1+ Bedroom</option>
-<option value="2">2+ Bedrooms</option>
-<option value="3">3+ Bedrooms</option>
-<option value="4">4+ Bedrooms</option>
-
-</select>
-
-<input
-type="number"
-id="maxPrice"
-placeholder="Max price">
-
-<button
-class="btn btn-primary"
-onclick="searchHomes()">
-Search
-</button>
+<a
+href="https://wa.me/15551234567"
+target="_blank"
+class="btn btn-whatsapp">
+💬 WhatsApp Us
+</a>
 
 </div>
 
@@ -977,7 +995,7 @@ Search
 </div>
 
 
-<!-- BUY HOMES -->
+<!-- ================= BUY HOMES ================= -->
 
 <section class="buy-section" id="homes">
 
@@ -985,35 +1003,30 @@ Search
 
 <div class="heading">
 
-<span>Homes For Sale</span>
+<span>Buy Your Home</span>
 
-<h2>Find Your Next Home</h2>
+<h2>Homes For Sale</h2>
 
 <p>
-Browse our featured property listings and contact us
-for information about a property you are interested in.
+Explore our featured homes and contact us directly
+about any property you are interested in.
 </p>
 
 </div>
 
 
-<div class="property-grid" id="propertyGrid">
+<div class="property-grid">
 
 
 <!-- HOME 1 -->
 
-<article
-class="property-card"
-data-country="Canada"
-data-type="Detached House"
-data-bedrooms="3"
-data-price="10000">
+<article class="property-card">
 
 <div class="property-image">
 
 <img
 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-alt="Modern home for sale">
+alt="Modern family home">
 
 <div class="badge">
 FEATURED
@@ -1044,11 +1057,11 @@ From $10,000
 </div>
 
 <a
-href="#contact"
-onclick="selectProperty('Modern Family Home')"
-class="btn btn-primary"
+href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Modern%20Family%20Home%20in%20Canada."
+target="_blank"
+class="btn btn-whatsapp"
 style="padding:10px 15px">
-View
+Ask About Home
 </a>
 
 </div>
@@ -1060,12 +1073,7 @@ View
 
 <!-- HOME 2 -->
 
-<article
-class="property-card"
-data-country="Australia"
-data-type="Luxury Villa"
-data-bedrooms="4"
-data-price="15000">
+<article class="property-card">
 
 <div class="property-image">
 
@@ -1102,11 +1110,11 @@ From $15,000
 </div>
 
 <a
-href="#contact"
-onclick="selectProperty('Contemporary Luxury Villa')"
-class="btn btn-primary"
+href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Contemporary%20Luxury%20Villa%20in%20Australia."
+target="_blank"
+class="btn btn-whatsapp"
 style="padding:10px 15px">
-View
+Ask About Home
 </a>
 
 </div>
@@ -1118,18 +1126,13 @@ View
 
 <!-- HOME 3 -->
 
-<article
-class="property-card"
-data-country="Canada"
-data-type="Townhouse"
-data-bedrooms="3"
-data-price="15000">
+<article class="property-card">
 
 <div class="property-image">
 
 <img
 src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=1200&q=85"
-alt="Townhouse">
+alt="Modern townhouse">
 
 <div class="badge">
 NEW
@@ -1160,11 +1163,11 @@ From $15,000
 </div>
 
 <a
-href="#contact"
-onclick="selectProperty('Modern Townhouse')"
-class="btn btn-primary"
+href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Modern%20Townhouse%20in%20Canada."
+target="_blank"
+class="btn btn-whatsapp"
 style="padding:10px 15px">
-View
+Ask About Home
 </a>
 
 </div>
@@ -1173,21 +1176,14 @@ View
 
 </article>
 
-
 </div>
-
-<p
-id="noResults"
-style="display:none;text-align:center;margin-top:30px;font-weight:bold;">
-No matching homes were found. Try another search.
-</p>
 
 </div>
 
 </section>
 
 
-<!-- HOW TO BUY -->
+<!-- ================= HOW TO BUY ================= -->
 
 <section class="how" id="how">
 
@@ -1200,7 +1196,7 @@ No matching homes were found. Try another search.
 <h2>How It Works</h2>
 
 <p>
-Start your home search in three simple steps.
+Buying your next home starts with a simple conversation.
 </p>
 
 </div>
@@ -1211,11 +1207,11 @@ Start your home search in three simple steps.
 
 <div class="step-number">1</div>
 
-<h3>Find a Home</h3>
+<h3>Choose a Home</h3>
 
 <p>
-Browse available homes and choose a property
-that matches what you are looking for.
+Browse the homes available on TrueHome Realty
+and choose a property you like.
 </p>
 
 </div>
@@ -1227,8 +1223,8 @@ that matches what you are looking for.
 <h3>Contact Us</h3>
 
 <p>
-Send us your details and tell us which property
-you are interested in.
+Contact us by email or WhatsApp and tell us
+which home you are interested in.
 </p>
 
 </div>
@@ -1237,11 +1233,11 @@ you are interested in.
 
 <div class="step-number">3</div>
 
-<h3>Confirm Details</h3>
+<h3>Discuss the Property</h3>
 
 <p>
-Property availability, pricing, ownership and
-purchase terms must be confirmed before buying.
+We can discuss the property, availability,
+pricing and next steps with you.
 </p>
 
 </div>
@@ -1253,7 +1249,7 @@ purchase terms must be confirmed before buying.
 </section>
 
 
-<!-- LOCATIONS -->
+<!-- ================= LOCATIONS ================= -->
 
 <section class="locations" id="locations">
 
@@ -1261,12 +1257,12 @@ purchase terms must be confirmed before buying.
 
 <div class="heading">
 
-<span>Where To Look</span>
+<span>Our Locations</span>
 
-<h2>Explore Our Locations</h2>
+<h2>Find Your Home</h2>
 
 <p>
-Explore residential opportunities in selected locations.
+Explore residential properties in Canada and Australia.
 </p>
 
 </div>
@@ -1287,9 +1283,7 @@ Explore homes and residential properties in Canada.
 
 <br>
 
-<a
-href="#homes"
-class="btn btn-gold">
+<a href="#homes" class="btn btn-gold">
 View Canadian Homes
 </a>
 
@@ -1312,9 +1306,7 @@ Explore contemporary homes and residential properties.
 
 <br>
 
-<a
-href="#homes"
-class="btn btn-gold">
+<a href="#homes" class="btn btn-gold">
 View Australian Homes
 </a>
 
@@ -1329,7 +1321,7 @@ View Australian Homes
 </section>
 
 
-<!-- WHY TRUEHOME -->
+<!-- ================= WHY TRUEHOME ================= -->
 
 <section class="feature-section">
 
@@ -1350,48 +1342,59 @@ alt="Beautiful modern house">
 <span>Why TrueHome Realty</span>
 
 <h2>
-A simpler way to search for your next home.
+A simpler way to find your next home.
 </h2>
 
 <p>
-TrueHome Realty is designed to make property
-discovery simple. Browse homes, explore locations
-and send an inquiry about a property you are
-interested in.
+Explore homes, choose a property and contact
+TrueHome Realty directly. Our website keeps the
+home-buying process simple and easy to understand.
 </p>
 
 <div class="feature-list">
 
 <div class="feature-item">
-<div class="feature-icon">⌂</div>
+
+<div class="feature-icon">🏠</div>
+
 <div>
-<strong>Homes To Explore</strong>
-Browse residential properties.
+<strong>Homes For Sale</strong><br>
+Explore available properties.
 </div>
+
 </div>
 
 <div class="feature-item">
-<div class="feature-icon">🔎</div>
+
+<div class="feature-icon">📍</div>
+
 <div>
-<strong>Easy Search</strong>
-Search by location and property type.
+<strong>Great Locations</strong><br>
+Explore Canada and Australia.
 </div>
+
 </div>
 
 <div class="feature-item">
-<div class="feature-icon">📞</div>
+
+<div class="feature-icon">📧</div>
+
 <div>
-<strong>Contact</strong>
-Send a property inquiry.
+<strong>Email Support</strong><br>
+Ask about any property.
 </div>
+
 </div>
 
 <div class="feature-item">
-<div class="feature-icon">✓</div>
+
+<div class="feature-icon">💬</div>
+
 <div>
-<strong>Simple Process</strong>
-Get information before making decisions.
+<strong>WhatsApp</strong><br>
+Contact us directly.
 </div>
+
 </div>
 
 </div>
@@ -1405,7 +1408,7 @@ Get information before making decisions.
 </section>
 
 
-<!-- SECONDARY BUILD SECTION -->
+<!-- ================= BUILD HOME ================= -->
 
 <section class="build-section" id="build">
 
@@ -1413,9 +1416,9 @@ Get information before making decisions.
 
 <div class="heading">
 
-<span>Build Your Home</span>
+<span>Secondary Service</span>
 
-<h2>Want To Build Instead?</h2>
+<h2>Want To Build Your Home?</h2>
 
 <p>
 If you don't want to buy an existing property,
@@ -1424,7 +1427,6 @@ home you would like to build.
 </p>
 
 </div>
-
 
 <div class="build-box">
 
@@ -1541,8 +1543,7 @@ Home Office
 
 <textarea
 id="buildDescription"
-placeholder="Describe the home you would like to build...">
-</textarea>
+placeholder="Describe the home you would like to build..."></textarea>
 
 </div>
 
@@ -1556,10 +1557,7 @@ onclick="generateHouse()">
 Generate Home Concept
 </button>
 
-
-<div
-class="preview"
-id="preview">
+<div class="preview" id="preview">
 
 <h3>
 Preliminary Home Concept
@@ -1575,23 +1573,17 @@ Living Room
 Kitchen
 </div>
 
-<div
-class="room"
-id="buildRoom3">
+<div class="room" id="buildRoom3">
 Bedrooms
 </div>
 
-<div
-class="room"
-id="buildRoom4">
+<div class="room" id="buildRoom4">
 Bathrooms
 </div>
 
 </div>
 
-<div
-class="summary"
-id="buildSummary">
+<div class="summary" id="buildSummary">
 </div>
 
 </div>
@@ -1603,29 +1595,27 @@ id="buildSummary">
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
 <h2>
-Ready to find your home?
+Ready to buy your home?
 </h2>
 
 <p>
-Browse our homes for sale or contact us about
-a property you are interested in.
+Explore our homes for sale and contact TrueHome Realty
+about the property you are interested in.
 </p>
 
-<a
-href="#homes"
-class="btn btn-gold">
+<a href="#homes" class="btn btn-gold">
 🏠 Buy Your Home
 </a>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -1633,12 +1623,12 @@ class="btn btn-gold">
 
 <div class="heading">
 
-<span>Property Inquiry</span>
+<span>Contact TrueHome Realty</span>
 
-<h2>Ask About A Home</h2>
+<h2>Let's Talk About Your Home</h2>
 
 <p>
-Tell us which property you are interested in.
+Contact us by email or WhatsApp about a property.
 </p>
 
 </div>
@@ -1649,10 +1639,33 @@ Tell us which property you are interested in.
 
 <strong>Important:</strong>
 Property information, prices, availability,
-ownership and purchase terms must be verified
+ownership and purchase terms should be verified
 before making a purchase decision.
 
 </div>
+
+
+<!-- DIRECT CONTACT -->
+
+<div class="direct-contact">
+
+<a
+class="email-contact"
+href="mailto:your-email@example.com">
+📧<br>
+Email TrueHome Realty
+</a>
+
+<a
+class="whatsapp-contact"
+href="https://wa.me/15551234567"
+target="_blank">
+💬<br>
+WhatsApp TrueHome Realty
+</a>
+
+</div>
+
 
 <form onsubmit="submitForm(event)">
 
@@ -1684,7 +1697,7 @@ placeholder="you@example.com">
 
 <div class="field">
 
-<label>Phone</label>
+<label>Phone / WhatsApp</label>
 
 <input
 type="tel"
@@ -1710,8 +1723,7 @@ placeholder="Property you are interested in">
 
 <textarea
 id="message"
-placeholder="Tell us what you would like to know about the property.">
-</textarea>
+placeholder="Tell us which home you are interested in..."></textarea>
 
 </div>
 
@@ -1720,7 +1732,7 @@ placeholder="Tell us what you would like to know about the property.">
 <button
 type="submit"
 class="btn btn-primary">
-Send Property Inquiry
+📧 Send Property Inquiry
 </button>
 
 </div>
@@ -1741,7 +1753,7 @@ style="margin-top:18px;font-weight:bold;">
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1764,8 +1776,10 @@ property opportunities.
 
 <h4>Buy</h4>
 
-<a href="#homes">Homes For Sale</a>
+<a href="#homes">Buy Your Home</a>
+
 <a href="#locations">Locations</a>
+
 <a href="#how">How It Works</a>
 
 </div>
@@ -1775,6 +1789,7 @@ property opportunities.
 <h4>Services</h4>
 
 <a href="#build">Build Your Home</a>
+
 <a href="#contact">Property Inquiry</a>
 
 </div>
@@ -1783,8 +1798,15 @@ property opportunities.
 
 <h4>Contact</h4>
 
-<a href="#contact">Contact Us</a>
-<a href="#contact">Ask About A Home</a>
+<a href="mailto:your-email@example.com">
+Email Us
+</a>
+
+<a
+href="https://wa.me/15551234567"
+target="_blank">
+WhatsApp
+</a>
 
 </div>
 
@@ -1805,7 +1827,7 @@ accuracy before any purchase decision.
 </footer>
 
 
-<!-- WHATSAPP -->
+<!-- ================= WHATSAPP FLOATING BUTTON ================= -->
 
 <div class="whatsapp">
 
@@ -1821,7 +1843,18 @@ aria-label="WhatsApp">
 
 <script>
 
-/* MOBILE MENU */
+/* ================= SETTINGS ================= */
+
+/*
+CHANGE THESE TWO VALUES TO YOUR REAL DETAILS.
+*/
+
+const BUSINESS_EMAIL = "your-email@example.com";
+
+const WHATSAPP_NUMBER = "15551234567";
+
+
+/* ================= MOBILE MENU ================= */
 
 function toggleMenu(){
 
@@ -1832,93 +1865,7 @@ document
 }
 
 
-/* SEARCH HOMES */
-
-function searchHomes(){
-
-const country =
-document.getElementById("searchCountry").value;
-
-const type =
-document.getElementById("searchType").value;
-
-const bedrooms =
-document.getElementById("searchBedrooms").value;
-
-const maxPrice =
-document.getElementById("maxPrice").value;
-
-const cards =
-document.querySelectorAll(".property-card");
-
-let found = 0;
-
-cards.forEach(function(card){
-
-const cardCountry =
-card.dataset.country;
-
-const cardType =
-card.dataset.type;
-
-const cardBedrooms =
-Number(card.dataset.bedrooms);
-
-const cardPrice =
-Number(card.dataset.price);
-
-let show = true;
-
-if(country !== "all" &&
-cardCountry !== country){
-
-show = false;
-
-}
-
-if(type !== "all" &&
-cardType !== type){
-
-show = false;
-
-}
-
-if(bedrooms !== "all" &&
-cardBedrooms < Number(bedrooms)){
-
-show = false;
-
-}
-
-if(maxPrice &&
-cardPrice > Number(maxPrice)){
-
-show = false;
-
-}
-
-card.style.display =
-show ? "block" : "none";
-
-if(show){
-found++;
-}
-
-});
-
-document.getElementById("noResults").style.display =
-found === 0 ? "block" : "none";
-
-document
-.getElementById("homes")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* SELECT PROPERTY */
+/* ================= SELECT PROPERTY ================= */
 
 function selectProperty(property){
 
@@ -1929,7 +1876,7 @@ document
 }
 
 
-/* BUILD HOME */
+/* ================= BUILD HOME ================= */
 
 function generateHouse(){
 
@@ -2026,7 +1973,7 @@ behavior:"smooth"
 }
 
 
-/* CONTACT FORM */
+/* ================= EMAIL FORM ================= */
 
 function submitForm(event){
 
@@ -2048,15 +1995,6 @@ const message =
 document.getElementById("message").value.trim();
 
 
-/*
-CHANGE THIS EMAIL
-TO YOUR REAL BUSINESS EMAIL.
-*/
-
-const receivingEmail =
-"your-email@example.com";
-
-
 const subject =
 encodeURIComponent(
 "TrueHome Realty Property Inquiry"
@@ -2068,17 +2006,22 @@ encodeURIComponent(
 `TrueHome Realty Property Inquiry
 
 CUSTOMER
+
 Name: ${name}
+
 Email: ${email}
-Phone: ${phone || "Not provided"}
+
+Phone / WhatsApp: ${phone || "Not provided"}
 
 PROPERTY
+
 Property: ${property || "Not specified"}
 
 MESSAGE
+
 ${message || "No additional message."}
 
-Please contact the customer regarding the property inquiry.`
+Please contact me regarding this property.`
 
 );
 
@@ -2091,7 +2034,7 @@ document
 
 window.location.href =
 "mailto:" +
-receivingEmail +
+BUSINESS_EMAIL +
 "?subject=" +
 subject +
 "&body=" +
