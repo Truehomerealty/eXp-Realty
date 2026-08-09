@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>TrueHome Realty | Buy Your Home</title>
 
@@ -10,881 +10,884 @@
 content="TrueHome Realty helps you find and inquire about homes for sale in Canada and Australia.">
 
 <style>
+
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  color:#17202a;
-  background:#fff;
-  line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+color:#17202a;
+line-height:1.6;
 }
 
 :root{
-  --blue:#087db8;
-  --dark:#073b57;
-  --deep:#052c42;
-  --light:#f4f8fa;
-  --gold:#d4af37;
-  --green:#25D366;
-  --gray:#66737c;
-  --white:#fff;
+--blue:#087db8;
+--deep:#052c42;
+--gold:#d4af37;
+--green:#25D366;
+--gray:#66737c;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 button,
 input,
 select,
 textarea{
-  font:inherit;
+font:inherit;
 }
 
-img{
-  max-width:100%;
-}
-
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:white;
-  box-shadow:0 2px 15px rgba(0,0,0,.12);
+position:sticky;
+top:0;
+z-index:1000;
+background:white;
+box-shadow:0 2px 15px rgba(0,0,0,.12);
 }
 
 .header-inner{
-  max-width:1250px;
-  margin:auto;
-  padding:12px 22px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+max-width:1250px;
+margin:auto;
+padding:8px 18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-}
+/* BUILT-IN LOGO */
 
-.logo img{
-  height:58px;
-  width:auto;
-  object-fit:contain;
+.logo svg{
+width:245px;
+height:62px;
+display:block;
 }
 
 nav{
-  display:flex;
-  align-items:center;
-  gap:25px;
+display:flex;
+gap:25px;
+align-items:center;
 }
 
 nav a{
-  color:#263746;
-  font-size:15px;
-  font-weight:600;
+font-size:15px;
+font-weight:600;
 }
 
 nav a:hover{
-  color:var(--blue);
+color:var(--blue);
 }
 
 .nav-buy{
-  background:var(--blue);
-  color:white!important;
-  padding:11px 18px;
-  border-radius:5px;
+background:var(--blue);
+color:white!important;
+padding:11px 18px;
+border-radius:5px;
 }
 
 .menu-btn{
-  display:none;
-  border:0;
-  background:none;
-  font-size:29px;
-  cursor:pointer;
+display:none;
+border:0;
+background:none;
+font-size:29px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
-  min-height:650px;
-  display:flex;
-  align-items:center;
-  background:
-  linear-gradient(
-    90deg,
-    rgba(3,39,59,.94),
-    rgba(3,39,59,.68),
-    rgba(3,39,59,.15)
-  ),
-  url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
-  center/cover;
+min-height:650px;
+display:flex;
+align-items:center;
+
+background:
+linear-gradient(
+90deg,
+rgba(3,39,59,.94),
+rgba(3,39,59,.68),
+rgba(3,39,59,.15)
+),
+
+url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=85")
+center/cover;
 }
 
 .hero-content{
-  width:100%;
-  max-width:1250px;
-  margin:auto;
-  padding:80px 22px;
-  color:white;
+max-width:1250px;
+width:100%;
+margin:auto;
+padding:80px 22px;
+color:white;
 }
 
 .hero-badge{
-  display:inline-block;
-  background:rgba(255,255,255,.14);
-  border:1px solid rgba(255,255,255,.3);
-  padding:8px 15px;
-  border-radius:30px;
-  margin-bottom:20px;
-  font-size:13px;
-  font-weight:bold;
+display:inline-block;
+background:rgba(255,255,255,.14);
+border:1px solid rgba(255,255,255,.3);
+padding:8px 15px;
+border-radius:30px;
+margin-bottom:20px;
+font-size:13px;
+font-weight:bold;
 }
 
 .hero h1{
-  max-width:760px;
-  font-size:60px;
-  line-height:1.08;
-  margin-bottom:20px;
+max-width:760px;
+font-size:60px;
+line-height:1.08;
+margin-bottom:20px;
 }
 
 .hero p{
-  max-width:650px;
-  font-size:19px;
-  color:#edf7fb;
-  margin-bottom:30px;
+max-width:650px;
+font-size:19px;
+color:#edf7fb;
+margin-bottom:30px;
 }
 
-.hero-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:13px;
+.hero-buttons,
+.contact-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .btn{
-  display:inline-block;
-  border:0;
-  cursor:pointer;
-  padding:15px 25px;
-  border-radius:5px;
-  font-weight:700;
+display:inline-block;
+border:0;
+cursor:pointer;
+padding:15px 25px;
+border-radius:5px;
+font-weight:700;
 }
 
 .btn-primary{
-  background:var(--blue);
-  color:white;
-}
-
-.btn-primary:hover{
-  background:#066c9f;
+background:var(--blue);
+color:white;
 }
 
 .btn-gold{
-  background:var(--gold);
-  color:#111;
+background:var(--gold);
+color:#111;
 }
 
 .btn-white{
-  background:white;
-  color:var(--deep);
+background:white;
+color:var(--deep);
 }
 
 .btn-whatsapp{
-  background:var(--green);
-  color:white;
+background:var(--green);
+color:white;
 }
 
-/* ================= BUY CTA ================= */
+/* CONTACT / MAX PRICE */
 
 .buy-contact{
-  position:relative;
-  margin-top:-65px;
-  padding:0 20px;
-  z-index:5;
+position:relative;
+margin-top:-65px;
+padding:0 20px;
+z-index:5;
 }
 
 .buy-contact-box{
-  max-width:1100px;
-  margin:auto;
-  background:white;
-  border-radius:9px;
-  padding:28px;
-  box-shadow:0 8px 35px rgba(0,0,0,.18);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:25px;
+max-width:1100px;
+margin:auto;
+background:white;
+border-radius:9px;
+padding:28px;
+box-shadow:0 8px 35px rgba(0,0,0,.18);
+}
+
+.buy-contact-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px;
+margin-bottom:22px;
 }
 
 .buy-contact-text h2{
-  color:var(--deep);
-  font-size:26px;
-  margin-bottom:5px;
+color:var(--deep);
+font-size:26px;
 }
 
 .buy-contact-text p{
-  color:var(--gray);
+color:var(--gray);
 }
 
-.contact-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.price-filter{
+border-top:1px solid #e8eef1;
+padding-top:20px;
 }
 
-/* ================= GENERAL ================= */
+.price-filter label{
+display:block;
+font-weight:700;
+color:var(--deep);
+margin-bottom:8px;
+}
+
+.price-filter input{
+width:100%;
+border:1px solid #d2dce1;
+padding:13px;
+border-radius:5px;
+}
+
+.filter-note{
+display:block;
+color:var(--gray);
+font-size:12px;
+margin-top:6px;
+}
+
+/* GENERAL */
 
 section{
-  padding:85px 22px;
+padding:85px 22px;
 }
 
 .container{
-  max-width:1250px;
-  margin:auto;
+max-width:1250px;
+margin:auto;
 }
 
 .heading{
-  text-align:center;
-  margin-bottom:45px;
+text-align:center;
+margin-bottom:45px;
 }
 
 .heading span{
-  color:var(--blue);
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  font-weight:bold;
-  font-size:13px;
+color:var(--blue);
+text-transform:uppercase;
+letter-spacing:1.5px;
+font-weight:bold;
+font-size:13px;
 }
 
 .heading h2{
-  color:var(--deep);
-  font-size:38px;
-  margin:8px 0;
+color:var(--deep);
+font-size:38px;
+margin:8px 0;
 }
 
 .heading p{
-  color:var(--gray);
-  max-width:680px;
-  margin:auto;
+color:var(--gray);
+max-width:680px;
+margin:auto;
 }
 
-/* ================= BUY HOMES ================= */
+/* HOMES */
 
-.buy-section{
-  background:#f5f8fa;
+.buy-section,
+.locations,
+.build-section{
+background:#f5f8fa;
 }
 
 .property-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .property-card{
-  background:white;
-  border-radius:8px;
-  overflow:hidden;
-  box-shadow:0 4px 20px rgba(0,0,0,.08);
-  transition:.2s;
+background:white;
+border-radius:8px;
+overflow:hidden;
+box-shadow:0 4px 20px rgba(0,0,0,.08);
+transition:.2s;
 }
 
 .property-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 30px rgba(0,0,0,.13);
+transform:translateY(-5px);
 }
 
 .property-image{
-  height:235px;
-  position:relative;
-  overflow:hidden;
+height:235px;
+position:relative;
+overflow:hidden;
 }
 
 .property-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .badge{
-  position:absolute;
-  left:14px;
-  top:14px;
-  background:var(--blue);
-  color:white;
-  padding:7px 12px;
-  border-radius:3px;
-  font-size:12px;
-  font-weight:bold;
+position:absolute;
+left:14px;
+top:14px;
+background:var(--blue);
+color:white;
+padding:7px 12px;
+border-radius:3px;
+font-size:12px;
+font-weight:bold;
 }
 
 .property-body{
-  padding:20px;
+padding:20px;
 }
 
 .property-body h3{
-  color:var(--deep);
-  font-size:21px;
+color:var(--deep);
+font-size:21px;
 }
 
 .location{
-  color:var(--gray);
-  margin:5px 0 15px;
+color:var(--gray);
+margin:5px 0 15px;
 }
 
 .property-info{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  border-top:1px solid #eee;
-  padding-top:14px;
-  color:#4c5961;
-  font-size:14px;
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+border-top:1px solid #eee;
+padding-top:14px;
+color:#4c5961;
+font-size:14px;
 }
 
 .property-bottom{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  margin-top:18px;
+margin-top:18px;
 }
 
-.price{
-  color:var(--blue);
-  font-size:19px;
-  font-weight:800;
+.message-btn{
+width:100%;
+text-align:center;
+padding:12px 15px;
 }
 
-/* ================= HOW TO BUY ================= */
-
-.how{
-  background:white;
+.no-results{
+display:none;
+text-align:center;
+margin-top:30px;
+font-weight:bold;
+color:var(--deep);
 }
+
+/* HOW */
 
 .steps{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .step{
-  text-align:center;
-  padding:30px;
-  border:1px solid #e4eaed;
-  border-radius:8px;
+text-align:center;
+padding:30px;
+border:1px solid #e4eaed;
+border-radius:8px;
 }
 
 .step-number{
-  width:55px;
-  height:55px;
-  margin:0 auto 15px;
-  border-radius:50%;
-  background:var(--blue);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:22px;
-  font-weight:bold;
+width:55px;
+height:55px;
+margin:0 auto 15px;
+border-radius:50%;
+background:var(--blue);
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:bold;
 }
 
 .step h3{
-  color:var(--deep);
-  margin-bottom:8px;
+color:var(--deep);
+margin-bottom:8px;
 }
 
 .step p{
-  color:var(--gray);
+color:var(--gray);
 }
 
-/* ================= LOCATIONS ================= */
-
-.locations{
-  background:#f5f8fa;
-}
+/* LOCATIONS */
 
 .location-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
 
 .location-card{
-  min-height:300px;
-  border-radius:8px;
-  overflow:hidden;
-  position:relative;
-  color:white;
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:flex-end;
+min-height:300px;
+border-radius:8px;
+overflow:hidden;
+position:relative;
+color:white;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:flex-end;
 }
 
 .location-card:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    transparent 30%,
-    rgba(0,30,45,.9)
-  );
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+transparent 30%,
+rgba(0,30,45,.9)
+);
 }
 
 .location-content{
-  position:relative;
-  z-index:2;
-  padding:25px;
+position:relative;
+z-index:2;
+padding:25px;
 }
 
 .location-content h3{
-  font-size:28px;
+font-size:28px;
 }
 
-/* ================= WHY TRUEHOME ================= */
+/* WHY */
 
 .feature-section{
-  background:var(--deep);
-  color:white;
+background:var(--deep);
+color:white;
 }
 
 .feature-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:55px;
-  align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center;
 }
 
 .feature-image{
-  height:430px;
-  overflow:hidden;
-  border-radius:8px;
+height:430px;
+overflow:hidden;
+border-radius:8px;
 }
 
 .feature-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
 
 .feature-content span{
-  color:#77cbed;
-  text-transform:uppercase;
-  font-weight:bold;
+color:#77cbed;
+text-transform:uppercase;
+font-weight:bold;
 }
 
 .feature-content h2{
-  font-size:40px;
-  line-height:1.15;
-  margin:12px 0 20px;
+font-size:40px;
+line-height:1.15;
+margin:12px 0 20px;
 }
 
 .feature-content p{
-  color:#d6e6ed;
-  margin-bottom:25px;
+color:#d6e6ed;
+margin-bottom:25px;
 }
 
 .feature-list{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
 }
 
 .feature-item{
-  display:flex;
-  gap:10px;
+display:flex;
+gap:10px;
 }
 
 .feature-icon{
-  width:40px;
-  height:40px;
-  min-width:40px;
-  background:rgba(255,255,255,.12);
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+width:40px;
+height:40px;
+min-width:40px;
+background:rgba(255,255,255,.12);
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-/* ================= BUILD SECONDARY ================= */
-
-.build-section{
-  background:#f5f8fa;
-}
+/* BUILD */
 
 .build-box{
-  max-width:1050px;
-  margin:auto;
-  background:white;
-  padding:35px;
-  border-radius:9px;
-  box-shadow:0 5px 25px rgba(0,0,0,.08);
+max-width:1050px;
+margin:auto;
+background:white;
+padding:35px;
+border-radius:9px;
+box-shadow:0 5px 25px rgba(0,0,0,.08);
 }
 
 .form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
 }
 
 .field label{
-  display:block;
-  font-weight:bold;
-  margin-bottom:7px;
+display:block;
+font-weight:bold;
+margin-bottom:7px;
 }
 
 .field input,
 .field select,
 .field textarea{
-  width:100%;
-  border:1px solid #d2dce1;
-  padding:13px;
-  border-radius:5px;
+width:100%;
+border:1px solid #d2dce1;
+padding:13px;
+border-radius:5px;
 }
 
 .field textarea{
-  min-height:110px;
-  resize:vertical;
+min-height:110px;
+resize:vertical;
 }
 
 .full{
-  grid-column:1/-1;
+grid-column:1/-1;
 }
 
 .options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+display:flex;
+flex-wrap:wrap;
+gap:10px;
 }
 
 .options label{
-  background:#eef4f7;
-  padding:9px 13px;
-  border-radius:5px;
-  font-weight:normal;
+background:#eef4f7;
+padding:9px 13px;
+border-radius:5px;
+font-weight:normal;
 }
 
 .preview{
-  display:none;
-  margin-top:30px;
-  padding:25px;
-  background:#eef5f8;
-  border-radius:7px;
+display:none;
+margin-top:30px;
+padding:25px;
+background:#eef5f8;
+border-radius:7px;
 }
 
 .floor-plan{
-  max-width:600px;
-  height:300px;
-  margin:20px auto;
-  background:white;
-  border:5px solid #173e52;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  grid-template-rows:1fr 1fr;
+max-width:600px;
+height:300px;
+margin:20px auto;
+background:white;
+border:5px solid #173e52;
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-rows:1fr 1fr;
 }
 
 .room{
-  border:2px solid #65808d;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
-  text-align:center;
+border:2px solid #65808d;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+text-align:center;
 }
 
 .summary{
-  background:white;
-  padding:18px;
-  border-radius:5px;
-  line-height:1.9;
+background:white;
+padding:18px;
+border-radius:5px;
+line-height:1.9;
 }
 
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact{
-  background:white;
+background:white;
 }
 
 .contact-box{
-  max-width:850px;
-  margin:auto;
-  background:#f5f8fa;
-  padding:35px;
-  border-radius:9px;
+max-width:850px;
+margin:auto;
+background:#f5f8fa;
+padding:35px;
+border-radius:9px;
 }
 
 .notice{
-  padding:15px;
-  background:#fff7d9;
-  border-left:4px solid var(--gold);
-  margin-bottom:25px;
+padding:15px;
+background:#fff7d9;
+border-left:4px solid var(--gold);
+margin-bottom:25px;
 }
 
 .direct-contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  margin-bottom:30px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:30px;
 }
 
 .direct-contact a{
-  padding:20px;
-  border-radius:7px;
-  text-align:center;
-  font-weight:bold;
-  color:white;
+padding:20px;
+border-radius:7px;
+text-align:center;
+font-weight:bold;
+color:white;
 }
 
 .email-contact{
-  background:var(--blue);
+background:var(--blue);
 }
 
 .whatsapp-contact{
-  background:var(--green);
+background:var(--green);
 }
 
-/* ================= CTA ================= */
+/* CTA */
 
 .cta{
-  text-align:center;
-  color:white;
-  padding:75px 20px;
-  background:
-  linear-gradient(rgba(4,58,85,.92),rgba(4,58,85,.92)),
-  url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85")
-  center/cover;
+text-align:center;
+color:white;
+padding:75px 20px;
+
+background:
+linear-gradient(
+rgba(4,58,85,.92),
+rgba(4,58,85,.92)
+),
+
+url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=85")
+center/cover;
 }
 
 .cta h2{
-  font-size:42px;
-  margin-bottom:12px;
+font-size:42px;
+margin-bottom:12px;
 }
 
 .cta p{
-  max-width:650px;
-  margin:0 auto 25px;
+max-width:650px;
+margin:0 auto 25px;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
-  background:#061a26;
-  color:#b9cbd4;
-  padding:55px 22px 25px;
+background:#061a26;
+color:#b9cbd4;
+padding:55px 22px 25px;
 }
 
 .footer-grid{
-  max-width:1250px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:35px;
+max-width:1250px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:35px;
 }
 
 .footer-logo{
-  color:white;
-  font-size:25px;
-  font-weight:bold;
+color:white;
+font-size:25px;
+font-weight:bold;
 }
 
 .footer-logo span{
-  color:#55bce8;
+color:#55bce8;
 }
 
 footer h4{
-  color:white;
-  margin-bottom:12px;
+color:white;
+margin-bottom:12px;
 }
 
 footer a{
-  display:block;
-  margin:7px 0;
+display:block;
+margin:7px 0;
 }
 
 .copyright{
-  max-width:1250px;
-  margin:40px auto 0;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.12);
-  text-align:center;
-  font-size:13px;
+max-width:1250px;
+margin:40px auto 0;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.12);
+text-align:center;
+font-size:13px;
 }
 
-/* ================= WHATSAPP ================= */
+/* FLOATING WHATSAPP */
 
 .whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  z-index:999;
+position:fixed;
+right:20px;
+bottom:20px;
+z-index:999;
 }
 
 .whatsapp a{
-  width:58px;
-  height:58px;
-  background:#25D366;
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:50%;
-  font-size:25px;
-  box-shadow:0 5px 20px rgba(0,0,0,.25);
+width:58px;
+height:58px;
+background:#25D366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.25);
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:950px){
 
-  .hero h1{
-    font-size:48px;
-  }
+.hero h1{
+font-size:48px;
+}
 
-  .property-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.property-grid{
+grid-template-columns:1fr 1fr;
+}
 
-  .feature-grid{
-    grid-template-columns:1fr;
-  }
+.feature-grid{
+grid-template-columns:1fr;
+}
 
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
 
-  .buy-contact-box{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+.buy-contact-top{
+flex-direction:column;
+align-items:flex-start;
+}
+
 }
 
 @media(max-width:650px){
 
-  .header-inner{
-    padding:10px 17px;
-  }
-
-  .logo img{
-    height:48px;
-  }
-
-  .menu-btn{
-    display:block;
-  }
-
-  nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    background:white;
-    flex-direction:column;
-    gap:0;
-  }
-
-  nav.active{
-    display:flex;
-  }
-
-  nav a{
-    padding:16px 22px;
-    border-bottom:1px solid #eee;
-  }
-
-  .nav-buy{
-    border-radius:0;
-  }
-
-  .hero{
-    min-height:590px;
-  }
-
-  .hero h1{
-    font-size:38px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  section{
-    padding:65px 18px;
-  }
-
-  .heading h2{
-    font-size:31px;
-  }
-
-  .property-grid,
-  .steps,
-  .location-grid{
-    grid-template-columns:1fr;
-  }
-
-  .property-bottom{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .feature-content h2{
-    font-size:32px;
-  }
-
-  .feature-list{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-  .build-box,
-  .contact-box{
-    padding:22px;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  .cta h2{
-    font-size:32px;
-  }
-
-  .direct-contact{
-    grid-template-columns:1fr;
-  }
-
-  .contact-buttons{
-    width:100%;
-  }
-
-  .contact-buttons .btn{
-    width:100%;
-    text-align:center;
-  }
+.logo svg{
+width:205px;
+height:54px;
 }
+
+.menu-btn{
+display:block;
+}
+
+nav{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+gap:0;
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+padding:16px 22px;
+border-bottom:1px solid #eee;
+}
+
+.nav-buy{
+border-radius:0;
+}
+
+.hero{
+min-height:590px;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+section{
+padding:65px 18px;
+}
+
+.heading h2{
+font-size:31px;
+}
+
+.property-grid,
+.steps,
+.location-grid{
+grid-template-columns:1fr;
+}
+
+.feature-content h2{
+font-size:32px;
+}
+
+.feature-list{
+grid-template-columns:1fr;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+.build-box,
+.contact-box{
+padding:22px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.cta h2{
+font-size:32px;
+}
+
+.direct-contact{
+grid-template-columns:1fr;
+}
+
+.contact-buttons{
+width:100%;
+}
+
+.contact-buttons .btn{
+width:100%;
+text-align:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
@@ -892,22 +895,91 @@ footer a{
 
 <a href="#" class="logo">
 
-<!-- PUT YOUR LOGO FILE IN THE SAME FOLDER AS index.html -->
-<img src="logo.png" alt="TrueHome Realty Logo">
+<!-- TRUEHOME REALTY LOGO -->
+
+<svg viewBox="0 0 490 124"
+xmlns="http://www.w3.org/2000/svg">
+
+<g transform="translate(4 7)">
+
+<path
+d="M58 5 10 45v61h37V69h22v37h37V45L58 5Z"
+fill="#087db8"/>
+
+<path
+d="M2 45 58 0l56 45-7 9L58 13 9 54 2 45Z"
+fill="#052c42"/>
+
+<path
+d="M50 69h16v37H50z"
+fill="#d4af37"/>
+
+<circle
+cx="58"
+cy="48"
+r="7"
+fill="#fff"/>
+
+</g>
+
+<text
+x="130"
+y="55"
+font-family="Arial"
+font-size="35"
+font-weight="800"
+fill="#052c42">
+True
+</text>
+
+<text
+x="208"
+y="55"
+font-family="Arial"
+font-size="35"
+font-weight="800"
+fill="#087db8">
+Home
+</text>
+
+<text
+x="130"
+y="91"
+font-family="Arial"
+font-size="21"
+font-weight="700"
+letter-spacing="2"
+fill="#66737c">
+REALTY
+</text>
+
+</svg>
 
 </a>
 
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+☰
+</button>
 
 <nav id="nav">
 
-<a href="#homes">Buy Your Home</a>
+<a href="#homes">
+Buy Your Home
+</a>
 
-<a href="#locations">Locations</a>
+<a href="#locations">
+Locations
+</a>
 
-<a href="#how">How It Works</a>
+<a href="#how">
+How It Works
+</a>
 
-<a href="#build">Build Your Home</a>
+<a href="#build">
+Build Your Home
+</a>
 
 <a href="#contact" class="nav-buy">
 Contact Us
@@ -920,7 +992,7 @@ Contact Us
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -942,11 +1014,13 @@ by email or WhatsApp for more information.
 
 <div class="hero-buttons">
 
-<a href="#homes" class="btn btn-primary">
+<a href="#homes"
+class="btn btn-primary">
 🏠 Buy Your Home
 </a>
 
-<a href="#contact" class="btn btn-white">
+<a href="#contact"
+class="btn btn-white">
 Contact Us
 </a>
 
@@ -957,32 +1031,35 @@ Contact Us
 </section>
 
 
-<!-- ================= CONTACT BAR ================= -->
+<!-- CONTACT + MAXIMUM PRICE -->
 
 <div class="buy-contact">
 
 <div class="buy-contact-box">
 
+<div class="buy-contact-top">
+
 <div class="buy-contact-text">
 
-<h2>Looking for a home?</h2>
+<h2>
+Looking for a home?
+</h2>
 
 <p>
-Choose a property below and contact TrueHome Realty.
+Choose a property below and message TrueHome Realty.
 </p>
 
 </div>
 
 <div class="contact-buttons">
 
-<a
-href="#contact"
+<a href="#contact"
 class="btn btn-primary">
 📧 Email Us
 </a>
 
-<a
-href="https://wa.me/15551234567"
+<a id="topWhatsApp"
+href="#"
 target="_blank"
 class="btn btn-whatsapp">
 💬 WhatsApp Us
@@ -992,23 +1069,52 @@ class="btn btn-whatsapp">
 
 </div>
 
+
+<div class="price-filter">
+
+<label for="maxPrice">
+Maximum Price / Budget
+</label>
+
+<input
+type="number"
+id="maxPrice"
+placeholder="Enter your maximum budget"
+min="0"
+step="1000"
+oninput="filterHomes()">
+
+<span class="filter-note">
+Property prices are not displayed. This filter only narrows homes by budget.
+</span>
+
+</div>
+
+</div>
+
 </div>
 
 
-<!-- ================= BUY HOMES ================= -->
+<!-- BUY YOUR HOME -->
 
-<section class="buy-section" id="homes">
+<section
+class="buy-section"
+id="homes">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Buy Your Home</span>
+<span>
+Buy Your Home
+</span>
 
-<h2>Homes For Sale</h2>
+<h2>
+Homes For Sale
+</h2>
 
 <p>
-Explore our featured homes and contact us directly
+Explore our featured homes and message us directly
 about any property you are interested in.
 </p>
 
@@ -1020,7 +1126,9 @@ about any property you are interested in.
 
 <!-- HOME 1 -->
 
-<article class="property-card">
+<article
+class="property-card"
+data-price="10000">
 
 <div class="property-image">
 
@@ -1045,23 +1153,24 @@ Modern Family Home
 </div>
 
 <div class="property-info">
+
 <span>🛏 3 Beds</span>
+
 <span>🚿 2 Baths</span>
+
 <span>📐 180 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
-<div class="price">
-From $10,000
-</div>
-
 <a
-href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Modern%20Family%20Home%20in%20Canada."
-target="_blank"
-class="btn btn-whatsapp"
-style="padding:10px 15px">
-Ask About Home
+href="#"
+onclick="messageAbout('Modern Family Home','Canada');return false"
+class="btn btn-whatsapp message-btn">
+
+💬 Message Us About This Home
+
 </a>
 
 </div>
@@ -1073,7 +1182,9 @@ Ask About Home
 
 <!-- HOME 2 -->
 
-<article class="property-card">
+<article
+class="property-card"
+data-price="15000">
 
 <div class="property-image">
 
@@ -1098,23 +1209,24 @@ Contemporary Luxury Villa
 </div>
 
 <div class="property-info">
+
 <span>🛏 4 Beds</span>
+
 <span>🚿 3 Baths</span>
+
 <span>📐 260 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
-<div class="price">
-From $15,000
-</div>
-
 <a
-href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Contemporary%20Luxury%20Villa%20in%20Australia."
-target="_blank"
-class="btn btn-whatsapp"
-style="padding:10px 15px">
-Ask About Home
+href="#"
+onclick="messageAbout('Contemporary Luxury Villa','Australia');return false"
+class="btn btn-whatsapp message-btn">
+
+💬 Message Us About This Home
+
 </a>
 
 </div>
@@ -1126,7 +1238,9 @@ Ask About Home
 
 <!-- HOME 3 -->
 
-<article class="property-card">
+<article
+class="property-card"
+data-price="15000">
 
 <div class="property-image">
 
@@ -1151,23 +1265,24 @@ Modern Townhouse
 </div>
 
 <div class="property-info">
+
 <span>🛏 3 Beds</span>
+
 <span>🚿 2 Baths</span>
+
 <span>📐 195 m²</span>
+
 </div>
 
 <div class="property-bottom">
 
-<div class="price">
-From $15,000
-</div>
-
 <a
-href="https://wa.me/15551234567?text=Hello%20TrueHome%20Realty%2C%20I%20am%20interested%20in%20the%20Modern%20Townhouse%20in%20Canada."
-target="_blank"
-class="btn btn-whatsapp"
-style="padding:10px 15px">
-Ask About Home
+href="#"
+onclick="messageAbout('Modern Townhouse','Canada');return false"
+class="btn btn-whatsapp message-btn">
+
+💬 Message Us About This Home
+
 </a>
 
 </div>
@@ -1178,22 +1293,38 @@ Ask About Home
 
 </div>
 
+
+<p
+id="noResults"
+class="no-results">
+
+No homes match that maximum budget.
+Try a higher amount or contact us for other properties.
+
+</p>
+
 </div>
 
 </section>
 
 
-<!-- ================= HOW TO BUY ================= -->
+<!-- HOW IT WORKS -->
 
-<section class="how" id="how">
+<section
+class="how"
+id="how">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Buying A Home</span>
+<span>
+Buying A Home
+</span>
 
-<h2>How It Works</h2>
+<h2>
+How It Works
+</h2>
 
 <p>
 Buying your next home starts with a simple conversation.
@@ -1205,39 +1336,50 @@ Buying your next home starts with a simple conversation.
 
 <div class="step">
 
-<div class="step-number">1</div>
+<div class="step-number">
+1
+</div>
 
-<h3>Choose a Home</h3>
+<h3>
+Choose a Home
+</h3>
 
 <p>
-Browse the homes available on TrueHome Realty
-and choose a property you like.
+Browse the homes available and choose a property you like.
 </p>
 
 </div>
 
+
 <div class="step">
 
-<div class="step-number">2</div>
+<div class="step-number">
+2
+</div>
 
-<h3>Contact Us</h3>
+<h3>
+Message Us
+</h3>
 
 <p>
-Contact us by email or WhatsApp and tell us
-which home you are interested in.
+Contact us by email or WhatsApp and tell us which home you want.
 </p>
 
 </div>
 
+
 <div class="step">
 
-<div class="step-number">3</div>
+<div class="step-number">
+3
+</div>
 
-<h3>Discuss the Property</h3>
+<h3>
+Discuss the Property
+</h3>
 
 <p>
-We can discuss the property, availability,
-pricing and next steps with you.
+Discuss availability, pricing and next steps with us.
 </p>
 
 </div>
@@ -1249,17 +1391,23 @@ pricing and next steps with you.
 </section>
 
 
-<!-- ================= LOCATIONS ================= -->
+<!-- LOCATIONS -->
 
-<section class="locations" id="locations">
+<section
+class="locations"
+id="locations">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Our Locations</span>
+<span>
+Our Locations
+</span>
 
-<h2>Find Your Home</h2>
+<h2>
+Find Your Home
+</h2>
 
 <p>
 Explore residential properties in Canada and Australia.
@@ -1269,13 +1417,16 @@ Explore residential properties in Canada and Australia.
 
 <div class="location-grid">
 
+
 <div
 class="location-card"
 style="background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1300&q=85')">
 
 <div class="location-content">
 
-<h3>🇨🇦 Canada</h3>
+<h3>
+🇨🇦 Canada
+</h3>
 
 <p>
 Explore homes and residential properties in Canada.
@@ -1283,7 +1434,9 @@ Explore homes and residential properties in Canada.
 
 <br>
 
-<a href="#homes" class="btn btn-gold">
+<a
+href="#homes"
+class="btn btn-gold">
 View Canadian Homes
 </a>
 
@@ -1298,7 +1451,9 @@ style="background-image:url('https://images.unsplash.com/photo-1600607688969-a5b
 
 <div class="location-content">
 
-<h3>🇦🇺 Australia</h3>
+<h3>
+🇦🇺 Australia
+</h3>
 
 <p>
 Explore contemporary homes and residential properties.
@@ -1306,7 +1461,9 @@ Explore contemporary homes and residential properties.
 
 <br>
 
-<a href="#homes" class="btn btn-gold">
+<a
+href="#homes"
+class="btn btn-gold">
 View Australian Homes
 </a>
 
@@ -1321,7 +1478,7 @@ View Australian Homes
 </section>
 
 
-<!-- ================= WHY TRUEHOME ================= -->
+<!-- WHY TRUEHOME -->
 
 <section class="feature-section">
 
@@ -1339,7 +1496,9 @@ alt="Beautiful modern house">
 
 <div class="feature-content">
 
-<span>Why TrueHome Realty</span>
+<span>
+Why TrueHome Realty
+</span>
 
 <h2>
 A simpler way to find your next home.
@@ -1348,50 +1507,73 @@ A simpler way to find your next home.
 <p>
 Explore homes, choose a property and contact
 TrueHome Realty directly. Our website keeps the
-home-buying process simple and easy to understand.
+home-buying process simple.
 </p>
 
 <div class="feature-list">
 
 <div class="feature-item">
 
-<div class="feature-icon">🏠</div>
+<div class="feature-icon">
+🏠
+</div>
 
 <div>
-<strong>Homes For Sale</strong><br>
+<strong>
+Homes For Sale
+</strong>
+<br>
 Explore available properties.
 </div>
 
 </div>
 
+
 <div class="feature-item">
 
-<div class="feature-icon">📍</div>
+<div class="feature-icon">
+📍
+</div>
 
 <div>
-<strong>Great Locations</strong><br>
+<strong>
+Great Locations
+</strong>
+<br>
 Explore Canada and Australia.
 </div>
 
 </div>
 
+
 <div class="feature-item">
 
-<div class="feature-icon">📧</div>
+<div class="feature-icon">
+📧
+</div>
 
 <div>
-<strong>Email Support</strong><br>
+<strong>
+Email Support
+</strong>
+<br>
 Ask about any property.
 </div>
 
 </div>
 
+
 <div class="feature-item">
 
-<div class="feature-icon">💬</div>
+<div class="feature-icon">
+💬
+</div>
 
 <div>
-<strong>WhatsApp</strong><br>
+<strong>
+WhatsApp
+</strong>
+<br>
 Contact us directly.
 </div>
 
@@ -1408,25 +1590,31 @@ Contact us directly.
 </section>
 
 
-<!-- ================= BUILD HOME ================= -->
+<!-- BUILD YOUR HOME - SECONDARY -->
 
-<section class="build-section" id="build">
+<section
+class="build-section"
+id="build">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Secondary Service</span>
+<span>
+Secondary Service
+</span>
 
-<h2>Want To Build Your Home?</h2>
+<h2>
+Want To Build Your Home?
+</h2>
 
 <p>
-If you don't want to buy an existing property,
-you can create a preliminary concept for the
-home you would like to build.
+Create a preliminary concept for the home
+you would like to build.
 </p>
 
 </div>
+
 
 <div class="build-box">
 
@@ -1434,30 +1622,55 @@ home you would like to build.
 
 <div class="field">
 
-<label>Country</label>
+<label>
+Country
+</label>
 
 <select id="buildCountry">
-<option>Canada</option>
-<option>Australia</option>
+
+<option>
+Canada
+</option>
+
+<option>
+Australia
+</option>
+
 </select>
 
 </div>
 
+
 <div class="field">
 
-<label>Home Type</label>
+<label>
+Home Type
+</label>
 
 <select id="buildType">
-<option>Detached House</option>
-<option>Townhouse</option>
-<option>Luxury Villa</option>
+
+<option>
+Detached House
+</option>
+
+<option>
+Townhouse
+</option>
+
+<option>
+Luxury Villa
+</option>
+
 </select>
 
 </div>
 
+
 <div class="field">
 
-<label>House Size (m²)</label>
+<label>
+House Size (m²)
+</label>
 
 <input
 type="number"
@@ -1467,49 +1680,67 @@ min="30">
 
 </div>
 
+
 <div class="field">
 
-<label>Bedrooms</label>
+<label>
+Bedrooms
+</label>
 
 <select id="buildBedrooms">
+
 <option>1</option>
 <option>2</option>
 <option selected>3</option>
 <option>4</option>
 <option>5</option>
 <option>6</option>
+
 </select>
 
 </div>
 
+
 <div class="field">
 
-<label>Bathrooms</label>
+<label>
+Bathrooms
+</label>
 
 <select id="buildBathrooms">
+
 <option>1</option>
 <option selected>2</option>
 <option>3</option>
 <option>4</option>
+
 </select>
 
 </div>
+
 
 <div class="field">
 
-<label>Floors</label>
+<label>
+Floors
+</label>
 
 <select id="buildFloors">
+
 <option selected>1</option>
 <option>2</option>
 <option>3</option>
+
 </select>
 
 </div>
 
+
 <div class="field full">
 
-<label>Features</label>
+<label>
+Features
+</label>
 
 <div class="options">
 
@@ -1537,9 +1768,12 @@ Home Office
 
 </div>
 
+
 <div class="field full">
 
-<label>Describe Your Home</label>
+<label>
+Describe Your Home
+</label>
 
 <textarea
 id="buildDescription"
@@ -1554,10 +1788,15 @@ placeholder="Describe the home you would like to build..."></textarea>
 <button
 class="btn btn-primary"
 onclick="generateHouse()">
+
 Generate Home Concept
+
 </button>
 
-<div class="preview" id="preview">
+
+<div
+class="preview"
+id="preview">
 
 <h3>
 Preliminary Home Concept
@@ -1573,17 +1812,23 @@ Living Room
 Kitchen
 </div>
 
-<div class="room" id="buildRoom3">
+<div
+class="room"
+id="buildRoom3">
 Bedrooms
 </div>
 
-<div class="room" id="buildRoom4">
+<div
+class="room"
+id="buildRoom4">
 Bathrooms
 </div>
 
 </div>
 
-<div class="summary" id="buildSummary">
+<div
+class="summary"
+id="buildSummary">
 </div>
 
 </div>
@@ -1595,7 +1840,7 @@ Bathrooms
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- CTA -->
 
 <section class="cta">
 
@@ -1604,28 +1849,38 @@ Ready to buy your home?
 </h2>
 
 <p>
-Explore our homes for sale and contact TrueHome Realty
+Explore our homes for sale and message TrueHome Realty
 about the property you are interested in.
 </p>
 
-<a href="#homes" class="btn btn-gold">
+<a
+href="#homes"
+class="btn btn-gold">
+
 🏠 Buy Your Home
+
 </a>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact">
 
 <div class="container">
 
 <div class="heading">
 
-<span>Contact TrueHome Realty</span>
+<span>
+Contact TrueHome Realty
+</span>
 
-<h2>Let's Talk About Your Home</h2>
+<h2>
+Let's Talk About Your Home
+</h2>
 
 <p>
 Contact us by email or WhatsApp about a property.
@@ -1633,11 +1888,15 @@ Contact us by email or WhatsApp about a property.
 
 </div>
 
+
 <div class="contact-box">
 
 <div class="notice">
 
-<strong>Important:</strong>
+<strong>
+Important:
+</strong>
+
 Property information, prices, availability,
 ownership and purchase terms should be verified
 before making a purchase decision.
@@ -1645,35 +1904,44 @@ before making a purchase decision.
 </div>
 
 
-<!-- DIRECT CONTACT -->
-
 <div class="direct-contact">
 
 <a
 class="email-contact"
-href="mailto:your-email@example.com">
+id="emailContact"
+href="#">
+
 📧<br>
 Email TrueHome Realty
+
 </a>
+
 
 <a
 class="whatsapp-contact"
-href="https://wa.me/15551234567"
+id="whatsappContact"
+href="#"
 target="_blank">
+
 💬<br>
 WhatsApp TrueHome Realty
+
 </a>
 
 </div>
 
 
-<form onsubmit="submitForm(event)">
+<form
+onsubmit="submitForm(event)">
 
 <div class="form-grid">
 
+
 <div class="field">
 
-<label>Full Name</label>
+<label>
+Full Name
+</label>
 
 <input
 type="text"
@@ -1683,9 +1951,12 @@ placeholder="Your full name">
 
 </div>
 
+
 <div class="field">
 
-<label>Email</label>
+<label>
+Email
+</label>
 
 <input
 type="email"
@@ -1695,9 +1966,12 @@ placeholder="you@example.com">
 
 </div>
 
+
 <div class="field">
 
-<label>Phone / WhatsApp</label>
+<label>
+Phone / WhatsApp
+</label>
 
 <input
 type="tel"
@@ -1706,9 +1980,12 @@ placeholder="Your phone number">
 
 </div>
 
+
 <div class="field">
 
-<label>Property</label>
+<label>
+Property
+</label>
 
 <input
 type="text"
@@ -1717,9 +1994,12 @@ placeholder="Property you are interested in">
 
 </div>
 
+
 <div class="field full">
 
-<label>Message</label>
+<label>
+Message
+</label>
 
 <textarea
 id="message"
@@ -1727,12 +2007,15 @@ placeholder="Tell us which home you are interested in..."></textarea>
 
 </div>
 
+
 <div class="full">
 
 <button
 type="submit"
 class="btn btn-primary">
+
 📧 Send Property Inquiry
+
 </button>
 
 </div>
@@ -1743,7 +2026,7 @@ class="btn btn-primary">
 
 <p
 id="formMessage"
-style="margin-top:18px;font-weight:bold;">
+style="margin-top:18px;font-weight:bold">
 </p>
 
 </div>
@@ -1753,7 +2036,7 @@ style="margin-top:18px;font-weight:bold;">
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1772,38 +2055,60 @@ property opportunities.
 
 </div>
 
+
 <div>
 
-<h4>Buy</h4>
+<h4>
+Buy
+</h4>
 
-<a href="#homes">Buy Your Home</a>
+<a href="#homes">
+Buy Your Home
+</a>
 
-<a href="#locations">Locations</a>
+<a href="#locations">
+Locations
+</a>
 
-<a href="#how">How It Works</a>
+<a href="#how">
+How It Works
+</a>
 
 </div>
 
+
 <div>
 
-<h4>Services</h4>
+<h4>
+Services
+</h4>
 
-<a href="#build">Build Your Home</a>
+<a href="#build">
+Build Your Home
+</a>
 
-<a href="#contact">Property Inquiry</a>
+<a href="#contact">
+Property Inquiry
+</a>
 
 </div>
 
+
 <div>
 
-<h4>Contact</h4>
+<h4>
+Contact
+</h4>
 
-<a href="mailto:your-email@example.com">
+<a
+id="footerEmail"
+href="#">
 Email Us
 </a>
 
 <a
-href="https://wa.me/15551234567"
+id="footerWhatsApp"
+href="#"
 target="_blank">
 WhatsApp
 </a>
@@ -1812,30 +2117,33 @@ WhatsApp
 
 </div>
 
+
 <div class="copyright">
 
 © 2026 TrueHome Realty. All rights reserved.
 
 <br><br>
 
-Property listings and prices shown on this website
-should be verified for current availability and
-accuracy before any purchase decision.
+Property listings and availability should be verified
+for current accuracy before any purchase decision.
 
 </div>
 
 </footer>
 
 
-<!-- ================= WHATSAPP FLOATING BUTTON ================= -->
+<!-- FLOATING WHATSAPP -->
 
 <div class="whatsapp">
 
 <a
-href="https://wa.me/15551234567"
+id="floatingWhatsApp"
+href="#"
 target="_blank"
 aria-label="WhatsApp">
+
 💬
+
 </a>
 
 </div>
@@ -1843,18 +2151,18 @@ aria-label="WhatsApp">
 
 <script>
 
-/* ================= SETTINGS ================= */
+/* =====================================================
+   CHANGE ONLY THESE TWO VALUES
+   ===================================================== */
 
-/*
-CHANGE THESE TWO VALUES TO YOUR REAL DETAILS.
-*/
+const BUSINESS_EMAIL =
+"truehomerealty01@gmail.com";
 
-const BUSINESS_EMAIL = "your-email@example.com";
-
-const WHATSAPP_NUMBER = "15551234567";
+const WHATSAPP_NUMBER =
+"15551234567";
 
 
-/* ================= MOBILE MENU ================= */
+/* MOBILE MENU */
 
 function toggleMenu(){
 
@@ -1865,18 +2173,106 @@ document
 }
 
 
-/* ================= SELECT PROPERTY ================= */
+/* CONTACT LINKS */
 
-function selectProperty(property){
+function setupContactLinks(){
+
+const email =
+"mailto:" + BUSINESS_EMAIL;
+
+const whatsapp =
+"https://wa.me/" + WHATSAPP_NUMBER;
 
 document
-.getElementById("selectedProperty")
-.value = property;
+.getElementById("emailContact")
+.href = email;
+
+document
+.getElementById("footerEmail")
+.href = email;
+
+document
+.getElementById("whatsappContact")
+.href = whatsapp;
+
+document
+.getElementById("footerWhatsApp")
+.href = whatsapp;
+
+document
+.getElementById("topWhatsApp")
+.href = whatsapp;
+
+document
+.getElementById("floatingWhatsApp")
+.href = whatsapp;
 
 }
 
 
-/* ================= BUILD HOME ================= */
+/* MESSAGE ABOUT HOME */
+
+function messageAbout(property,country){
+
+const text =
+"Hello TrueHome Realty, I am interested in the " +
+property +
+" in " +
+country +
+". Please send me more information about this home.";
+
+const url =
+"https://wa.me/" +
+WHATSAPP_NUMBER +
+"?text=" +
+encodeURIComponent(text);
+
+window.open(url,"_blank");
+
+}
+
+
+/* MAXIMUM PRICE */
+
+function filterHomes(){
+
+const max =
+document
+.getElementById("maxPrice")
+.value;
+
+const cards =
+document.querySelectorAll(".property-card");
+
+let found = 0;
+
+cards.forEach(function(card){
+
+const cardPrice =
+Number(card.dataset.price);
+
+const show =
+!max ||
+cardPrice <= Number(max);
+
+card.style.display =
+show ? "block" : "none";
+
+if(show){
+found++;
+}
+
+});
+
+document
+.getElementById("noResults")
+.style.display =
+found ? "none" : "block";
+
+}
+
+
+/* BUILD HOME */
 
 function generateHouse(){
 
@@ -1906,27 +2302,52 @@ document
 
 const features = [];
 
-if(document.getElementById("buildGarage").checked)
+
+if(
+document
+.getElementById("buildGarage")
+.checked
+)
 features.push("Garage");
 
-if(document.getElementById("buildGarden").checked)
+
+if(
+document
+.getElementById("buildGarden")
+.checked
+)
 features.push("Garden");
 
-if(document.getElementById("buildPool").checked)
+
+if(
+document
+.getElementById("buildPool")
+.checked
+)
 features.push("Swimming Pool");
 
-if(document.getElementById("buildOffice").checked)
+
+if(
+document
+.getElementById("buildOffice")
+.checked
+)
 features.push("Home Office");
+
 
 document
 .getElementById("buildRoom3")
 .innerText =
-bedrooms + " Bedroom(s)";
+bedrooms +
+" Bedroom(s)";
+
 
 document
 .getElementById("buildRoom4")
 .innerText =
-bathrooms + " Bathroom(s)";
+bathrooms +
+" Bathroom(s)";
+
 
 document
 .getElementById("buildSummary")
@@ -1939,7 +2360,8 @@ country +
 type +
 
 "<br><strong>Size:</strong> " +
-size + " m²" +
+size +
+" m²" +
 
 "<br><strong>Bedrooms:</strong> " +
 bedrooms +
@@ -1951,18 +2373,28 @@ bathrooms +
 floors +
 
 "<br><strong>Features:</strong> " +
-(features.length ?
-features.join(", ") :
-"None selected") +
+
+(
+features.length
+?
+features.join(", ")
+:
+"None selected"
+) +
 
 "<br><strong>Description:</strong> " +
-(description ||
-"No description provided.");
+
+(
+description ||
+"No description provided."
+);
+
 
 document
 .getElementById("preview")
 .style.display =
 "block";
+
 
 document
 .getElementById("preview")
@@ -1973,32 +2405,53 @@ behavior:"smooth"
 }
 
 
-/* ================= EMAIL FORM ================= */
+/* EMAIL FORM */
 
 function submitForm(event){
 
 event.preventDefault();
 
+
 const name =
-document.getElementById("name").value.trim();
+document
+.getElementById("name")
+.value
+.trim();
+
 
 const email =
-document.getElementById("email").value.trim();
+document
+.getElementById("email")
+.value
+.trim();
+
 
 const phone =
-document.getElementById("phone").value.trim();
+document
+.getElementById("phone")
+.value
+.trim();
+
 
 const property =
-document.getElementById("selectedProperty").value.trim();
+document
+.getElementById("selectedProperty")
+.value
+.trim();
+
 
 const message =
-document.getElementById("message").value.trim();
+document
+.getElementById("message")
+.value
+.trim();
 
 
 const subject =
 encodeURIComponent(
 "TrueHome Realty Property Inquiry"
 );
+
 
 const body =
 encodeURIComponent(
@@ -2011,11 +2464,13 @@ Name: ${name}
 
 Email: ${email}
 
-Phone / WhatsApp: ${phone || "Not provided"}
+Phone / WhatsApp:
+${phone || "Not provided"}
 
 PROPERTY
 
-Property: ${property || "Not specified"}
+Property:
+${property || "Not specified"}
 
 MESSAGE
 
@@ -2041,6 +2496,11 @@ subject +
 body;
 
 }
+
+
+/* START */
+
+setupContactLinks();
 
 </script>
 
